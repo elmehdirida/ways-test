@@ -1,0 +1,16 @@
+.slider-margin {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 26px;
+  left: 450px;
+  height: 48px;
+  width: 163px;
+}
+
+.text{
+  font-size: 16px;
+  font-weight: 400;
+  height: 24px;
+}
+
