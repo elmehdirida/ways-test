@@ -11,4 +11,8 @@ import {MatRadioModule} from "@angular/material/radio";
   styleUrls: ['./slider-ui.component.css'],
 })
 export class SliderUiComponent {
+   color = 'primary';
+  checked = false;
+  disabled = false;
 }
+
