@@ -1,0 +1,41 @@
+.all{
+  width: 1056px;
+  height: 1000px;
+}
+
+.slider{
+  display: flex;
+  align-items: center;
+  width: 163px;
+  height: 48px;
+  margin-top: 26px;
+  margin-left: 450px;
+}
+
+.general-card {
+  width: 856px;
+  height: 801px;
+  margin-left: 100px;
+  margin-top: 26px;
+}
+
+.logo{
+  margin-top: 61px;
+  margin-left: 672px;
+}
+
+.input-sender-address{
+  width: 471px;
+  height: 72px;
+  margin-top: 28px;
+  margin-left: 62px;
+  border-radius: 4px;
+}
+
+.text-area{
+  width: 471px;
+  height: 96px;
+  margin-left: 62px;
+  border-radius: 4px;
+  border-width: 1px;
+}

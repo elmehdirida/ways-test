@@ -24,7 +24,7 @@
           "apps/ways-test/src/assets"
         ],
         "styles": [
-          "@angular/material/prebuilt-themes/pink-bluegrey.css",
+          "@angular/material/prebuilt-themes/deeppurple-amber.css",
           "apps/ways-test/src/styles.css"
         ],
         "scripts": []
