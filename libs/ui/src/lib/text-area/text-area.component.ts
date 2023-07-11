@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatInputModule} from "@angular/material/input";
 
@@ -9,4 +9,6 @@ import {MatInputModule} from "@angular/material/input";
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.css'],
 })
-export class TextAreaComponent {}
+export class TextAreaComponent {
+  @Input() body : string='Body'
+}
