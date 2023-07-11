@@ -17,9 +17,11 @@ import {MatCardModule} from "@angular/material/card";
   styleUrls: ['./principal.component.css'],
 })
 export class PrincipalComponent {
-  sender="Sender address";
-  subject="Subject (optional)";
-  footnote  = "Footnote (optional)"
+  sender: string="Sender address";
+  subject: string="Subject (optional)";
+  footnote : string = "Footnote (optional)"
+  body: string = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  ";
+
   list : string[] =[
     "Test GmbH",
     " Wallstraße 8 Frankfurt",

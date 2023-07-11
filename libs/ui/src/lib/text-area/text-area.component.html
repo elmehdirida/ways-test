@@ -1,5 +1,8 @@
   <mat-form-field appearance="outline" style="width: 100%;">
-    <mat-label>Leave a comment</mat-label>
-    <textarea style="resize: none" matInput ></textarea>
+    <mat-label>Body</mat-label>
+    <textarea
+              cdkTextareaAutosize
+              matInput >{{body}}
+    </textarea>
   </mat-form-field>
 

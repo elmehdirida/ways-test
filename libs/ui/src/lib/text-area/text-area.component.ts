@@ -10,5 +10,5 @@ import {MatInputModule} from "@angular/material/input";
   styleUrls: ['./text-area.component.css'],
 })
 export class TextAreaComponent {
-  @Input() body : string='Body'
+  @Input() body! : string
 }
