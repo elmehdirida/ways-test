@@ -1,0 +1,29 @@
+
+.line {
+  border: 1px dashed black;
+  width: 471px;
+  margin-left: 62px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.lines-label{
+  width: 43px;
+  height: 16px;
+  margin-left: 76px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-align: left;
+  color : rgba(102, 102, 102, 1)
+}
+
+.box{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
