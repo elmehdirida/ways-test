@@ -11,5 +11,7 @@ import {MatCardModule} from "@angular/material/card";
   styleUrls: ['./principal.component.css'],
 })
 export class PrincipalComponent {
-  sender: string="Sender address";
+  sender="Sender address";
+  subject="Subject (optional)";
+  footnote="Footnote (optional)";
 }
