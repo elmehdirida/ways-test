@@ -8,13 +8,14 @@ import {
   TextAreaComponent
 } from "@ways-test/ui";
 import {MatCardModule} from "@angular/material/card";
+import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/Datepicker.component";
 
 @Component({
-  selector: 'ways-test-principal',
-  standalone: true,
-  imports: [CommonModule, SliderUiComponent, InputUiComponent, NgOptimizedImage, MatCardModule, TextAreaComponent, LinesComponent, DateBlockComponent],
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css'],
+    selector: 'ways-test-principal',
+    standalone: true,
+    templateUrl: './principal.component.html',
+    styleUrls: ['./principal.component.css'],
+    imports: [CommonModule, SliderUiComponent, InputUiComponent, NgOptimizedImage, MatCardModule, TextAreaComponent, LinesComponent, DateBlockComponent, DatepickerComponent]
 })
 export class PrincipalComponent {
   sender: string="Sender address";
