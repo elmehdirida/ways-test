@@ -11,7 +11,4 @@ import { CommonModule } from '@angular/common';
 export class LinesComponent {
   @Input() addresses! : string [];
 
-  opendialg() {
-    console.log("open")
-  }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {PrincipalComponent} from "./principal/principal.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   standalone: true,
