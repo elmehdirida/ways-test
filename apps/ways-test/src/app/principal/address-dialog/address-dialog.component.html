@@ -1,12 +1,12 @@
 <mat-card class="dialog-card">
   <div style="display: inline-flex">
-    <h6 class="dialog-title">Edit receiver address</h6>
+    <p class="dialog-title">Edit receiver address</p>
     <mat-icon class="close_24px" (click)="onCloseDialog()">clear</mat-icon>
   </div>
   <div class="inside-dialog">
     <div style="display: inline-flex">
       <ways-test-input-ui class="input-sender-address-dialog" [textHolder]="line"></ways-test-input-ui>
-      <mat-icon class="delete_24px">delete_forever</mat-icon>
+      <mat-icon class="delete_24px" fontIcon="delete_forever"></mat-icon>
     </div>
     <div style="display: inline-flex">
       <ways-test-input-ui class="input-sender-address-dialog" [textHolder]="line"></ways-test-input-ui>
@@ -14,7 +14,27 @@
     </div>
     <div style="display: inline-flex">
       <ways-test-input-ui class="input-sender-address-dialog" [textHolder]="line"></ways-test-input-ui>
-      <mat-icon class="delete_24px">delete_forever</mat-icon>
+      <mat-icon class="delete_24px" fontIcon="delete_forever"></mat-icon>
+    </div>
+    <div class="text-icon-div">
+      <mat-icon fontIcon="add" class="text-icon"></mat-icon>
+      <button class="flat-btn" mat-flat-button><p class="text-add">ADD LINE</p></button>
+  </div>
+    <mat-divider class="divider" ></mat-divider>
+    <p class="preview-text">Preview</p>
+    <div class="preview-div">
+      <p class="p-preview">Test GmbH</p>
+      <p class="p-preview">Wallstraße 8, Frankfurt</p>
+      <p class="p-preview">GERMANY</p>
+    </div>
+  </div>
+  <mat-divider class="divider-bottom"></mat-divider>
+  <div class="bottom-button-div">
+    <div class="bottom-buttons">
+    <button mat-button class="cancel-btn"><p class="cancel-btn-text">CANCEL</p></button>
+      <div class="apply-btn-text-div">
+    <button mat-flat-button class="apply-btn" color="primary"> <p class="apply-btn-text">APPLY</p></button>
+      </div>
     </div>
   </div>
 </mat-card>
