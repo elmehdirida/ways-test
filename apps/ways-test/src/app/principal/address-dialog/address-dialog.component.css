@@ -1,0 +1,53 @@
+.dialog-card{
+  width: 560px;
+  height: 552px;
+  padding-top: 21px ;
+  gap: 16px;
+}
+
+.dialog-title{
+  font-weight: 500;
+  width: 191px;
+  height: 24px;
+  margin-left: 24px;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.inside-dialog{
+  margin: 0 auto;
+  width: 544px;
+  height: 422px;
+}
+
+.close_24px{
+  height: 24px;
+  width: 24px;
+  margin-left: 300px;
+  cursor: pointer;
+}
+
+.delete_24px{
+  outline-color: red;
+  height: 24px;
+  width: 24px;
+  margin-left: 24px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.input-sender-address-dialog{
+  width: 464px;
+  height: 67px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+}
+.text-icon-div{
+  height: 36px;
+  width: 122px;
+  margin-left: 8px;
+  padding:6px 6px 6px 8px;
+}
+.text-icon {
+  width: 84px;
+}

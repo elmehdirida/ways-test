@@ -1,0 +1,20 @@
+<mat-card class="dialog-card">
+  <div style="display: inline-flex">
+    <h6 class="dialog-title">Edit receiver address</h6>
+    <mat-icon class="close_24px" (click)="onCloseDialog()">clear</mat-icon>
+  </div>
+  <div class="inside-dialog">
+    <div style="display: inline-flex">
+      <ways-test-input-ui class="input-sender-address-dialog" [textHolder]="line"></ways-test-input-ui>
+      <mat-icon class="delete_24px">delete_forever</mat-icon>
+    </div>
+    <div style="display: inline-flex">
+      <ways-test-input-ui class="input-sender-address-dialog" [textHolder]="line"></ways-test-input-ui>
+      <mat-icon class="delete_24px" fontIcon="delete_forever"></mat-icon>
+    </div>
+    <div style="display: inline-flex">
+      <ways-test-input-ui class="input-sender-address-dialog" [textHolder]="line"></ways-test-input-ui>
+      <mat-icon class="delete_24px">delete_forever</mat-icon>
+    </div>
+  </div>
+</mat-card>
