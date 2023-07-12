@@ -10,4 +10,7 @@ export * from './lib/lines/lines.component';
 
 export * from './lib/date-block/date-block.component';
 
+<<<<<<< HEAD
 export * from './lib/Datepicker/Datepicker.component';
+=======
+>>>>>>> refs/remotes/origin/main
