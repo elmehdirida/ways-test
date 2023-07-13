@@ -15,7 +15,7 @@ import {MatListModule} from "@angular/material/list";
   styleUrls: ['./address-dialog.component.css'],
 })
 export class AddressDialogComponent {
-   line : string = "line "
+   line  = "line "
   constructor(public dialogRef : MatDialogRef<AddressDialogComponent>) {
   }
 

@@ -8,31 +8,36 @@ import {
   TextAreaComponent
 } from "@ways-test/ui";
 import {MatCardModule} from "@angular/material/card";
-import {AddressDialogComponent} from "./address-dialog/address-dialog.component";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
+import { AddressDialogComponent } from './address-dialog/address-dialog.component';
+import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/datepicker.component";
+
 
 @Component({
-  selector: 'ways-test-principal',
-  standalone: true,
-  imports: [
-    CommonModule,
-    SliderUiComponent,
-    InputUiComponent,
-    NgOptimizedImage,
-    MatCardModule,
-    TextAreaComponent,
-    LinesComponent,
-    DateBlockComponent
-  ,MatDialogModule],
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css'],
+    selector: 'ways-test-principal',
+    standalone: true,
+    templateUrl: './principal.component.html',
+    styleUrls: ['./principal.component.css'],
+    imports: [
+        CommonModule,
+        SliderUiComponent,
+        InputUiComponent,
+        NgOptimizedImage,
+        MatCardModule,
+        TextAreaComponent,
+        LinesComponent,
+        DateBlockComponent,
+        MatDialogModule,
+        DatepickerComponent
+    ]
 })
 export class PrincipalComponent  implements OnInit{
 
-  sender: string="Sender address";
-  subject: string="Subject (optional)";
-  footnote : string = "Footnote (optional)"
-  body: string = "";
+  sender="Sender address";
+  subject="Subject (optional)";
+  footnote  = "Footnote (optional)"
+  body = "";
   list : string[] =[
     "Test GmbH",
     " Wallstraße 8 Frankfurt",
@@ -60,4 +65,17 @@ export class PrincipalComponent  implements OnInit{
   ngOnInit(): void {
     this.openDialog()
   }
+
+  openContactDialog(): void {
+    const dialogRef = this.dialog.open(ContactDialogComponent, {
+      data: {},
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
+  
 }

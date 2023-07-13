@@ -1,0 +1,121 @@
+.dialog-card{
+    width: 560px;
+    height: 552px;
+    padding-top: 21px ;
+    gap: 16px;
+  }
+
+
+  .dialog-title{
+    font-weight: 500;
+    width: 191px;
+    height: 24px;
+    margin-left: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+  }
+
+
+
+  .close_24px{
+    height: 24px;
+    width: 24px;
+    margin-left: 300px;
+    cursor: pointer;
+  }
+
+  .date-picker-contact-dialog{
+    width: 464px;
+    height: 67px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+
+  .input-sender-address-dialog{
+    width: 464px;
+    height: 67px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+  .divider{
+    width: 100%;
+    height: 1px;
+    margin-top: 9px;
+    color: rgba(33, 33, 33, 0.08);
+  }
+
+  
+  .preview-text{
+    width: 51px;
+    height: 24px;
+    margin-top: 15px;
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.1px;
+  }
+  
+  .preview-div{
+    width: 147px;
+    height: 60px;
+    margin-top: 16px;
+    margin-left: 16px;
+  }
+  .p-preview{
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+  
+  .divider-bottom{
+    width: 100%;
+    height: 1px;
+    color: rgba(33, 33, 33, 0.08);
+  }
+
+  .bottom-button-div{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 53px;
+  }
+
+  .bottom-buttons{
+    display: flex;
+    width: 167px;
+    height: 36px;
+  }
+  .cancel-btn{
+    height: 36px;
+    width: 76px;
+    border-radius: 25px;
+    padding:10px 8px 10px 8px ;
+  }
+
+  .cancel-btn-text{
+    color: rgba(25, 118, 210, 1);
+    width: 75px;
+    height: 16px;
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    border: 0;
+  }
+
+  .apply-btn-text {
+    color: white;
+    width: 75px;
+    height: 16px;
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    border: 0;
+  }
+  
