@@ -1,5 +1,5 @@
 <mat-form-field
   appearance="outline" style="width: 100%;">
     <mat-label>{{textHolder}}</mat-label>
-    <input type="text" matInput>
+    <input #newV type="text"  matInput [formControl]="value" (change)="onChange(newV.value)">
   </mat-form-field>

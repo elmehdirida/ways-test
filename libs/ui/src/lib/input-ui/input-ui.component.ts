@@ -1,7 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule } from "@angular/forms";
+import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
 
 @Component({
   selector: 'ways-test-input-ui',
@@ -10,6 +10,21 @@ import {ReactiveFormsModule } from "@angular/forms";
   templateUrl: './input-ui.component.html',
   styleUrls: ['./input-ui.component.css'],
 })
-export class InputUiComponent {
+export class InputUiComponent implements OnInit{
+
+
   @Input() textHolder  =''
+  @Input() initialValue =''
+  value = new FormControl(this.initialValue);
+  @Output() newValue = new EventEmitter<string>();
+
+  onChange(val : string){
+    this.newValue.emit(val);
+  }
+
+  ngOnInit(): void {
+    if (this.initialValue) {
+      this.value.setValue(this.initialValue);
+    }
+  }
 }

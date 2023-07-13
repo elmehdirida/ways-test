@@ -20,6 +20,8 @@
   margin: 0 auto;
   width: 544px;
   height: 422px;
+  overflow-y: auto;
+
 }
 
 .close_24px{
@@ -45,6 +47,7 @@
 }
 
 .text-icon-div{
+  cursor: pointer;
   display: flex;
   align-items: center;
   width: 122px;

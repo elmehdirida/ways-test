@@ -33,11 +33,10 @@ export class PrincipalComponent  implements OnInit{
   subject: string="Subject (optional)";
   footnote : string = "Footnote (optional)"
   body: string = "";
-  list : string[] =[
-    "Test GmbH",
-    " Wallstraße 8 Frankfurt",
-    " GERMANY",
+  listAdresse : string[] =[
+    "test",'test2'
   ]
+   listAdresseCopy = [...this.listAdresse];
   contactInfo : any[] =[
     "01.01.2023",
     "Max Mustermann"
@@ -49,15 +48,21 @@ export class PrincipalComponent  implements OnInit{
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddressDialogComponent, {
-      data: {},
+      data: {
+        addressList: this.listAdresseCopy
+      },
     });
 
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe(result => {
+      if (result !== undefined) {
+        console.log(result)
+        this.listAdresse = result;
+      } else {
+        console.log('AddressDialogComponent closed with no data.');
+      }
     });
   }
 
   ngOnInit(): void {
-    this.openDialog()
   }
 }

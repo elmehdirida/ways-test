@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +8,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './lines.component.html',
   styleUrls: ['./lines.component.css'],
 })
-export class LinesComponent {
+export class LinesComponent implements OnInit{
   @Input() addresses! : string [];
+
+  ngOnInit(): void {
+  }
 
 }
