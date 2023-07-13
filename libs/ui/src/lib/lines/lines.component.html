@@ -3,7 +3,8 @@
   <div class="line" >
     <div class="box">
     <div  *ngFor="let add of addresses">{{add}} </div>
-      <div *ngIf="addresses.length==0">
+      // eslint-disable-next-line @angular-eslint/template/eqeqeq
+      <div *ngIf="addresses.length===0">
         No Addresses , Tape here To Add
       </div>
   </div>

@@ -10,13 +10,12 @@
         
             <mat-dialog-content >
                 <div class="input-sender-address-dialog">
-                    <ways-test-datepicker></ways-test-datepicker>
-
+                    <ways-test-datepicker (newDate)="handleDateChange($event)" [defaultDate]="dateString"></ways-test-datepicker>
                 </div>
 
                 <div class="inside-dialog">
                     <div style="display: inline-flex">
-                      <ways-test-input-ui class="input-sender-address-dialog" [textHolder]="contactName"></ways-test-input-ui>
+                      <ways-test-input-ui class="input-sender-address-dialog" (newValue)="handleContactNameChange($event)" [textHolder]="contactName" [initialValue]="contactListCopy[1]"></ways-test-input-ui>
                     </div>
                 </div>
         
@@ -24,8 +23,9 @@
             <mat-divider class="divider"></mat-divider>
             <p class="preview-text">Preview</p>
             <div class="preview-div">
-              <p class="p-preview">Test GmbH</p>
-              <p class="p-preview">Wallstraße 8, Frankfurt</p>
+              <p class="p-preview">Date: {{updatedContactList[0]}}</p>
+              <p class="p-preview">Contact person: {{updatedContactList[1]}}</p>
+              
             </div>
           <mat-divider class="divider-bottom"></mat-divider>
                 <div class="contact-button-dialog">

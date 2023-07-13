@@ -11,7 +11,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { AddressDialogComponent } from './address-dialog/address-dialog.component';
-import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/datepicker.component";
+import { DatepickerComponent } from '@ways-test/ui';
 
 
 @Component({
@@ -34,6 +34,7 @@ import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/d
 })
 export class PrincipalComponent  {
 
+
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)"
@@ -42,16 +43,19 @@ export class PrincipalComponent  {
     "test",'test2'
   ]
    listAdresseCopy = [...this.listAdresse];
-  contactInfo : any[] =[
+   
+  contactInfo : string[] =[
     "01.01.2023",
     "Max Mustermann"
   ]
+  contactInfoCopy = [...this.contactInfo];
 
   constructor(public dialog :MatDialog) {
   }
 
 
   openDialog(): void {
+
     const dialogRef = this.dialog.open(AddressDialogComponent, {
       data: {
         addressList: this.listAdresseCopy
@@ -71,16 +75,16 @@ export class PrincipalComponent  {
   openContactDialog(): void {
     const dialogRef = this.dialog.open(ContactDialogComponent, {
       data: {
-        contactInfo: this.contactInfo
+        contactInfo: this.contactInfoCopy
       },
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result !== undefined) {
-        console.log(result)
+      if (result !== null && result !== undefined) {
         this.contactInfo = result;
+        this.contactInfoCopy = [...result];
       } else {
-        console.log('ContactDialogComponent closed with no data.');
+        console.log('ContactDialogComponent closed with no modifications.');
       }
     });
   }
