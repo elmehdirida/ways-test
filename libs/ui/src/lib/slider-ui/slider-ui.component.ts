@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatRadioModule} from "@angular/material/radio";
@@ -11,8 +11,12 @@ import {MatRadioModule} from "@angular/material/radio";
   styleUrls: ['./slider-ui.component.css'],
 })
 export class SliderUiComponent {
-   color = 'primary';
-  checked = false;
-  disabled = false;
+  @Input() enable : boolean=false;
+  @Output() newP = new EventEmitter<boolean>();
+
+  changeMode() {
+    this.enable=!this.enable
+    this.newP.emit(this.enable)
+  }
 }
 

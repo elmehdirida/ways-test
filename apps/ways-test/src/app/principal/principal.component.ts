@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {
-  DateBlockComponent,
+  DateBlockComponent, DatepickerComponent,
   InputUiComponent,
   LinesComponent,
   SliderUiComponent,
@@ -37,10 +37,9 @@ export class PrincipalComponent  {
 
   sender="Sender address";
   subject="Subject (optional)";
-  footnote  = "Footnote (optional)"
+  footnote  = "Footnote (optional)";
   body = "";
   listAdresse : string[] =[
-    "test",'test2'
   ]
    listAdresseCopy = [...this.listAdresse];
    
@@ -64,8 +63,8 @@ export class PrincipalComponent  {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        console.log(result)
         this.listAdresse = result;
+        this.listAdresseCopy = [...this.listAdresse];
       } else {
         console.log('AddressDialogComponent closed with no data.');
       }
@@ -89,4 +88,7 @@ export class PrincipalComponent  {
     });
   }
 
+  changeMode(event: boolean) {
+      this.preview=event
+  }
 }
