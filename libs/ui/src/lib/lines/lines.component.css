@@ -1,8 +1,9 @@
 
 .line {
-  overflow:auto ;
+  overflow-y: auto;
   border: 1px dashed black;
   width: 471px;
+  max-height: 80px;
   margin-left: 62px;
   border-radius: 4px;
   font-size: 14px;

@@ -8,6 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {  MatDialogModule,  MatDialogRef} from '@angular/material/dialog';
 import { FormBuilder,ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @Component({
@@ -15,16 +16,16 @@ import { MatListModule } from '@angular/material/list';
     standalone: true,
     templateUrl: './contact-dialog.component.html',
     styleUrls: ['./contact-dialog.component.css'],
-    imports: [CommonModule,
-        InputUiComponent,
-        MatCardModule,
-        MatIconModule,
-        MatDatepickerModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatDialogModule,
-        DatepickerComponent,
-        MatListModule]
+  imports: [CommonModule,
+    InputUiComponent,
+    MatCardModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    DatepickerComponent,
+    MatListModule, MatButtonModule]
 })
 export class ContactDialogComponent {
 contactName = 'Contact Name';
@@ -40,7 +41,7 @@ close() {
 }
 
 
-  
+
 
 
 

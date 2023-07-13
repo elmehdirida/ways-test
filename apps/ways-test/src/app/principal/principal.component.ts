@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {
-  DateBlockComponent,
+  DateBlockComponent, DatepickerComponent,
   InputUiComponent,
   LinesComponent,
   SliderUiComponent,
@@ -11,7 +11,6 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { AddressDialogComponent } from './address-dialog/address-dialog.component';
-import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/datepicker.component";
 
 
 @Component({
@@ -33,13 +32,12 @@ import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/d
     ]
 })
 export class PrincipalComponent  {
-
+  preview : boolean=false;
   sender="Sender address";
   subject="Subject (optional)";
-  footnote  = "Footnote (optional)"
+  footnote  = "Footnote (optional)";
   body = "";
   listAdresse : string[] =[
-    "test",'test2'
   ]
    listAdresseCopy = [...this.listAdresse];
   contactInfo : any[] =[
@@ -60,8 +58,8 @@ export class PrincipalComponent  {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        console.log(result)
         this.listAdresse = result;
+        this.listAdresseCopy = [...this.listAdresse];
       } else {
         console.log('AddressDialogComponent closed with no data.');
       }
@@ -85,4 +83,7 @@ export class PrincipalComponent  {
     });
   }
 
+  changeMode(event: boolean) {
+      this.preview=event
+  }
 }

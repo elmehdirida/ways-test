@@ -4,7 +4,7 @@
     <mat-icon class="close_24px" (click)="onCloseDialog()">clear</mat-icon>
   </div>
   <div  class="inside-dialog">
-    <div  *ngFor="let item of newList ; index as i;" style="display: inline-flex">
+    <div  *ngFor="let item of data.addressList ; index as i;" style="display: inline-flex">
       <ways-test-input-ui (newValue)="addAddresse($event , i)" class="input-sender-address-dialog" textHolder="Line{{i+1}}" [initialValue]="item"></ways-test-input-ui>
       <mat-icon class="delete_24px" fontIcon="delete_forever" (click)="deleteLine(i)"></mat-icon>
     </div>
@@ -23,7 +23,7 @@
     <div class="bottom-buttons">
     <button mat-button class="cancel-btn" (click)="onCloseDialog()"><p class="cancel-btn-text">CANCEL</p></button>
       <div class="apply-btn-text-div">
-    <button mat-flat-button class="apply-btn" color="primary" (click)="onApply()"><p class="apply-btn-text">APPLY</p></button>
+    <button mat-flat-button class="apply-btn" style="background-color: rgba(25, 118, 210, 1)" (click)="onApply()"><p class="apply-btn-text">APPLY</p></button>
       </div>
     </div>
   </div>

@@ -1,6 +1,2 @@
 <mat-slide-toggle
-class="example-margin"
-          [color]="color"
-          [checked]="checked"
-          [disabled]="disabled">Preview Mode</mat-slide-toggle>
-          
+class="example-margin"  [checked]="enable" (change)="changeMode()">Preview Mode</mat-slide-toggle>

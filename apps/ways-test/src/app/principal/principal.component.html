@@ -1,10 +1,10 @@
-<ways-test-slider-ui class="slider"></ways-test-slider-ui>
-<mat-card  class="general-card mat-mdc-elevation-specific mat-elevation-z2">
+<ways-test-slider-ui (newP)="changeMode($event)" [enable]="preview" class="slider"></ways-test-slider-ui>
+<mat-card *ngIf="!preview" class="general-card mat-mdc-elevation-specific mat-elevation-z2">
   <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
-  <ways-test-input-ui  class="input-sender-address "   [textHolder]="sender"></ways-test-input-ui>
-  <ways-test-lines [addresses]="listAdresse" (click)="openDialog()"></ways-test-lines>
-  <ways-test-date-block [contact]="contactInfo" (click)="openContactDialog()"></ways-test-date-block>
+  <ways-test-input-ui   class="input-sender-address " [initialValue]="sender" [textHolder]="sender"></ways-test-input-ui>
+  <ways-test-lines style="width: 471px" [addresses]="listAdresse" (click)="openDialog()"></ways-test-lines>
+  <ways-test-date-block style="width: 471px" [contact]="contactInfo" (click)="openContactDialog()"></ways-test-date-block>
   <ways-test-input-ui [textHolder]="subject" class="input-subject"></ways-test-input-ui>
-  <ways-test-text-area class="text-body" [body]="body"></ways-test-text-area>
+  <ways-test-text-area class="text-body"  [body]="body"></ways-test-text-area>
   <ways-test-input-ui [textHolder]="footnote"  class="input-footnote"></ways-test-input-ui>
 </mat-card>

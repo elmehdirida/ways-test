@@ -5,7 +5,10 @@
   gap: 16px;
 
 }
-
+.dialog-title-div{
+  width: 560px;
+  height: 24px;
+}
 .dialog-title{
   font-weight: 500;
   width: 191px;
@@ -42,8 +45,9 @@
 .input-sender-address-dialog{
   width: 464px;
   height: 67px;
+  margin-top: 8px;
   margin-left: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .text-icon-div{
@@ -145,11 +149,11 @@
 }
 
 .apply-btn{
-  color: rgba(25, 118, 210, 1);
   height: 36px;
   width: 75px;
   border-radius: 10px;
   padding:6px 6px 6px 8px ;
+  margin-left: 10px;
 }
 .apply-btn-text-div{
   width: 61px;

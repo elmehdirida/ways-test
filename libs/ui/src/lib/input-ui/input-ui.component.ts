@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatInputModule} from "@angular/material/input";
-import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormControl, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'ways-test-input-ui',
@@ -11,7 +11,7 @@ import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
   styleUrls: ['./input-ui.component.css'],
 })
 export class InputUiComponent implements OnInit{
-
+  isDisabled : boolean = true
 
   @Input() textHolder  =''
   @Input() initialValue =''
