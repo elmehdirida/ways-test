@@ -34,15 +34,14 @@ import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/d
 })
 export class PrincipalComponent  implements OnInit{
 
-  sender="Sender address";
-  subject="Subject (optional)";
-  footnote  = "Footnote (optional)"
-  body = "";
-  list : string[] =[
-    "Test GmbH",
-    " Wallstraße 8 Frankfurt",
-    " GERMANY",
+  sender: string="Sender address";
+  subject: string="Subject (optional)";
+  footnote : string = "Footnote (optional)"
+  body: string = "";
+  listAdresse : string[] =[
+    "test",'test2'
   ]
+   listAdresseCopy = [...this.listAdresse];
   contactInfo : any[] =[
     "01.01.2023",
     "Max Mustermann"
@@ -54,28 +53,21 @@ export class PrincipalComponent  implements OnInit{
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddressDialogComponent, {
-      data: {},
+      data: {
+        addressList: this.listAdresseCopy
+      },
     });
 
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe(result => {
+      if (result !== undefined) {
+        console.log(result)
+        this.listAdresse = result;
+      } else {
+        console.log('AddressDialogComponent closed with no data.');
+      }
     });
   }
 
   ngOnInit(): void {
-    this.openDialog()
   }
-
-  openContactDialog(): void {
-    const dialogRef = this.dialog.open(ContactDialogComponent, {
-      data: {},
-    });
-  
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
-
-
-  
 }
