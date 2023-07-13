@@ -32,7 +32,7 @@ import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/d
         DatepickerComponent
     ]
 })
-export class PrincipalComponent  implements OnInit{
+export class PrincipalComponent  {
 
   sender="Sender address";
   subject="Subject (optional)";
@@ -68,6 +68,21 @@ export class PrincipalComponent  implements OnInit{
     });
   }
 
-  ngOnInit(): void {
+  openContactDialog(): void {
+    const dialogRef = this.dialog.open(ContactDialogComponent, {
+      data: {
+        contactInfo: this.contactInfo
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result !== undefined) {
+        console.log(result)
+        this.contactInfo = result;
+      } else {
+        console.log('ContactDialogComponent closed with no data.');
+      }
+    });
   }
+
 }

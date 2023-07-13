@@ -3,7 +3,7 @@
   <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
   <ways-test-input-ui  class="input-sender-address "   [textHolder]="sender"></ways-test-input-ui>
   <ways-test-lines [addresses]="listAdresse" (click)="openDialog()"></ways-test-lines>
-  <ways-test-date-block [contact]="contactInfo"></ways-test-date-block>
+  <ways-test-date-block [contact]="contactInfo" (click)="openContactDialog()"></ways-test-date-block>
   <ways-test-input-ui [textHolder]="subject" class="input-subject"></ways-test-input-ui>
   <ways-test-text-area class="text-body" [body]="body"></ways-test-text-area>
   <ways-test-input-ui [textHolder]="footnote"  class="input-footnote"></ways-test-input-ui>
