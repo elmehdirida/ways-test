@@ -15,7 +15,7 @@ import {MatListModule} from "@angular/material/list";
   styleUrls: ['./address-dialog.component.css'],
 })
 export class AddressDialogComponent implements OnInit{
-   line : string = "line "
+   line  = "line "
   newList : string[]=[]
   ngOnInit(): void {
      this.newList = this.data.addressList

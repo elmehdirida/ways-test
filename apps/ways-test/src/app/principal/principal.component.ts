@@ -34,10 +34,10 @@ import { DatepickerComponent } from "../../../../../libs/ui/src/lib/Datepicker/d
 })
 export class PrincipalComponent  implements OnInit{
 
-  sender: string="Sender address";
-  subject: string="Subject (optional)";
-  footnote : string = "Footnote (optional)"
-  body: string = "";
+  sender="Sender address";
+  subject="Subject (optional)";
+  footnote  = "Footnote (optional)"
+  body = "";
   listAdresse : string[] =[
     "test",'test2'
   ]
