@@ -1,47 +1,44 @@
 <mat-card class="dialog-card">
+  <div style="display: inline-flex">
+    <h6 class="dialog-title">Edit contact</h6>
+    <mat-icon class="close_24px" (click)="close()">clear</mat-icon>
+  </div>
+  <div class="inside-dialog">
     <div style="display: inline-flex">
-        <h6 class="dialog-title">Edit contact</h6>
-        <mat-icon class="close_24px" (click)="close()">clear</mat-icon>
-      </div>
-      <div class="inside-dialog">
-        <div style="display: inline-flex">
-          <div class="edit-course-form">
-
-        
-            <mat-dialog-content >
-                <div class="input-sender-address-dialog">
-                    <ways-test-datepicker (newDate)="handleDateChange($event)" [defaultDate]="dateString"></ways-test-datepicker>
-                </div>
-
-                <div class="inside-dialog">
-                    <div style="display: inline-flex">
-                      <ways-test-input-ui class="input-sender-address-dialog" (newValue)="handleContactNameChange($event)" [textHolder]="contactName" [initialValue]="contactListCopy[1]"></ways-test-input-ui>
-                    </div>
-                </div>
-        
-            </mat-dialog-content>
-            <mat-divider class="divider"></mat-divider>
-            <p class="preview-text">Preview</p>
-            <div class="preview-div">
-              <p class="p-preview">Date: {{updatedContactList[0]}}</p>
-              <p class="p-preview">Contact person: {{updatedContactList[1]}}</p>
-              
+      <div class="edit-course-form">
+        <mat-dialog-content>
+          <div class="input-sender-address-dialog">
+            <ways-test-datepicker (newDate)="handleDateChange($event)"
+                                  [defaultDate]="dateString"></ways-test-datepicker>
+          </div>
+          <div class="inside-dialog">
+            <div style="display: inline-flex">
+              <ways-test-input-ui class="input-sender-address-dialog" (newValue)="handleContactNameChange($event)"
+                                  [textHolder]="contactName" [initialValue]="contactListCopy[1]"></ways-test-input-ui>
             </div>
-          <mat-divider class="divider-bottom"></mat-divider>
-                <div class="contact-button-dialog">
-                  <mat-dialog-actions>
-                    <div class="bottom-button-div">
-                      <div class="bottom-buttons">
-                            <button mat-raised-button style="background-color: white"
-                              (click)="close()"><p class="cancel-btn-text">CANCEL</p></button>
-                            <button mat-raised-button style="background-color: rgba(25, 118, 210, 1);
-                            " (click)="save()"><p class="apply-btn-text">APPLY</p></button>
-                      </div>
-                    </div>
-                  </mat-dialog-actions>
-                </div>
+          </div>
+        </mat-dialog-content>
+        <mat-divider class="divider"></mat-divider>
+        <p class="preview-text">Preview</p>
+        <div class="preview-div">
+          <p class="p-preview">Date: {{updatedContactList[0]}}</p>
+          <p class="p-preview">Contact person: {{updatedContactList[1]}}</p>
         </div>
+        <mat-divider class="divider-bottom"></mat-divider>
+        <div class="contact-button-dialog">
+          <mat-dialog-actions>
+            <div class="bottom-button-div">
+              <div class="bottom-buttons">
+                <button mat-raised-button style="background-color: white"
+                        (click)="close()"><p class="cancel-btn-text">CANCEL</p></button>
+                <button mat-raised-button style="background-color: rgba(25, 118, 210, 1);
+                            " (click)="save()"><p class="apply-btn-text">APPLY</p></button>
+              </div>
+            </div>
+          </mat-dialog-actions>
         </div>
       </div>
-      
-  </mat-card>
+    </div>
+  </div>
+
+</mat-card>

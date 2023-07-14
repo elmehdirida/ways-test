@@ -10,5 +10,7 @@ export const Primary = {
   render: (args: DateBlockComponent) => ({
     props: args,
   }),
-  args: {},
+  args: {
+    contact : [new Date(),""]
+  },
 };
