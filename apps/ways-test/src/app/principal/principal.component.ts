@@ -37,14 +37,19 @@ export class PrincipalComponent  {
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
-  inputBody = "";
-  inputSender : string = ""
-  inputSubject : string =""
-  inputFootNote : string = ""
+  inputBody = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. ";
+  inputSender : string = "Company GmbH, Musterstraße 10, 12345 Musterstadt"
+  inputSubject : string ="This is an example subject line"
+  inputFootNote : string = "footNote"
   listAdresse : string[] =[
+    "Test GmbH",
+    "Wallstraße 8, Frankfurt",
+    "GERMANY"
   ]
   listAdresseCopy = [...this.listAdresse];
   contactInfo : string[] =[
+    "01.01.2023",
+    "Max Mustermann"
   ]
   contactInfoCopy = [...this.contactInfo];
 
