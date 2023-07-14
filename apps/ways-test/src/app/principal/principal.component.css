@@ -2,7 +2,9 @@
   width: 1056px;
   height: 1000px;
 }
-
+p{
+  margin: 0;
+}
 .slider{
   display: flex;
   align-items: center;
@@ -21,8 +23,8 @@
 }
 
 .logo{
-  margin-top: 61px;
-  margin-left: 672px;
+  margin-top: 60px;
+  margin-left: 659px;
 }
 
 .input-sender-address{
@@ -49,4 +51,66 @@
   height: 72px;
   margin-left:62px;
 }
+.preview-card{
+  width: 857px;
+  height: 1161px;
+  margin-left: 100px;
+  margin-top: 26px;
 
+}
+.preview-sender-div{
+  margin-top: 39px;
+  margin-left: 81px;
+}
+.preview-sender{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+
+}
+.preview-add{
+  margin-top: 22px;
+  margin-left: 81px;
+}
+.preview-add-line {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+}
+.preview-contact-div{
+  margin-top: 68px;
+  margin-left: 81px;
+}
+.preview-contact-line {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.preview-subject-div{
+  margin-top: 72px;
+  margin-left: 81px;
+}
+
+.preview-subject-line{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+.preview-body-div{
+  margin-top: 11px;
+  margin-left: 81px;
+  max-width: 695px;
+}
+
+.preview-body-line{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}

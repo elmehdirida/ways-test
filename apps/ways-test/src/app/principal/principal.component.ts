@@ -32,20 +32,19 @@ import { AddressDialogComponent } from './address-dialog/address-dialog.componen
     ]
 })
 export class PrincipalComponent  {
-
-  preview =false;
+  preview : boolean=false;
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
-  body = "";
+  body = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.";
   listAdresse : string[] =[
-    "test",'test2'
+    "Test GmbH", "Wallstraße 8, Frankfurt", "GERMANY"
   ]
+  inputAddress : string = 'Company GmbH. Musterstraße 10, 12345 Musterstadt'
+  inputSubject : string ="This is an example subject line"
    listAdresseCopy = [...this.listAdresse];
-   
+
   contactInfo : string[] =[
-    "01.01.2023",
-    "Max Mustermann"
   ]
   contactInfoCopy = [...this.contactInfo];
 
@@ -54,7 +53,6 @@ export class PrincipalComponent  {
 
 
   openDialog(): void {
-
     const dialogRef = this.dialog.open(AddressDialogComponent, {
       data: {
         addressList: this.listAdresseCopy
@@ -93,5 +91,5 @@ export class PrincipalComponent  {
     this.preview=event
 }
 
-  
+
 }

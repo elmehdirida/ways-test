@@ -4,6 +4,10 @@
     <div class="box">
       <!--  a fixe-->
       <div   *ngFor="let i of contact">{{i}} </div>
+      <div class="preview-add-line" *ngIf="contact.length==0">
+        No Contact , Tape here To Add
+      </div>
     </div>
+
   </div>
 </div>
