@@ -11,7 +11,6 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { AddressDialogComponent } from './address-dialog/address-dialog.component';
-import { DatepickerComponent } from '@ways-test/ui';
 
 
 @Component({
@@ -34,7 +33,7 @@ import { DatepickerComponent } from '@ways-test/ui';
 })
 export class PrincipalComponent  {
 
-
+  preview =false;
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
@@ -89,4 +88,10 @@ export class PrincipalComponent  {
     });
   }
 
+
+  changeMode(event: boolean) {
+    this.preview=event
+}
+
+  
 }
