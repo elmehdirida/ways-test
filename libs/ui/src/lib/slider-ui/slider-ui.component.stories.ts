@@ -11,5 +11,6 @@ export const Primary = {
     props: args,
   }),
   args: {
+    enable: true
     },
 };
