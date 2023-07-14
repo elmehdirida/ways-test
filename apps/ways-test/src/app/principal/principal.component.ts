@@ -40,6 +40,7 @@ export class PrincipalComponent  {
   footnote  = "Footnote (optional)";
   body = "";
   listAdresse : string[] =[
+    "test",'test2'
   ]
    listAdresseCopy = [...this.listAdresse];
    
@@ -63,8 +64,8 @@ export class PrincipalComponent  {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
+        console.log(result)
         this.listAdresse = result;
-        this.listAdresseCopy = [...this.listAdresse];
       } else {
         console.log('AddressDialogComponent closed with no data.');
       }
@@ -88,7 +89,4 @@ export class PrincipalComponent  {
     });
   }
 
-  changeMode(event: boolean) {
-      this.preview=event
-  }
 }
