@@ -1,4 +1,6 @@
-
+p{
+  margin: 0;
+}
 .line {
   border: 1px dashed black;
   width: 471px;

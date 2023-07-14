@@ -72,7 +72,9 @@ export class PrincipalComponent  {
   openContactDialog(): void {
     const dialogRef = this.dialog.open(ContactDialogComponent, {
       data: {
-        contactInfo: this.contactInfoCopy
+        contactInfo: this.contactInfoCopy,
+        defaultDate: this.contactInfoCopy[0]
+
       },
     });
 
