@@ -32,7 +32,7 @@ import { AddressDialogComponent } from './address-dialog/address-dialog.componen
     ]
 })
 export class PrincipalComponent  {
-  preview : boolean=false;
+  preview =false;
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
@@ -40,12 +40,12 @@ export class PrincipalComponent  {
   listAdresse : string[] =[
     "Test GmbH", "Wallstraße 8, Frankfurt", "GERMANY"
   ]
-  inputAddress : string = 'Company GmbH. Musterstraße 10, 12345 Musterstadt'
-  inputSubject : string ="This is an example subject line"
+  inputAddress  = 'Company GmbH. Musterstraße 10, 12345 Musterstadt'
+  inputSubject  ="This is an example subject line"
    listAdresseCopy = [...this.listAdresse];
 
-  contactInfo : string[] =[
-  ]
+  contactInfo : string[] =[]
+
   contactInfoCopy = [...this.contactInfo];
 
   constructor(public dialog :MatDialog) {
@@ -72,7 +72,9 @@ export class PrincipalComponent  {
   openContactDialog(): void {
     const dialogRef = this.dialog.open(ContactDialogComponent, {
       data: {
-        contactInfo: this.contactInfoCopy
+        contactInfo: this.contactInfoCopy,
+        defaultDate: this.contactInfoCopy[0]
+
       },
     });
 

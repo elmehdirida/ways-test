@@ -9,6 +9,8 @@ import {  MAT_DIALOG_DATA, MatDialogModule,  MatDialogRef} from '@angular/materi
 import { FormBuilder,ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import * as moment from 'moment';
+
 
 
 @Component({
@@ -33,7 +35,7 @@ contactName = 'Contact Name';
 contactListInit: string[] = [];
 contactListCopy = [...this.contactListInit];
 formattedDateInit! : string;
-dateString : any
+dateString : Date = new Date(this.formattedDateInit);
 unsavedChanges = false;
 updatedContactList: string[] = [];
 
@@ -41,7 +43,16 @@ updatedContactList: string[] = [];
 ngOnInit(): void {
     this.contactListCopy = this.data.contactInfo
     this.updatedContactList= this.data.contactInfo
+    this.formattedDateInit = this.data.contactInfo[0];
+
+    if (this.formattedDateInit) {
+      const dateObject = moment(this.formattedDateInit, 'MM.DD.YYYY').toDate();
+      if (!isNaN(dateObject.getTime())) {
+        this.dateString = dateObject;
+      }
+    }
   }
+
 
 constructor(public dialogRef : MatDialogRef<ContactDialogComponent> 
   ,@Inject(MAT_DIALOG_DATA) public data: { contactInfo: string[] }) {

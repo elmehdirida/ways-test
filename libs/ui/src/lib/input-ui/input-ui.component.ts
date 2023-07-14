@@ -11,7 +11,9 @@ import {FormControl, ReactiveFormsModule} from "@angular/forms";
   styleUrls: ['./input-ui.component.css'],
 })
 export class InputUiComponent implements OnInit{
-  isDisabled : boolean = true
+  
+
+  isDisabled  = true
 
   @Input() textHolder  =''
   @Input() initialValue =''

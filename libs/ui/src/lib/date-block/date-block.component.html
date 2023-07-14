@@ -1,13 +1,16 @@
 <div>
   <label class="lines-label">Block A</label>
-  <div class="line" >
+  <div class="line">
     <div class="box">
-      <!--  a fixe-->
-      <div   *ngFor="let i of contact">{{i}} </div>
-      <div class="preview-add-line" *ngIf="contact.length==0">
-        No Contact , Tape here To Add
+      <div *ngIf="contact.length > 0 && (contact[0] !== '' || contact[1] !== '')">
+        <p>Date: {{contact[0]}}</p>
+        <p>Contact Person: {{contact[1]}}</p>
+      </div>
+      <div class="preview-add-line" *ngIf="contact.length === 0">
+        No Contact, Type here to Add
       </div>
     </div>
-
   </div>
 </div>
+
+
