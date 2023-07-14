@@ -11,6 +11,8 @@ export const Primary = {
     props: args,
   }),
   args: {
-    textHolder :''
+    textHolder :'input Holder',
+    initialValue : 'initial Value',
+    isRequired : true
   },
 };

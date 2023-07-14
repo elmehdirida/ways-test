@@ -4,7 +4,9 @@ const config: StorybookConfig = {
   stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],
 
   staticDirs : ['./assets'],
-  addons: ['@storybook/addon-essentials'],
+  addons: ['@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/angular',
     options: {},
