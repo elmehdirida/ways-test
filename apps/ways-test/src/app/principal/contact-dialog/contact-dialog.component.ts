@@ -6,7 +6,7 @@ import { DatepickerComponent, InputUiComponent } from '@ways-test/ui';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {  MAT_DIALOG_DATA, MatDialogModule,  MatDialogRef} from '@angular/material/dialog';
-import { FormBuilder,ReactiveFormsModule } from '@angular/forms';
+import {ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import * as moment from 'moment';
@@ -54,10 +54,10 @@ ngOnInit(): void {
   }
 
 
-constructor(public dialogRef : MatDialogRef<ContactDialogComponent> 
+constructor(public dialogRef : MatDialogRef<ContactDialogComponent>
   ,@Inject(MAT_DIALOG_DATA) public data: { contactInfo: string[] }) {
   }
- 
+
 
 
   save() {
@@ -68,18 +68,18 @@ constructor(public dialogRef : MatDialogRef<ContactDialogComponent>
       this.dialogRef.close();
     }
   }
-  
+
 
 close() {
   this.dialogRef.close();
 }
 
-handleContactNameChange(event: any) {
+handleContactNameChange(event: string) {
   this.updatedContactList[1] = event;
   this.unsavedChanges = true;
 }
 
-handleDateChange(event: any) {
+handleDateChange(event: Date) {
   const dateObject = new Date(event);
   if (!isNaN(dateObject.getTime())) {
     const formattedDate = `${dateObject.getMonth() + 1}.${dateObject.getDate()}.${dateObject.getFullYear()}`;
