@@ -1,21 +1,13 @@
-.example-h2 {
-    margin: 10px;
-  }
-
-  .example-section {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 60px;
-  }
-
-  .example-margin {
-    margin: 10px;
-  }
-.red-slide-toggle .mat-slide-toggle-bar {
-  background-color: rgba(255, 0, 0, 0.38);
+.slider-text{
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color:rgba(0, 0, 0, 0.87) ;
+  margin: 50% 0 50% 12px;
 }
-
-.red-slide-toggle .mat-slide-toggle-thumb {
-  background-color: red;
+.slider-icon{
+  display: flex;
+  align-items: center;
 }

@@ -63,10 +63,8 @@ export class PrincipalComponent  {
         addressList: this.listAdresseCopy
       },
     });
-
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        console.log(result)
         this.listAdresse = result;
       } else {
         console.log('AddressDialogComponent closed with no data.');

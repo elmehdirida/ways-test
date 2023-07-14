@@ -1,14 +1,18 @@
 .dialog-card{
   width: 560px;
   height: 552px;
-  padding-top: 21px ;
+  padding-top: 21px;
   gap: 16px;
-
+  box-shadow: 0 11px 15px 0 rgba(0, 0, 0, 0.2),
+  0 9px 46px 0 rgba(0, 0, 0, 0.12),
+  0 24px 38px 0 rgba(0, 0, 0, 0.14);
 }
+
 .dialog-title-div{
   width: 560px;
   height: 24px;
 }
+
 .dialog-title{
   font-weight: 500;
   width: 191px;

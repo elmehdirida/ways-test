@@ -6,7 +6,7 @@ p{
   margin: 0;
 }
 .slider{
-  display: flex;
+  display: inline-flex;
   align-items: center;
   width: 163px;
   height: 48px;
@@ -37,7 +37,7 @@ p{
 
 .input-subject {
   width: 731px;
-  margin-top: 80px;
+  margin-top: 72px;
   margin-left:62px;
 }
 
