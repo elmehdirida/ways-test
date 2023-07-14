@@ -33,17 +33,17 @@ import { AddressDialogComponent } from './address-dialog/address-dialog.componen
 })
 export class PrincipalComponent  {
   preview : boolean=false;
+  isReq = true;
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
-  body = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.";
+  inputBody = "";
+  inputSender : string = ""
+  inputSubject : string =""
+  inputFootNote : string = ""
   listAdresse : string[] =[
-    "Test GmbH", "Wallstraße 8, Frankfurt", "GERMANY"
   ]
-  inputAddress : string = 'Company GmbH. Musterstraße 10, 12345 Musterstadt'
-  inputSubject : string ="This is an example subject line"
-   listAdresseCopy = [...this.listAdresse];
-
+  listAdresseCopy = [...this.listAdresse];
   contactInfo : string[] =[
   ]
   contactInfoCopy = [...this.contactInfo];
@@ -92,4 +92,19 @@ export class PrincipalComponent  {
 }
 
 
+  setSenderAdd(event: string) {
+    this.inputSender = event
+  }
+
+  setSubject(event: string) {
+    this.inputSubject = event
+  }
+
+  setBody(event: string) {
+    this.inputBody= event
+  }
+
+  setFootNote(event: string) {
+    this.inputFootNote = event
+  }
 }

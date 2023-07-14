@@ -2,4 +2,6 @@
   appearance='outline' style="width: 100%;">
     <mat-label>{{textHolder}}</mat-label>
     <input #newV type="text"  matInput [formControl]="value" (change)="onChange(newV.value)">
+  <mat-error *ngIf="value.hasError('required')">
+  </mat-error>
   </mat-form-field>
