@@ -153,6 +153,7 @@
 }
 
 .apply-btn{
+  background-color: rgba(25, 118, 210, 1) !important;
   height: 36px;
   width: 75px;
   border-radius: 10px;

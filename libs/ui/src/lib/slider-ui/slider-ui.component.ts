@@ -15,8 +15,7 @@ export class SliderUiComponent {
   @Output() newP = new EventEmitter<boolean>();
 
   changeMode() {
-    this.enable=!this.enable
-    this.newP.emit(this.enable)
+    this.newP.emit(!this.enable)
   }
 }
 
