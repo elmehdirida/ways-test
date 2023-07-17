@@ -15,4 +15,15 @@ export class LetterService {
     return this.http.get<Letter[]>(this.ApiLetters);
   }
 
+    getletter(id : number) : Observable<Letter>{
+    return this.http.get<Letter>(this.ApiLetters + "/" + id);   
+    }
+
+    addletter(letter : Letter) : Observable<Letter>{
+    return this.http.post<Letter>(this.ApiLetters, letter);
+    }
+    
+    updateletter(letter : Letter) : Observable<Letter>{
+    return this.http.put<Letter>(this.ApiLetters + "/" + letter.id, letter);
+    }
 }

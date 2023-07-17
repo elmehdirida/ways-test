@@ -6,6 +6,4 @@ export interface Letter {
     subject: string;
     body: string;
     footNote: string;
-
-   
 }

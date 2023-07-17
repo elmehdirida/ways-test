@@ -17,6 +17,4 @@ export class AppComponent implements OnInit {
     this.letterService.getletters().subscribe(data => console.log(data));
   }
   title = 'ways-test';
-  
-
 }
