@@ -7,9 +7,10 @@
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 6px;
-    background: #1976D2;
     padding-right: 8px;
     justify-content: flex-start;
     align-items: flex-start;
-    display: flex; border: none;
+    display: flex;
+     border: none;
+     box-shadow: none;
 }
