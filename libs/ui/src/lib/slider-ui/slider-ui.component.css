@@ -1,11 +1,11 @@
 .slider-text{
-  text-align: center;
-  font-weight: 400;
+  color: rgba(0, 0, 0, 0.87);
   font-size: 16px;
+  font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.15px;
-  color:rgba(0, 0, 0, 0.87) ;
-  margin: 50% 0 50% 12px;
+  word-wrap: break-word;
+  margin: 0;
 }
 .slider-icon{
   display: flex;

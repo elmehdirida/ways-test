@@ -11,6 +11,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { AddressDialogComponent } from './address-dialog/address-dialog.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @Component({
@@ -18,18 +20,20 @@ import { AddressDialogComponent } from './address-dialog/address-dialog.componen
     standalone: true,
     templateUrl: './principal.component.html',
     styleUrls: ['./principal.component.css'],
-    imports: [
-        CommonModule,
-        SliderUiComponent,
-        InputUiComponent,
-        NgOptimizedImage,
-        MatCardModule,
-        TextAreaComponent,
-        LinesComponent,
-        DateBlockComponent,
-        MatDialogModule,
-        DatepickerComponent
-    ]
+  imports: [
+    CommonModule,
+    SliderUiComponent,
+    InputUiComponent,
+    NgOptimizedImage,
+    MatCardModule,
+    TextAreaComponent,
+    LinesComponent,
+    DateBlockComponent,
+    MatDialogModule,
+    DatepickerComponent,
+    MatButtonModule,
+    MatIconModule
+  ]
 })
 export class PrincipalComponent  {
   preview : boolean=false;
@@ -109,5 +113,13 @@ export class PrincipalComponent  {
 
   setFootNote(event: string) {
     this.inputFootNote = event
+  }
+
+  backToPreview() {
+
+  }
+
+  saveLetter() {
+
   }
 }
