@@ -11,12 +11,11 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { AddressDialogComponent } from './address-dialog/address-dialog.component';
-<<<<<<< HEAD
+
 import { CardLetterComponent } from "../../../../../libs/ui/src/lib/cardLetter/card-letter.component";
-=======
+
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
->>>>>>> 65835857d83a4e0c344e3cc39fa8591ae794c864
 
 
 @Component({
@@ -24,7 +23,7 @@ import {MatIconModule} from "@angular/material/icon";
     standalone: true,
     templateUrl: './principal.component.html',
     styleUrls: ['./principal.component.css'],
-<<<<<<< HEAD
+
     imports: [
         CommonModule,
         SliderUiComponent,
@@ -36,24 +35,10 @@ import {MatIconModule} from "@angular/material/icon";
         DateBlockComponent,
         MatDialogModule,
         DatepickerComponent,
-        CardLetterComponent
+        CardLetterComponent,
+        MatIconModule
     ]
-=======
-  imports: [
-    CommonModule,
-    SliderUiComponent,
-    InputUiComponent,
-    NgOptimizedImage,
-    MatCardModule,
-    TextAreaComponent,
-    LinesComponent,
-    DateBlockComponent,
-    MatDialogModule,
-    DatepickerComponent,
-    MatButtonModule,
-    MatIconModule
-  ]
->>>>>>> 65835857d83a4e0c344e3cc39fa8591ae794c864
+
 })
 export class PrincipalComponent  {
   preview : boolean=false;
@@ -140,6 +125,5 @@ export class PrincipalComponent  {
   }
 
   saveLetter() {
-
   }
 }
