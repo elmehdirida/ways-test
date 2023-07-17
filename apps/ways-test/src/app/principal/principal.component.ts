@@ -11,6 +11,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { AddressDialogComponent } from './address-dialog/address-dialog.component';
+import { CardLetterComponent } from "../../../../../libs/ui/src/lib/cardLetter/card-letter.component";
 
 
 @Component({
@@ -28,7 +29,8 @@ import { AddressDialogComponent } from './address-dialog/address-dialog.componen
         LinesComponent,
         DateBlockComponent,
         MatDialogModule,
-        DatepickerComponent
+        DatepickerComponent,
+        CardLetterComponent
     ]
 })
 export class PrincipalComponent  {

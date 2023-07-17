@@ -1,0 +1,65 @@
+.card{
+    width: 258px;
+    height: 128px;
+    background: white;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
+    border-radius: 4px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: inline-flex
+}
+
+.card-header{
+     align-self: stretch;
+    padding-top: 14px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    justify-content: flex-start;       
+    align-items: center;
+    display: inline-flex;
+}
+
+.header{
+    align-self: stretch;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    word-wrap: break-word
+}
+
+.sub-head{
+    align-self: stretch;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    word-wrap: break-word;
+}
+
+
+.content{
+    align-self: stretch;
+    padding: 16px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+
+.secondary-text{
+    width: 226px; color: rgba(0, 0, 0, 0.60);
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.10px;
+    word-wrap: break-word;
+}

@@ -11,3 +11,6 @@ export * from './lib/lines/lines.component';
 export * from './lib/date-block/date-block.component';
 
 export * from './lib/Datepicker/datepicker.component';
+
+export * from './lib/cardLetter/card-letter.component';
+
