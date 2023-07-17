@@ -12,8 +12,5 @@ export * from './lib/date-block/date-block.component';
 
 export * from './lib/Datepicker/datepicker.component';
 
-<<<<<<< HEAD
 export * from './lib/cardLetter/card-letter.component';
 
-=======
->>>>>>> 65835857d83a4e0c344e3cc39fa8591ae794c864
