@@ -10,5 +10,11 @@ export const Primary = {
   render: (args: LinesComponent) => ({
     props: args,
   }),
-  args: {},
+  args: {
+    addresses : [
+      "Test GmbH",
+      "Wallstraße 8, Frankfurt",
+      "GERMANY"
+    ]
+  },
 };

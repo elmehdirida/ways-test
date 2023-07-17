@@ -65,7 +65,7 @@ export class PrincipalComponent  {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        this.listAdresse = result;
+        this.listAdresse=result
       } else {
         console.log('AddressDialogComponent closed with no data.');
       }
