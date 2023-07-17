@@ -8,13 +8,12 @@
       <div class="edit-course-form">
         <mat-dialog-content>
           <div class="input-sender-address-dialog">
-            <ways-test-datepicker (newDate)="handleDateChange($event)"
-                                  [defaultDate]="dateString"></ways-test-datepicker>
+            <ways-test-datepicker (newDate)="handleDateChange($event)" [defaultDate]="dateString"></ways-test-datepicker>
           </div>
           <div class="inside-dialog">
             <div style="display: inline-flex">
               <ways-test-input-ui class="input-sender-address-dialog" (newValue)="handleContactNameChange($event)"
-                                  [textHolder]="contactName" [initialValue]="contactListCopy[1]"></ways-test-input-ui>
+              [textHolder]="contactName" [initialValue]="contactListCopy[1]"></ways-test-input-ui>
             </div>
           </div>
         </mat-dialog-content>

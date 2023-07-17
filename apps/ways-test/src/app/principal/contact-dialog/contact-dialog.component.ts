@@ -42,10 +42,12 @@ updatedContactList: string[] = [];
 
 ngOnInit(): void {
     this.contactListCopy = this.data.contactInfo
-    this.updatedContactList= this.data.contactInfo
+    //this.updatedContactList= this.data.contactInfo
+    
     this.formattedDateInit = this.data.contactInfo[0];
 
     if (this.formattedDateInit) {
+      //it's a hard code ^-^
       const dateObject = moment(this.formattedDateInit, 'MM.DD.YYYY').toDate();
       if (!isNaN(dateObject.getTime())) {
         this.dateString = dateObject;
@@ -74,12 +76,12 @@ close() {
   this.dialogRef.close();
 }
 
-handleContactNameChange(event: any) {
+handleContactNameChange(event: string) {
   this.updatedContactList[1] = event;
   this.unsavedChanges = true;
 }
 
-handleDateChange(event: any) {
+handleDateChange(event: Date) {
   const dateObject = new Date(event);
   if (!isNaN(dateObject.getTime())) {
     const formattedDate = `${dateObject.getMonth() + 1}.${dateObject.getDate()}.${dateObject.getFullYear()}`;
