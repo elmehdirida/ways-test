@@ -9,6 +9,7 @@ import { Letter } from '../models/Letter.model';
 export class LetterService {
     ApiLetters = "http://localhost:3000/letters";
 
+
   constructor(private http : HttpClient) { }
 
     getletters() : Observable<Letter[]>{
@@ -16,13 +17,13 @@ export class LetterService {
   }
 
     getletter(id : number) : Observable<Letter>{
-    return this.http.get<Letter>(this.ApiLetters + "/" + id);   
+    return this.http.get<Letter>(this.ApiLetters + "/" + id);
     }
 
     addletter(letter : Letter) : Observable<Letter>{
     return this.http.post<Letter>(this.ApiLetters, letter);
     }
-    
+
     updateletter(letter : Letter) : Observable<Letter>{
     return this.http.put<Letter>(this.ApiLetters + "/" + letter.id, letter);
     }
