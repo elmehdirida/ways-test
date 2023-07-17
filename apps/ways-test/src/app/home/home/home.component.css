@@ -3,14 +3,41 @@
     height: 1000px;
     background: #FFF;
 }
+.div-button{
+    height: 36px;
+      padding-left: 8px;
+       padding-right: 6px;
+     left: 865px;
+      top: 32px;
+       position: absolute;
+        background: #1976D2;
+         border-radius: 10px;
+          justify-content: flex-start;
+      align-items: flex-start;
+       display: inline-flex;
+}
 .add-new-button{
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 6px;
+    background: #1976D2;
     padding-right: 8px;
     justify-content: flex-start;
     align-items: flex-start;
+    display: flex; 
+    align-items: center;
+    border: none;
+}
+
+.button-text{
+   color: white;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 16px;
+    letter-spacing: 1.25px;
+    word-wrap: break-word; 
     display: flex;
-     border: none;
-     box-shadow: none;
+    align-items: center;
 }
