@@ -11,9 +11,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { AddressDialogComponent } from './address-dialog/address-dialog.component';
-
 import { CardLetterComponent } from "../../../../../libs/ui/src/lib/cardLetter/card-letter.component";
-
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 
@@ -23,22 +21,21 @@ import {MatIconModule} from "@angular/material/icon";
     standalone: true,
     templateUrl: './principal.component.html',
     styleUrls: ['./principal.component.css'],
-
-    imports: [
-        CommonModule,
-        SliderUiComponent,
-        InputUiComponent,
-        NgOptimizedImage,
-        MatCardModule,
-        TextAreaComponent,
-        LinesComponent,
-        DateBlockComponent,
-        MatDialogModule,
-        DatepickerComponent,
-        CardLetterComponent,
-        MatIconModule
-    ]
-
+  imports: [
+    CommonModule,
+    SliderUiComponent,
+    InputUiComponent,
+    NgOptimizedImage,
+    MatCardModule,
+    TextAreaComponent,
+    LinesComponent,
+    DateBlockComponent,
+    MatDialogModule,
+    DatepickerComponent,
+    CardLetterComponent,
+    MatIconModule,
+    MatButtonModule
+  ]
 })
 export class PrincipalComponent  {
   preview : boolean=false;
