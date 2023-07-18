@@ -13,4 +13,8 @@ export class DataSharingService {
   getLetterData() {
     return this.letterData;
   }
+
+  deleteLetterData() {
+    this.letterData = undefined;
+  }
 }

@@ -6,6 +6,7 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import {DataSharingService, Letter, LetterService} from '@ways-test/data-access';
 import {RouterLink} from "@angular/router";
 import {map, tap} from "rxjs";
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -16,6 +17,7 @@ import {map, tap} from "rxjs";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit{
+
     letters: Letter[] = [];
     cardComponents: CardLetterComponent[] = [];
     totalItems: number = 0;
@@ -32,10 +34,13 @@ export class HomeComponent implements OnInit{
       }
       this.displayedCardComponents = this.cardComponents.slice(0, this.itemsPerPage);
     });
+
+
+    
   }
 
 
-    constructor(private sharingData : DataSharingService ,private letterService : LetterService) {
+    constructor(private sharingData : DataSharingService ,private letterService : LetterService,private route: ActivatedRoute, private router: Router) {
     }
 
     onPageChange(event: PageEvent) {
@@ -49,5 +54,8 @@ export class HomeComponent implements OnInit{
     this.sharingData.setLetterData(letter)
   }
 
-
+    navigateToAddLetter() {
+      this.router.navigate(['/principal', { mode: 'add' }]);
+    }
+    
 }

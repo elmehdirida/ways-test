@@ -15,8 +15,7 @@ import { CardLetterComponent } from "@ways-test/ui";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {RouterLink} from "@angular/router";
-import {DataSharingService, Letter} from "@ways-test/data-access";
-
+import {DataSharingService, Letter, LetterService} from "@ways-test/data-access";
 
 @Component({
     selector: 'ways-test-principal',
@@ -47,11 +46,22 @@ export class PrincipalComponent implements OnInit{
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
 
-  constructor(public dialog :MatDialog , private  data : DataSharingService) {
+  constructor(public dialog :MatDialog , private  data : DataSharingService, private letterService : LetterService) {
   }
   letter! : Letter
   ngOnInit(): void {
     this.letter = this.data.getLetterData()
+    if (this.letter === undefined) {
+      this.letter = {
+        senderAddress: "",
+        receiverAddress: [],
+        subject: "",
+        body: "",
+        contact: [],
+        footNote: "",
+        id: 0
+      }
+    }
   }
 
   openDialog(): void {
@@ -109,5 +119,9 @@ export class PrincipalComponent implements OnInit{
   }
 
   saveLetter() {
+  }
+
+  deleteData(){
+    this.data.deleteLetterData()
   }
 }

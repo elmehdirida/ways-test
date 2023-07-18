@@ -4,5 +4,5 @@ import {HomeComponent} from "./home/home/home.component";
 
 export const appRoutes: Route[] = [
   { path: '' , component: HomeComponent},
-  {path :"letter" , component : PrincipalComponent}
+  { path :"letter" , component : PrincipalComponent}
 ];
