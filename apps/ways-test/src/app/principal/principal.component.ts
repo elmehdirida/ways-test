@@ -51,7 +51,7 @@ export class PrincipalComponent implements OnInit{
   }
   letter! : Letter
   contactInfoCopy! :string[];
-  letterCopy! : Letter
+  AddressReceiverCopy! : string[]
   ngOnInit(): void {
     this.letter = this.data.getLetterData()
     if (this.letter === undefined) {
@@ -64,9 +64,10 @@ export class PrincipalComponent implements OnInit{
         footNote: "",
         id: 0
       }
+      this.contactInfoCopy= []
     }
     else{
-      this.letterCopy = this.letter
+      this.AddressReceiverCopy = [...this.letter.receiverAddress]
       this.contactInfoCopy =[...this.letter.contact]
     }
   }
@@ -74,7 +75,7 @@ export class PrincipalComponent implements OnInit{
   openDialog(): void {
     const dialogRef = this.dialog.open(AddressDialogComponent, {
       data: {
-        addressList: this.letterCopy.receiverAddress
+        addressList: this.AddressReceiverCopy
       },
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -152,7 +153,7 @@ export class PrincipalComponent implements OnInit{
       }
     }
   }
-  
+
 
   deleteData(){
     this.data.deleteLetterData()
