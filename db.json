@@ -1,40 +1,71 @@
 {
-    "letters": [
-      {
-        "id": 1,
-        "senderAddress": "123 Main St, City",
-        "receiverAddress": ["456 Elm St, City"],
-        "contact": ["01.01.2023","John Doe"],
-        "subject": "Example Subject 1",
-        "body": "Lorem ipsum dolor sit amet.",
-        "footNote": "Example Footnote 1"
-      },
-      {
-        "id": 2,
-        "senderAddress": "789 Oak St, City",
-        "receiverAddress": ["321 Pine St, City", "654 Birch St, City"],
-        "contact": ["01.01.2023", "Bob Johnson"],
-        "subject": "Example Subject 2",
-        "body": "Consectetur adipiscing elit.",
-        "footNote": "Example Footnote 2"
-      },
-      {
-        "id": 3,
-        "senderAddress": "987 Maple St, City",
-        "receiverAddress": ["654 Birch St, City"],
-        "contact": ["01.01.2023","Alice Brown"],
-        "subject": "Example Subject 3",
-        "body": "Sed do eiusmod tempor incididunt.",
-        "footNote": "Example Footnote 3"
-      },
-      {
-        "id": 4,
-        "senderAddress": "456 Elm St, City",
-        "receiverAddress": ["123 Main St, City", "789 Oak St, City"],
-        "contact": ["01.01.2023", "Sarah Davis"],
-        "subject": "Example Subject 4",
-        "body": "Ut enim ad minim veniam.",
-        "footNote": "Example Footnote 4"
-      }
-    ]
-  }
+  "letters": [
+    {
+      "id": 1,
+      "senderAddress": "123 Main St, City",
+      "receiverAddress": [
+        "456 Elm St, City"
+      ],
+      "contact": [
+        "01.01.2023",
+        "John Doe"
+      ],
+      "subject": "Example Subject 1",
+      "body": "Lorem ipsum dolor sit amet.",
+      "footNote": "Example Footnote 1"
+    },
+    {
+      "id": 2,
+      "senderAddress": "789 Oak St, City",
+      "receiverAddress": [
+        "321 Pine St, City",
+        "654 Birch St, City"
+      ],
+      "contact": [
+        "01.01.2023",
+        "Bob Johnson"
+      ],
+      "subject": "Example Subject 2",
+      "body": "Consectetur adipiscing elit.",
+      "footNote": "Example Footnote 2"
+    },
+    {
+      "id": 3,
+      "senderAddress": "987 Maple St, City",
+      "receiverAddress": [
+        "654 Birch St, City"
+      ],
+      "contact": [
+        "01.01.2023",
+        "Alice Brown"
+      ],
+      "subject": "Example Subject 3",
+      "body": "Sed do eiusmod tempor incididunt.",
+      "footNote": "Example Footnote 3"
+    },
+    {
+      "id": 4,
+      "senderAddress": "456 Elm St, City",
+      "receiverAddress": [
+        "123 Main St, City",
+        "789 Oak St, City"
+      ],
+      "contact": [
+        "01.01.2023",
+        "Sarah Davis"
+      ],
+      "subject": "Example Subject 4",
+      "body": "Ut enim ad minim veniam.",
+      "footNote": "Example Footnote 4"
+    },
+    {
+      "senderAddress": "Beni Mellal, Modern neibor",
+      "receiverAddress": [],
+      "subject": "",
+      "body": "",
+      "contact": [],
+      "footNote": "",
+      "id": 5
+    }
+  ]
+}

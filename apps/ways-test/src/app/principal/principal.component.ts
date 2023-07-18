@@ -46,7 +46,7 @@ export class PrincipalComponent implements OnInit{
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
 
-  constructor(public dialog :MatDialog , private  data : DataSharingService) {
+  constructor(public dialog :MatDialog , private  data : DataSharingService,private letterService : LetterService) {
   }
   letter! : Letter
   contactInfoCopy! :string[];
@@ -125,7 +125,17 @@ export class PrincipalComponent implements OnInit{
   }
 
   saveLetter() {
+    if (this.letter) {
+      this.letterService.addletter(this.letter).subscribe(
+        savedLetter => {
+          console.log('Letter saved:', savedLetter);
+        },
+        error => {
+          console.error('Error saving letter:', error);
+        }
+      );
   }
+}
 
   deleteData(){
     this.data.deleteLetterData()
