@@ -6,6 +6,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {InputUiComponent} from "@ways-test/ui";
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
+import {forEach} from "@angular-devkit/schematics";
 
 @Component({
   selector: 'ways-test-address-dialog',
@@ -16,9 +17,8 @@ import {MatListModule} from "@angular/material/list";
 })
 export class AddressDialogComponent implements OnInit{
   newList : string[]=[]
-  newListCopy = [...this.data.addressList]
   ngOnInit(): void {
-     this.newList = this.data.addressList
+    this.newList = [...this.data.addressList];
   }
   constructor(public dialogRef : MatDialogRef<AddressDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: { addressList: string[] }) {
@@ -32,11 +32,11 @@ export class AddressDialogComponent implements OnInit{
         j--;
       }
     }
-    this.dialogRef.close(this.newListCopy);
+    this.dialogRef.close(this.data.addressList);
   }
 
   deleteLine(i: number) {
-    this.data.addressList.splice(i, 1);
+    this.newList.splice(i, 1);
   }
 
   addAddresse(val: string, i: number) {

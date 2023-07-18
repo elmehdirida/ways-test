@@ -46,9 +46,11 @@ export class PrincipalComponent implements OnInit{
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
 
-  constructor(public dialog :MatDialog , private  data : DataSharingService, private letterService : LetterService) {
+  constructor(public dialog :MatDialog , private  data : DataSharingService) {
   }
   letter! : Letter
+  contactInfoCopy! :string[];
+  letterCopy! : Letter
   ngOnInit(): void {
     this.letter = this.data.getLetterData()
     if (this.letter === undefined) {
@@ -62,12 +64,16 @@ export class PrincipalComponent implements OnInit{
         id: 0
       }
     }
+    else{
+      this.letterCopy = this.letter
+      this.contactInfoCopy =[...this.letter.contact]
+    }
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddressDialogComponent, {
       data: {
-        addressList: this.letter.receiverAddress
+        addressList: this.letterCopy.receiverAddress
       },
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -82,14 +88,14 @@ export class PrincipalComponent implements OnInit{
   openContactDialog(): void {
     const dialogRef = this.dialog.open(ContactDialogComponent, {
       data: {
-        contactInfo: this.letter.contact
+        contactInfo: this.contactInfoCopy
       },
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result !== null && result !== undefined) {
         this.letter.contact = result;
-        this.letter.contact = [...result];
+        this.contactInfoCopy = [...result];
       } else {
         console.log('ContactDialogComponent closed with no modifications.');
       }
