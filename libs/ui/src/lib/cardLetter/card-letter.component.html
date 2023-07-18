@@ -2,13 +2,12 @@
     <mat-card-header class="card-header">
       <div  style="height: 46px; justify-content: flex-start; align-items: center; gap: 16px; display: flex">
         <div  style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 2px; display: inline-flex">
-          <div class="header">Letter 1</div>
-          <div class="sub-head">Test GmbH</div>
+          <div class="header">Letter {{letter.id}}</div>
+          <div class="sub-head">{{letter.receiverAddress[0]}}</div>
         </div>
       </div>
     </mat-card-header>
     <mat-card-content class="content">
-      <div class="secondary-text">This is an example subject line</div>
+      <div class="secondary-text">{{letter.subject}}</div>
     </mat-card-content>
   </mat-card>
-  

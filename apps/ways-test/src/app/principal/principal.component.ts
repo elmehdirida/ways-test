@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {
   DateBlockComponent, DatepickerComponent,
@@ -11,9 +11,11 @@ import {MatCardModule} from "@angular/material/card";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 import { AddressDialogComponent } from './address-dialog/address-dialog.component';
-import { CardLetterComponent } from "../../../../../libs/ui/src/lib/cardLetter/card-letter.component";
+import { CardLetterComponent } from "@ways-test/ui";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {RouterLink} from "@angular/router";
+import {DataSharingService, Letter} from "@ways-test/data-access";
 
 
 @Component({
@@ -34,44 +36,33 @@ import {MatIconModule} from "@angular/material/icon";
     DatepickerComponent,
     CardLetterComponent,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterLink
   ]
 })
-export class PrincipalComponent  {
+export class PrincipalComponent implements OnInit{
   preview : boolean=false;
   isReq = true;
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
-  inputBody = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. ";
-  inputSender : string = "Company GmbH, Musterstraße 10, 12345 Musterstadt"
-  inputSubject : string ="This is an example subject line"
-  inputFootNote : string = "footNote"
-  listAdresse : string[] =[
-    "Test GmbH",
-    "Wallstraße 8, Frankfurt",
-    "GERMANY"
-  ]
-  listAdresseCopy = [...this.listAdresse];
-  contactInfo : string[] =[
-    "01.01.2023",
-    "Max Mustermann"
-  ]
-  contactInfoCopy = [...this.contactInfo];
 
-  constructor(public dialog :MatDialog) {
+  constructor(public dialog :MatDialog , private  data : DataSharingService) {
   }
-
+  letter! : Letter
+  ngOnInit(): void {
+    this.letter = this.data.getLetterData()
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddressDialogComponent, {
       data: {
-        addressList: this.listAdresseCopy
+        addressList: this.letter.receiverAddress
       },
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        this.listAdresse=result
+        this.letter.receiverAddress=result
       } else {
         console.log('AddressDialogComponent closed with no data.');
       }
@@ -81,14 +72,14 @@ export class PrincipalComponent  {
   openContactDialog(): void {
     const dialogRef = this.dialog.open(ContactDialogComponent, {
       data: {
-        contactInfo: this.contactInfoCopy
+        contactInfo: this.letter.contact
       },
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result !== null && result !== undefined) {
-        this.contactInfo = result;
-        this.contactInfoCopy = [...result];
+        this.letter.contact = result;
+        this.letter.contact = [...result];
       } else {
         console.log('ContactDialogComponent closed with no modifications.');
       }
@@ -102,23 +93,19 @@ export class PrincipalComponent  {
 
 
   setSenderAdd(event: string) {
-    this.inputSender = event
+    this.letter.senderAddress = event
   }
 
   setSubject(event: string) {
-    this.inputSubject = event
+    this.letter.subject = event
   }
 
   setBody(event: string) {
-    this.inputBody= event
+    this.letter.body= event
   }
 
   setFootNote(event: string) {
-    this.inputFootNote = event
-  }
-
-  backToPreview() {
-
+    this.letter.footNote = event
   }
 
   saveLetter() {

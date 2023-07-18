@@ -1,59 +1,45 @@
-
 <div class="header-div">
-  <div class="back-to-preview-div"  (click)="backToPreview()">
+  <div class="back-to-preview-div"  routerLink="">
     <mat-icon fontIcon="keyboard_backspace"></mat-icon>
     <button class="flat-btn" mat-flat-button><p class="back-to-preview">BACK TO OVERVIEW</p></button>
   </div>
-  <div class="letter">Letter 1</div>
+  <div class="letter">Letter  {{letter.id}}</div>
   <ways-test-slider-ui (newP)="changeMode($event)" [enable]="preview" class="slider"></ways-test-slider-ui>
     <div class="save-btn-div">
       <button mat-button class="save-btn" (click)="saveLetter()"><p class="save-btn-text">SAVE</p></button>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <mat-card *ngIf="!preview" class="general-card mat-mdc-elevation-specific mat-elevation-z2">
   <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
-  <ways-test-input-ui   class="input-sender-address " [initialValue]="inputSender" [textHolder]="sender" [isRequired]="isReq" (newValue)="setSenderAdd($event)"></ways-test-input-ui>
-  <ways-test-lines style="width: 471px" [addresses]="listAdresse" (click)="openDialog()"></ways-test-lines>
-  <ways-test-date-block style="width: 471px" [contact]="contactInfo" (click)="openContactDialog()"></ways-test-date-block>
-  <ways-test-input-ui [textHolder]="subject" class="input-subject"  [initialValue]="inputSubject" (newValue)="setSubject($event)" ></ways-test-input-ui>
-  <ways-test-text-area class="text-body"  [body]="inputBody" [isRequired]="isReq" (newValue)="setBody($event)"></ways-test-text-area>
-  <ways-test-input-ui [textHolder]="footnote" [initialValue]="inputFootNote"  class="input-footnote" (newValue)="setFootNote($event)"></ways-test-input-ui>
+  <ways-test-input-ui   class="input-sender-address " [initialValue]="letter.senderAddress" [textHolder]="sender" [isRequired]="isReq" (newValue)="setSenderAdd($event)"></ways-test-input-ui>
+  <ways-test-lines style="width: 471px" [addresses]="letter.receiverAddress" (click)="openDialog()"></ways-test-lines>
+  <ways-test-date-block style="width: 471px" [contact]="letter.contact" (click)="openContactDialog()"></ways-test-date-block>
+  <ways-test-input-ui [textHolder]="subject" class="input-subject"  [initialValue]="letter.subject" (newValue)="setSubject($event)" ></ways-test-input-ui>
+  <ways-test-text-area class="text-body"  [body]="letter.body" [isRequired]="isReq" (newValue)="setBody($event)"></ways-test-text-area>
+  <ways-test-input-ui [textHolder]="footnote" [initialValue]="letter.footNote"  class="input-footnote" (newValue)="setFootNote($event)"></ways-test-input-ui>
 </mat-card>
 <mat-card *ngIf="preview" class="preview-card mat-mdc-elevation-specific mat-elevation-z2">
   <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
   <div class="preview-sender-div">
-    <u class="preview-sender">{{inputSender}}</u>
+    <u class="preview-sender">{{letter.senderAddress}}</u>
   </div>
   <div class="preview-add">
-      <div class="preview-add-line" *ngFor="let add of listAdresse">{{add}} </div>
-      <div class="preview-add-line" *ngIf="listAdresse.length==0">
+      <div class="preview-add-line" *ngFor="let add of letter.receiverAddress">{{add}} </div>
+      <div class="preview-add-line" *ngIf="letter.receiverAddress.length==0">
         No Addresses , Tape here To Add
       </div>
   </div>
   <div class="preview-contact-div">
       <div class="preview-contact-line">
-        <p>Date:  {{contactInfo[0]}}</p>
-        <p>Contact Person:  {{contactInfo[1]}}</p>
+        <p>Date:  {{letter.contact[0]}}</p>
+        <p>Contact Person:  {{letter.contact[1]}}</p>
     </div>
   </div>
   <div class="preview-subject-div">
-    <div class="preview-subject-line">{{inputSubject}}</div>
+    <div class="preview-subject-line">{{letter.subject}}</div>
   </div>
   <div class="preview-body-div">
-    <div class="preview-body-line">{{inputBody}}</div>
+    <div class="preview-body-line">{{letter.body}}</div>
   </div>
 </mat-card>
 

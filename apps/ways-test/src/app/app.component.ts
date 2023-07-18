@@ -11,10 +11,8 @@ import { HomeComponent } from './home/home/home.component';
     styleUrls: ['./app.component.css'],
     imports: [RouterModule, PrincipalComponent, MatNativeDateModule, DataAccessModule, HomeComponent]
 })
-export class AppComponent implements OnInit {
-  constructor(private letterService : LetterService) {}
-  ngOnInit(): void {
-    this.letterService.getLetters().subscribe(data => console.log(data));
-  }
+export class AppComponent  {
+  constructor() {}
+
   title = 'ways-test';
 }

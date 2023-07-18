@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import {Letter} from "@ways-test/data-access";
 
 @Component({
   selector: 'ways-test-card-letter',
@@ -9,4 +10,6 @@ import {MatCardModule} from '@angular/material/card';
   templateUrl: './card-letter.component.html',
   styleUrls: ['./card-letter.component.css'],
 })
-export class CardLetterComponent {}
+export class CardLetterComponent {
+  @Input() letter! : Letter
+}
