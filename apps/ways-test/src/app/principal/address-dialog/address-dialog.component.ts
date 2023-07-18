@@ -18,8 +18,11 @@ import {forEach} from "@angular-devkit/schematics";
 export class AddressDialogComponent implements OnInit{
   newList : string[]=[]
   ngOnInit(): void {
-    this.newList = [...this.data.addressList];
-  }
+    if (this.data.addressList)
+    {
+      this.newList = this.data.addressList;
+
+    }  }
   constructor(public dialogRef : MatDialogRef<AddressDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: { addressList: string[] }) {
   }
