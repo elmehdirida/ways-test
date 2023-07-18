@@ -14,7 +14,7 @@ import { HomeComponent } from './home/home/home.component';
 export class AppComponent implements OnInit {
   constructor(private letterService : LetterService) {}
   ngOnInit(): void {
-    this.letterService.getletters().subscribe(data => console.log(data));
+    this.letterService.getLetters().subscribe(data => console.log(data));
   }
   title = 'ways-test';
 }

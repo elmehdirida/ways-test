@@ -12,7 +12,7 @@ export class LetterService {
 
   constructor(private http : HttpClient) { }
 
-    getletters() : Observable<Letter[]>{
+    getLetters() : Observable<Letter[]>{
     return this.http.get<Letter[]>(this.ApiLetters);
   }
 

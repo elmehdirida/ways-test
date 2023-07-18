@@ -1,16 +1,25 @@
 <div class="card mat-mdc-elevation-specific mat-elevation-z2">
-    <div style="left: 32px; top: 38px; position: absolute; color: black; font-size: 24px; font-family: Roboto;
-     font-weight: 400; line-height: 24px;
-     letter-spacing: 0.18px; word-wrap: break-word">My Letters</div>
-    <div class="div-button" style="">
-
-        <button mat-button color="primary" class="add-new-button">
-            <div class="button-text">ADD NEW LETTER</div>
-        </button>
-
+    <div class="title">My Letters</div>
+  
+    <div class="div-button">
+      <button mat-button color="primary" class="add-new-button">
+        <div class="button-text">ADD NEW LETTER</div>
+      </button>
     </div>
-    <div style="height: 128px; left: 32px; top: 100px; position: absolute; background: white; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20); border-radius: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+  
+    <div class="letters-container">
+        <div *ngFor="let cardComponent of displayedCardComponents">
         <ways-test-card-letter></ways-test-card-letter>
+        </div>
     </div>
-
 </div>
+<div class="pagination">
+    <mat-paginator
+    [length]="totalItems"
+    [pageSize]="itemsPerPage"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)"
+    ></mat-paginator>
+</div>
+  
+

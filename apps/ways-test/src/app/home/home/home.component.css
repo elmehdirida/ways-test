@@ -3,18 +3,32 @@
     height: 1000px;
     background: #FFF;
 }
+
+.title{
+    left: 32px;
+    top: 38px;
+    position: absolute;
+    color: black;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.18px;
+    word-wrap: break-word;
+}
+
 .div-button{
     height: 36px;
-      padding-left: 8px;
-       padding-right: 6px;
-     left: 865px;
-      top: 32px;
-       position: absolute;
-        background: #1976D2;
-         border-radius: 10px;
-          justify-content: flex-start;
-      align-items: flex-start;
-       display: inline-flex;
+    padding-left: 8px;
+    padding-right: 6px;
+    left: 865px;
+    top: 32px;
+    position: absolute;
+    background: #1976D2;
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: inline-flex;
 }
 .add-new-button{
     padding-top: 4px;
@@ -41,3 +55,29 @@
     display: flex;
     align-items: center;
 }
+
+
+
+
+
+.letters-container {
+    width: 1024px;
+    left: 32px;
+    
+    top: 100px;
+    position: absolute;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap
+  }
+  
+  .letters-container ways-test-card-letter {
+    width: calc((100% - 80px) / 3); 
+  }
+
+
+  .pagination{
+    margin-top: -100px;
+    position: absolute;
+    margin-left: 32px;
+  }
