@@ -59,12 +59,17 @@
       "footNote": "Example Footnote 4"
     },
     {
-      "senderAddress": "Beni Mellal, Modern neibor",
-      "receiverAddress": [],
-      "subject": "",
-      "body": "",
-      "contact": [],
-      "footNote": "",
+      "senderAddress": "Beni Mellal, Modern neibors",
+      "receiverAddress": [
+        "mohsine"
+      ],
+      "subject": "mjiug",
+      "body": "uigui",
+      "contact": [
+        "5.4.1999",
+        "Mohsine Hajjar"
+      ],
+      "footNote": "iguugg",
       "id": 5
     }
   ]

@@ -14,7 +14,7 @@ import { AddressDialogComponent } from './address-dialog/address-dialog.componen
 import { CardLetterComponent } from "@ways-test/ui";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {DataSharingService, Letter, LetterService} from "@ways-test/data-access";
 
 @Component({
@@ -46,7 +46,8 @@ export class PrincipalComponent implements OnInit{
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
 
-  constructor(public dialog :MatDialog , private  data : DataSharingService,private letterService : LetterService) {
+  constructor(public dialog :MatDialog , private  data : DataSharingService,private letterService : LetterService,
+     private router : Router) {
   }
   letter! : Letter
   contactInfoCopy! :string[];
@@ -126,16 +127,32 @@ export class PrincipalComponent implements OnInit{
 
   saveLetter() {
     if (this.letter) {
-      this.letterService.addletter(this.letter).subscribe(
-        savedLetter => {
-          console.log('Letter saved:', savedLetter);
-        },
-        error => {
-          console.error('Error saving letter:', error);
-        }
-      );
+      if (this.letter.id) {
+        this.letterService.updateletter(this.letter).subscribe(
+          updatedLetter => {
+            alert('Letter updated :' + updatedLetter.id);
+            this.router.navigateByUrl("");
+
+            console.log('Letter updated:', updatedLetter);
+          },
+          error => {
+            console.error('Error updating letter:', error);
+          }
+        );
+      } else {
+        this.letterService.addletter(this.letter).subscribe(
+          addedLetter => {
+            alert('Letter added:' + addedLetter.id);
+            this.router.navigateByUrl("");
+          },
+          error => {
+            console.error('Error adding letter:', error);
+          }
+        );
+      }
+    }
   }
-}
+  
 
   deleteData(){
     this.data.deleteLetterData()
