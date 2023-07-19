@@ -4,7 +4,7 @@
       "id": 1,
       "senderAddress": "123 Main St, City",
       "receiverAddress": [
-        "456 Elm St, City"
+        "hghfgh"
       ],
       "contact": [
         "01.01.2023",
@@ -12,7 +12,8 @@
       ],
       "subject": "Example Subject 1",
       "body": "Lorem ipsum dolor sit amet.",
-      "footNote": "Example Footnote 1"
+      "footNote": "Example Footnote 1",
+      "navigationId": 9
     },
     {
       "id": 2,
@@ -190,6 +191,19 @@
       "contact": [],
       "footNote": "",
       "id": 17
+    },
+    {
+      "navigationId": 1,
+      "id": 18
+    },
+    {
+      "senderAddress": "",
+      "receiverAddress": [],
+      "subject": "",
+      "body": "",
+      "contact": [],
+      "footNote": "",
+      "id": 19
     }
   ]
 }

@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit{
     });
 
 
-    
+
   }
 
 
@@ -54,8 +54,4 @@ export class HomeComponent implements OnInit{
     this.sharingData.setLetterData(letter)
   }
 
-    navigateToAddLetter() {
-      this.router.navigate(['/principal', { mode: 'add' }]);
-    }
-    
 }

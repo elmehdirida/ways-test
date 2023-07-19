@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {CommonModule, Location, NgOptimizedImage} from '@angular/common';
 import {
   DateBlockComponent, DatepickerComponent,
   InputUiComponent,
@@ -53,8 +53,8 @@ export class PrincipalComponent implements OnInit{
   contactInfoCopy! :string[];
   AddressReceiverCopy! : string[]
   ngOnInit(): void {
-    this.letter = this.data.getLetterData()
-    if (this.letter === undefined) {
+    this.letter = history.state
+    if (this.letter.id === undefined) {
       this.letter = {
         senderAddress: "",
         receiverAddress: [],

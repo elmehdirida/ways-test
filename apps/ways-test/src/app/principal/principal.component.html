@@ -26,12 +26,9 @@
   </div>
   <div class="preview-add">
       <div class="preview-add-line" *ngFor="let add of letter.receiverAddress">{{add}} </div>
-      <div class="preview-add-line" *ngIf="letter.receiverAddress.length==0">
-        No Addresses , Tape here To Add
-      </div>
   </div>
   <div class="preview-contact-div">
-      <div class="preview-contact-line">
+      <div class="preview-contact-line" *ngIf="letter.contact.length !==0">
         <p>Date:  {{letter.contact[0]}}</p>
         <p>Contact Person:  {{letter.contact[1]}}</p>
     </div>

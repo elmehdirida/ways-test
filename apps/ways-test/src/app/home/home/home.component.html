@@ -12,7 +12,7 @@
 
     <div class="letters-container">
         <div *ngFor="let cardComponent of displayedCardComponents">
-          <ways-test-card-letter [routerLink]="['/letter']" [letter]="cardComponent.letter" (click)="passDataToLetter(cardComponent.letter)"></ways-test-card-letter>
+          <ways-test-card-letter [routerLink]="['/letter']" [state]="cardComponent.letter" [letter]="cardComponent.letter" (click)="passDataToLetter(cardComponent.letter)"></ways-test-card-letter>
         </div>
     </div>
 </div>
