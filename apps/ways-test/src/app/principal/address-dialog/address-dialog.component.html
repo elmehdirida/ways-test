@@ -5,7 +5,7 @@
   </div>
   <div  class="inside-dialog">
     <div  *ngFor="let item of newList ; index as i;" style="display: inline-flex">
-      <ways-test-input-ui (newValue)="addAddresse($event , i)" class="input-sender-address-dialog" textHolder="Line{{i+1}}" [initialValue]="item"></ways-test-input-ui>
+      <ways-test-input-ui (newValue)="addAddresse($event , i)" class="input-sender-address-dialog" textHolder="Line {{i+1}}" [initialValue]="item"></ways-test-input-ui>
       <mat-icon class="delete_24px" fontIcon="delete_forever" (click)="deleteLine(i)"></mat-icon>
     </div>
     <div class="text-icon-div" (click)="addLine()">
