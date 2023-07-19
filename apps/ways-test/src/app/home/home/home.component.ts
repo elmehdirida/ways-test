@@ -40,7 +40,8 @@ export class HomeComponent implements OnInit{
   }
 
 
-    constructor(private sharingData : DataSharingService ,private letterService : LetterService,private route: ActivatedRoute, private router: Router) {
+    constructor(private sharingData : DataSharingService ,private letterService : LetterService,private route: ActivatedRoute,
+       private router: Router) {
     }
 
     onPageChange(event: PageEvent) {
