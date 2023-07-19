@@ -16,6 +16,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {Router, RouterLink} from "@angular/router";
 import {DataSharingService, Letter, LetterService} from "@ways-test/data-access";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'ways-test-principal',
@@ -45,13 +46,18 @@ export class PrincipalComponent implements OnInit{
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
-
-  constructor(public dialog :MatDialog , private  data : DataSharingService,private letterService : LetterService,
-     private router : Router) {
-  }
+  letterForm!: FormGroup;
   letter! : Letter
   contactInfoCopy! :string[];
   AddressReceiverCopy! : string[]
+
+  constructor(public dialog :MatDialog , private  data : DataSharingService,private letterService : LetterService,
+     private router : Router, private formBuilder : FormBuilder,) {
+  
+  }
+
+  
+
   ngOnInit(): void {
     this.letter = this.data.getLetterData()
     if (this.letter === undefined) {
@@ -70,7 +76,9 @@ export class PrincipalComponent implements OnInit{
       this.AddressReceiverCopy = [...this.letter.receiverAddress]
       this.contactInfoCopy =[...this.letter.contact]
     }
+
   }
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddressDialogComponent, {
@@ -127,6 +135,7 @@ export class PrincipalComponent implements OnInit{
   }
 
   saveLetter() {
+    
     if (this.letter) {
       if (this.letter.id) {
         this.letterService.updateletter(this.letter).subscribe(
@@ -152,10 +161,14 @@ export class PrincipalComponent implements OnInit{
         );
       }
     }
+    else{
+      alert("Please fill the sender address")
+    }
   }
-
 
   deleteData(){
     this.data.deleteLetterData()
   }
+
+
 }

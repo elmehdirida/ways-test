@@ -11,7 +11,10 @@
 </div>
 <mat-card *ngIf="!preview" class="general-card mat-mdc-elevation-specific mat-elevation-z2">
   <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
-  <ways-test-input-ui   class="input-sender-address " [initialValue]="letter.senderAddress" [textHolder]="sender" [isRequired]="isReq" (newValue)="setSenderAdd($event)"></ways-test-input-ui>
+  <ways-test-input-ui   class="input-sender-address " [initialValue]="letter.senderAddress" [textHolder]="sender" 
+  [isRequired]="isReq" (newValue)="setSenderAdd($event)"
+  [ngClass]="{ 'invalid': isReq  }"
+></ways-test-input-ui>
   <ways-test-lines style="width: 471px" [addresses]="letter.receiverAddress" (click)="openDialog()"></ways-test-lines>
   <ways-test-date-block style="width: 471px" [contact]="letter.contact" (click)="openContactDialog()"></ways-test-date-block>
   <ways-test-input-ui [textHolder]="subject" class="input-subject"  [initialValue]="letter.subject" (newValue)="setSubject($event)" ></ways-test-input-ui>
