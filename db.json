@@ -27,7 +27,8 @@
       ],
       "subject": "Example Subject 2",
       "body": "Consectetur adipiscing elit.",
-      "footNote": "Example Footnote 2"
+      "footNote": "Example Footnote 2",
+      "navigationId": 13
     },
     {
       "id": 3,
@@ -120,7 +121,6 @@
       "id": 9
     },
     {
-<<<<<<< HEAD
       "senderAddress": "Bm",
       "receiverAddress": [
         "casa"
@@ -132,14 +132,6 @@
         "Ridda"
       ],
       "footNote": "p^p",
-=======
-      "senderAddress": "",
-      "receiverAddress": [],
-      "subject": "",
-      "body": "",
-      "contact": [],
-      "footNote": "",
->>>>>>> refs/remotes/origin/main
       "id": 10
     },
     {
@@ -162,7 +154,6 @@
     },
     {
       "senderAddress": "",
-<<<<<<< HEAD
       "receiverAddress": [
         "joojoj"
       ],
@@ -179,50 +170,24 @@
       "receiverAddress": [],
       "subject": "pouoou",
       "body": "ouhyy",
-=======
-      "receiverAddress": [],
-      "subject": "",
-      "body": "",
-      "contact": [],
-      "footNote": "",
-      "id": 13
-    },
-    {
-      "senderAddress": "",
-      "receiverAddress": [],
-      "subject": "",
-      "body": "",
->>>>>>> refs/remotes/origin/main
       "contact": [],
       "footNote": "",
       "id": 14
     },
     {
-<<<<<<< HEAD
       "senderAddress": "ljlljl",
       "receiverAddress": [],
       "subject": "doîtgiùp",
       "body": "klhlkh",
-=======
-      "senderAddress": "",
-      "receiverAddress": [],
-      "subject": "",
-      "body": "",
->>>>>>> refs/remotes/origin/main
       "contact": [],
       "footNote": "",
       "id": 15
     },
     {
-<<<<<<< HEAD
       "senderAddress": "oipou",
       "receiverAddress": [
         "opuopu"
       ],
-=======
-      "senderAddress": "",
-      "receiverAddress": [],
->>>>>>> refs/remotes/origin/main
       "subject": "",
       "body": "",
       "contact": [],
@@ -237,7 +202,6 @@
       "contact": [],
       "footNote": "",
       "id": 17
-<<<<<<< HEAD
     },
     {
       "senderAddress": "",
@@ -283,8 +247,15 @@
       "contact": [],
       "footNote": "",
       "id": 22
-=======
->>>>>>> refs/remotes/origin/main
+    },
+    {
+      "senderAddress": "Artem",
+      "receiverAddress": [],
+      "subject": "interview",
+      "body": "test",
+      "contact": [],
+      "footNote": "",
+      "id": 23
     }
   ]
 }
