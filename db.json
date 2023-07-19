@@ -4,7 +4,7 @@
       "id": 1,
       "senderAddress": "123 Main St, City",
       "receiverAddress": [
-        "456 Elm St, City"
+        "hghfgh"
       ],
       "contact": [
         "01.01.2023",
@@ -12,7 +12,8 @@
       ],
       "subject": "Example Subject 1",
       "body": "Lorem ipsum dolor sit amet.",
-      "footNote": "Example Footnote 1"
+      "footNote": "Example Footnote 1",
+      "navigationId": 9
     },
     {
       "id": 2,
@@ -73,13 +74,14 @@
       "id": 5
     },
     {
-      "senderAddress": "mojomj",
+      "senderAddress": "hjjh",
       "receiverAddress": [],
       "subject": "",
-      "body": "omjom",
+      "body": "hkghj",
       "contact": [],
       "footNote": "",
-      "id": 6
+      "id": 6,
+      "navigationId": 7
     },
     {
       "senderAddress": "fdfdf",
@@ -105,7 +107,7 @@
       "id": 8
     },
     {
-      "senderAddress": "",
+      "senderAddress": "skhjshjs",
       "receiverAddress": [
         "sn,jshj",
         "xhjhx"
@@ -120,26 +122,12 @@
       "id": 9
     },
     {
-<<<<<<< HEAD
-      "senderAddress": "Bm",
-      "receiverAddress": [
-        "casa"
-      ],
-      "subject": "Mosine",
-      "body": "p^p",
-      "contact": [
-        "7.2.2023",
-        "Ridda"
-      ],
-      "footNote": "p^p",
-=======
       "senderAddress": "",
       "receiverAddress": [],
       "subject": "",
       "body": "",
       "contact": [],
       "footNote": "",
->>>>>>> refs/remotes/origin/main
       "id": 10
     },
     {
@@ -162,24 +150,6 @@
     },
     {
       "senderAddress": "",
-<<<<<<< HEAD
-      "receiverAddress": [
-        "joojoj"
-      ],
-      "subject": "pojooj",
-      "body": "opjo",
-      "contact": [
-        "7.5.2023"
-      ],
-      "footNote": "ojo",
-      "id": 13
-    },
-    {
-      "senderAddress": "opuupou",
-      "receiverAddress": [],
-      "subject": "pouoou",
-      "body": "ouhyy",
-=======
       "receiverAddress": [],
       "subject": "",
       "body": "",
@@ -192,37 +162,22 @@
       "receiverAddress": [],
       "subject": "",
       "body": "",
->>>>>>> refs/remotes/origin/main
       "contact": [],
       "footNote": "",
       "id": 14
     },
     {
-<<<<<<< HEAD
-      "senderAddress": "ljlljl",
-      "receiverAddress": [],
-      "subject": "doîtgiùp",
-      "body": "klhlkh",
-=======
       "senderAddress": "",
       "receiverAddress": [],
       "subject": "",
       "body": "",
->>>>>>> refs/remotes/origin/main
       "contact": [],
       "footNote": "",
       "id": 15
     },
     {
-<<<<<<< HEAD
-      "senderAddress": "oipou",
-      "receiverAddress": [
-        "opuopu"
-      ],
-=======
       "senderAddress": "",
       "receiverAddress": [],
->>>>>>> refs/remotes/origin/main
       "subject": "",
       "body": "",
       "contact": [],
@@ -237,15 +192,9 @@
       "contact": [],
       "footNote": "",
       "id": 17
-<<<<<<< HEAD
     },
     {
-      "senderAddress": "",
-      "receiverAddress": [],
-      "subject": "",
-      "body": "",
-      "contact": [],
-      "footNote": "",
+      "navigationId": 1,
       "id": 18
     },
     {
@@ -258,33 +207,13 @@
       "id": 19
     },
     {
-      "senderAddress": "",
+      "senderAddress": "jhgjh",
       "receiverAddress": [],
       "subject": "",
-      "body": "",
+      "body": "jhh",
       "contact": [],
       "footNote": "",
       "id": 20
-    },
-    {
-      "senderAddress": "",
-      "receiverAddress": [],
-      "subject": "",
-      "body": "",
-      "contact": [],
-      "footNote": "",
-      "id": 21
-    },
-    {
-      "senderAddress": "lkioh",
-      "receiverAddress": [],
-      "subject": "",
-      "body": "",
-      "contact": [],
-      "footNote": "",
-      "id": 22
-=======
->>>>>>> refs/remotes/origin/main
     }
   ]
 }

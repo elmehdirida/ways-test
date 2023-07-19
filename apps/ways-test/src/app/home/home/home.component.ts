@@ -49,10 +49,4 @@ export class HomeComponent implements OnInit{
       const endIndex = startIndex + event.pageSize;
       this.displayedCardComponents = this.cardComponents.slice(startIndex, endIndex);
     }
-
-
-  passDataToLetter(letter: Letter) {
-    this.sharingData.setLetterData(letter)
-  }
-
 }
