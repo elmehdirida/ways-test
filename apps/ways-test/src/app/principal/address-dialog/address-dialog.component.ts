@@ -16,11 +16,13 @@ import {forEach} from "@angular-devkit/schematics";
   styleUrls: ['./address-dialog.component.css'],
 })
 export class AddressDialogComponent implements OnInit{
-  newList : string[]=[]
+  newList: string[] = [''];
+  oldList : string []=[]
   ngOnInit(): void {
     if (this.data.addressList)
     {
-      this.newList = this.data.addressList;
+      this.newList = [...this.data.addressList];
+      this.oldList = [...this.newList]
 
     }  }
   constructor(public dialogRef : MatDialogRef<AddressDialogComponent>,
@@ -35,7 +37,7 @@ export class AddressDialogComponent implements OnInit{
         j--;
       }
     }
-    this.dialogRef.close(this.data.addressList);
+    this.dialogRef.close(this.oldList);
   }
 
   deleteLine(i: number) {
@@ -43,15 +45,14 @@ export class AddressDialogComponent implements OnInit{
   }
 
   addAddresse(val: string, i: number) {
-    for (let j = 0; j < this.newList.length; j++) {
-      if (this.newList[j].trim() === '') {
-        this.deleteLine(j);
-      }
-    }
     if (val === '') {
       this.deleteLine(i);
     } else {
-      this.newList[i] = val;
+      const updatedList = Array.from(this.newList);
+      updatedList[i] = val;
+      console.log()
+      this.newList = updatedList;
+      console.log(this.newList)
     }
   }
   onApply() {
@@ -65,6 +66,6 @@ export class AddressDialogComponent implements OnInit{
   }
 
   addLine() {
-    this.newList.push('')
+    this.newList.push("")
   }
 }

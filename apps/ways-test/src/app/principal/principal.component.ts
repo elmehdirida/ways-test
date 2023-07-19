@@ -80,7 +80,7 @@ export class PrincipalComponent implements OnInit{
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result !== undefined) {
-        this.letter.receiverAddress=result
+        this.letter.receiverAddress=this.AddressReceiverCopy=result
       } else {
         console.log('AddressDialogComponent closed with no data.');
       }
