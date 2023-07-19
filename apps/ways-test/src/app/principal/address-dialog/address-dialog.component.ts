@@ -6,7 +6,6 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {InputUiComponent} from "@ways-test/ui";
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
-import {forEach} from "@angular-devkit/schematics";
 
 @Component({
   selector: 'ways-test-address-dialog',
@@ -16,7 +15,7 @@ import {forEach} from "@angular-devkit/schematics";
   styleUrls: ['./address-dialog.component.css'],
 })
 export class AddressDialogComponent implements OnInit{
-  newList: string[] = [''];
+  newList : string[]=[]
   oldList : string []=[]
   ngOnInit(): void {
     if (this.data.addressList)
@@ -31,12 +30,6 @@ export class AddressDialogComponent implements OnInit{
 
 
   onCloseDialog(): void {
-    for (let j = 0; j < this.newList.length; j++) {
-      if (this.newList[j].trim() === '') {
-        this.deleteLine(j);
-        j--;
-      }
-    }
     this.dialogRef.close(this.oldList);
   }
 
@@ -48,20 +41,13 @@ export class AddressDialogComponent implements OnInit{
     if (val === '') {
       this.deleteLine(i);
     } else {
-      const updatedList = Array.from(this.newList);
-      updatedList[i] = val;
-      console.log()
-      this.newList = updatedList;
-      console.log(this.newList)
+      this.newList[i] = val;
     }
+    this.newList = this.newList.filter(item => item.trim() !== '');
+
   }
   onApply() {
-    for (let j = 0; j < this.newList.length; j++) {
-      if (this.newList[j].trim() === '') {
-        this.deleteLine(j);
-        j--;
-      }
-    }
+    this.newList = this.newList.filter(item => item.trim() !== '');
     this.dialogRef.close(this.newList)
   }
 
