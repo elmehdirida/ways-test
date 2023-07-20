@@ -292,6 +292,15 @@
       "contact": [],
       "footNote": "",
       "id": 25
+    },
+    {
+      "senderAddress": "mohsine",
+      "receiverAddress": [],
+      "subject": "",
+      "body": "test",
+      "contact": [],
+      "footNote": "",
+      "id": 26
     }
   ]
 }

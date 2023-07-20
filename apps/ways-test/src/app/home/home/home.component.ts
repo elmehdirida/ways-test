@@ -1,11 +1,10 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardLetterComponent, UiModule } from '@ways-test/ui';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import {DataSharingService, Letter, LetterService} from '@ways-test/data-access';
 import {RouterLink} from "@angular/router";
-import {map, tap} from "rxjs";
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -40,8 +39,7 @@ export class HomeComponent implements OnInit{
   }
 
 
-    constructor(private sharingData : DataSharingService ,private letterService : LetterService,private route: ActivatedRoute,
-       private router: Router) {
+    constructor(private letterService : LetterService) {
     }
 
     onPageChange(event: PageEvent) {

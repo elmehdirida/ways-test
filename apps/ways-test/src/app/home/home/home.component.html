@@ -1,20 +1,16 @@
 <div class="card mat-mdc-elevation-specific mat-elevation-z2">
-    <div style="left: 32px; top: 38px; position: absolute; color: black; font-size: 24px; font-family: Roboto;
-     font-weight: 400; line-height: 24px;
-     letter-spacing: 0.18px; word-wrap: break-word">My Letters</div>
-    <div class="div-button">
-
-        <button mat-button color="primary" class="add-new-button">
-            <div class="button-text" routerLink="letter/new">ADD NEW LETTER</div>
-        </button>
-
-    </div>
-
-    <div class="letters-container">
-        <div *ngFor="let cardComponent of displayedCardComponents">
-          <ways-test-card-letter [routerLink]="['/letter',cardComponent.letter.id]" [state]="cardComponent.letter" [letter]="cardComponent.letter"></ways-test-card-letter>
+    <div class="title">My Letters</div>
+        <div class="div-button">
+            <button mat-button color="primary" class="add-new-button">
+                <div class="button-text" routerLink="letter/new">ADD NEW LETTER</div>
+            </button>
         </div>
-    </div>
+        <div class="letters-container">
+            <div *ngFor="let cardComponent of displayedCardComponents">
+            <ways-test-card-letter [routerLink]="['/letter',cardComponent.letter.id]" [state]="cardComponent.letter" 
+            [letter]="cardComponent.letter"></ways-test-card-letter>
+            </div>
+        </div>
 </div>
 <div class="pagination">
     <mat-paginator
