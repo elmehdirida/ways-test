@@ -10,32 +10,21 @@
       <button mat-button class="save-btn" (click)="saveLetter()"><p class="save-btn-text">SAVE</p></button>
     </div>
 </div>
-<mat-card  *ngIf="!preview" class="general-card mat-mdc-elevation-specific mat-elevation-z2">
+  <mat-card  *ngIf="!preview" class="general-card mat-mdc-elevation-specific mat-elevation-z2">
   <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
 
-
-  <ways-test-input-ui class="input-sender-address" [initialValue]="letter.senderAddress" [textHolder]="sender" 
-  [isRequired]="isReq" (newValue)="setSenderAdd($event)" formControlName="senderAddress"
-  [ngClass]="{'is-invalid': letterForm.controls['senderAddress'].invalid && letterForm.controls['senderAddress'].touched}"
-></ways-test-input-ui>
-
-
-<div *ngIf="letterForm.controls['senderAddress'].invalid && letterForm.controls['senderAddress'].touched" class="error-message">
-  Sender Address is required.
-</div>
-
-
+  <ways-test-input-ui class="input-sender-address" [value]="letter.senderAddress" [placeHolder]="sender"
+  [required]="isReq" (onChangeValue)="setSenderAdd($event)"></ways-test-input-ui>
 
   <ways-test-lines style="width: 471px" [addresses]="letter.receiverAddress" (click)="openDialog()"></ways-test-lines>
   <ways-test-date-block style="width: 471px" [contact]="letter.contact" (click)="openContactDialog()"></ways-test-date-block>
-  <ways-test-input-ui [textHolder]="subject" class="input-subject"  [initialValue]="letter.subject" (newValue)="setSubject($event)" ></ways-test-input-ui>
+  <ways-test-input-ui [placeHolder]="subject" class="input-subject"  [value]="letter.subject" (onChangeValue)="setSubject($event)" ></ways-test-input-ui>
   <ways-test-text-area class="text-body"  [body]="letter.body" [isRequired]="isReq" (newValue)="setBody($event)"
-  [ngClass]="{'is-invalid': letterForm.controls['body'].invalid && letterForm.controls['body'].touched}"
   ></ways-test-text-area>
 
 
 
-  <ways-test-input-ui [textHolder]="footnote" [initialValue]="letter.footNote"  class="input-footnote" (newValue)="setFootNote($event)"></ways-test-input-ui>
+  <ways-test-input-ui [placeHolder]="footnote" [value]="letter.footNote"  class="input-footnote" (onChangeValue)="setFootNote($event)"></ways-test-input-ui>
 </mat-card>
 <mat-card *ngIf="preview" class="preview-card mat-mdc-elevation-specific mat-elevation-z2">
   <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">

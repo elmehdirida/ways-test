@@ -13,8 +13,8 @@
           </div>
           <div class="inside-dialog">
             <div style="display: inline-flex">
-              <ways-test-input-ui class="input-sender-address-dialog" (newValue)="handleContactNameChange($event)"
-              [textHolder]="contactName" [initialValue]="contactListCopy[1]"></ways-test-input-ui>
+              <ways-test-input-ui class="input-sender-address-dialog" (onChangeValue)="handleContactNameChange($event)"
+              [placeHolder]="contactName" [value]="contactListCopy[1]"></ways-test-input-ui>
             </div>
           </div>
         </mat-dialog-content>

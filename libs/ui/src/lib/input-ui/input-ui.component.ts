@@ -1,33 +1,25 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatInputModule} from "@angular/material/input";
-import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'ways-test-input-ui',
   standalone: true,
-  imports: [CommonModule, MatInputModule, ReactiveFormsModule],
+  imports: [CommonModule, MatInputModule, FormsModule],
   templateUrl: './input-ui.component.html',
   styleUrls: ['./input-ui.component.css'],
 })
-export class InputUiComponent implements OnInit{
-  @Input() textHolder  =''
-  @Input() initialValue =''
-  @Input() isRequired : boolean = false
-  @Output() newValue = new EventEmitter<string>();
-  
-  value = new FormControl(this.initialValue );
+export class InputUiComponent{
+  @Input() placeHolder  =''
+  @Input() value =''
+  @Input() type : string = 'text'
+  @Input() required : boolean = false
+  @Output() onChangeValue = new EventEmitter<string>();
 
-  onChange(val : string){
-    this.newValue.emit(val);
+  onChange(){
+    console.log(this.value )
+    this.onChangeValue.emit(this.value);
   }
 
-  ngOnInit(): void {
-    if (this.initialValue) {
-      this.value.setValue(this.initialValue);
-    }
-    if(this.isRequired){
-      this.value.setValidators(Validators.required)
-    }
-  }
 }
