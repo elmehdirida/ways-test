@@ -12,7 +12,8 @@
       ],
       "subject": "Example Subject 1",
       "body": "Lorem ipsum dolor sit amet.",
-      "footNote": "Example Footnote 1"
+      "footNote": "Example Footnote 1",
+      "navigationId": 6
     },
     {
       "id": 2,
@@ -72,16 +73,25 @@
         "Mohsine Hajjar"
       ],
       "footNote": "iguugg",
-      "id": 5
+      "id": 5,
+      "navigationId": 26
     },
     {
-      "senderAddress": "mojomj",
-      "receiverAddress": [],
-      "subject": "",
-      "body": "omjom",
-      "contact": [],
-      "footNote": "",
-      "id": 6
+      "senderAddress": "quartier moderne",
+      "receiverAddress": [
+        "Beni Mellal",
+        "Mghila",
+        "Fst"
+      ],
+      "subject": "Testing",
+      "body": "In case you haven’t been paying attention, I’m a big fan of AngularJS. In fact, I’m just starting out with Angular. Over the next few months, you’ll be seeing many articles about Angular, many of which will contain code that is directly inspired by the beautiful angular world of software development. The code above is a fairly simple test to check if an angular app is online or not.",
+      "contact": [
+        "7.20.2023",
+        "Mohsine Hajjar"
+      ],
+      "footNote": "By me",
+      "id": 6,
+      "navigationId": 22
     },
     {
       "senderAddress": "fdfdf",
@@ -260,12 +270,28 @@
     },
     {
       "senderAddress": "hjjgjvgh",
+      "receiverAddress": [
+        "lkioh",
+        "^llllllllllllllllllllllllllllkpppp^j"
+      ],
+      "subject": "^pi^^ppip",
+      "body": "ygyu",
+      "contact": [
+        "7.5.2023",
+        "^*l^^"
+      ],
+      "footNote": "p$o^$o$",
+      "id": 24,
+      "navigationId": 4
+    },
+    {
+      "senderAddress": "",
       "receiverAddress": [],
       "subject": "",
-      "body": "ygyu",
+      "body": "",
       "contact": [],
       "footNote": "",
-      "id": 24
+      "id": 25
     }
   ]
 }

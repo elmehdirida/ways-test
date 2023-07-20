@@ -15,6 +15,7 @@ export class InputUiComponent implements OnInit{
   @Input() initialValue =''
   @Input() isRequired : boolean = false
   @Output() newValue = new EventEmitter<string>();
+  
   value = new FormControl(this.initialValue );
 
   onChange(val : string){
