@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CommonModule, Location, NgOptimizedImage} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {
   DateBlockComponent, DatepickerComponent,
   InputUiComponent,
@@ -16,8 +16,6 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {Router, RouterLink} from "@angular/router";
 import {DataSharingService, Letter, LetterService} from "@ways-test/data-access";
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -40,7 +38,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     MatButtonModule,
     RouterLink,
-    MatSnackBarModule
+
   ]
 })
 export class PrincipalComponent implements OnInit{
@@ -49,17 +47,16 @@ export class PrincipalComponent implements OnInit{
   sender="Sender address";
   subject="Subject (optional)";
   footnote  = "Footnote (optional)";
-  letterForm!: FormGroup;
   letter! : Letter
   contactInfoCopy! :string[];
   AddressReceiverCopy! : string[]
 
   constructor(public dialog :MatDialog , private  data : DataSharingService,private letterService : LetterService,
-     private router : Router, private fb : FormBuilder,private snackBar : MatSnackBar) {
-  
+     private router : Router) {
+
   }
 
-  
+
 
   ngOnInit(): void {
     this.letter = history.state
@@ -76,15 +73,11 @@ export class PrincipalComponent implements OnInit{
       this.contactInfoCopy= []
     }
     else{
+
       this.AddressReceiverCopy = [...this.letter.receiverAddress]
       this.contactInfoCopy =[...this.letter.contact]
     }
 
-
-    this.letterForm = this.fb.group({
-      senderAddress: ["", Validators.required],
-      body : ["", Validators.required],
-    })
 
   }
 
@@ -144,51 +137,35 @@ export class PrincipalComponent implements OnInit{
   }
 
   saveLetter() {
-    if (!this.letter.senderAddress) {
-      this.snackBar.open('Please enter the sender address', 'Close', {
-        duration: 3000,
-        verticalPosition: 'top',
-        panelClass: 'snackbar-error'
-      });
-      return;
-    }
-  
-    if (!this.letter.body) {
-      this.snackBar.open('Please enter the body of the letter', 'Close', {
-        duration: 3000,
-        verticalPosition: 'top',
-        panelClass: 'snackbar-error'
-      });
-      return;
-    }
-    if (this.letter) {
-      if (this.letter.id) {
-        this.letterService.updateletter(this.letter).subscribe(
-          updatedLetter => {
-            alert('Letter updated :' + updatedLetter.id);
-            this.router.navigateByUrl("");
+      if(this.letter.senderAddress !== '' && this.letter.body !==''){
+        if (this.letter.id !==0) {
+          this.letterService.updateletter(this.letter).subscribe(
+            updatedLetter => {
+              alert('Letter updated :' + updatedLetter.id);
+              this.router.navigateByUrl("");
 
-            console.log('Letter updated:', updatedLetter);
-          },
-          error => {
-            console.error('Error updating letter:', error);
-          }
-        );
-      } else {
-        this.letterService.addletter(this.letter).subscribe(
-          addedLetter => {
-            alert('Letter added:' + addedLetter.id);
-            this.router.navigateByUrl("");
-          },
-          error => {
-            console.error('Error adding letter:', error);
-          }
-        );
+              console.log('Letter updated:', updatedLetter);
+            },
+            error => {
+              console.error('Error updating letter:', error);
+            }
+          );
+        } else {
+          console.log(this.letter.id)
+          this.letterService.addletter(this.letter).subscribe(
+            addedLetter => {
+              alert('Letter added:' + addedLetter.id);
+              this.router.navigateByUrl("");
+            },
+            error => {
+              console.error('Error adding letter:', error);
+            }
+          );
+        }
       }
-    }
-    else{
-      alert("Please fill the sender address")
-    }
+
+
+
   }
 
   deleteData(){
