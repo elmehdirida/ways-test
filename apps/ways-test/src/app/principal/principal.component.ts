@@ -75,7 +75,7 @@ export class PrincipalComponent implements OnInit{
         footNote: "",
         id: 0
       }
-      this.contactInfoCopy= []
+      this.contactInfoCopy= ["",""]
     }
     else{
       this.AddressReceiverCopy = [...this.letter.receiverAddress]

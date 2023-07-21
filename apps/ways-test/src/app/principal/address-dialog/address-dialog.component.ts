@@ -17,6 +17,7 @@ import {MatListModule} from "@angular/material/list";
 export class AddressDialogComponent implements OnInit{
   newList : string[]=[]
   oldList : string []=[]
+  newListCopy : string[]=[]
   ngOnInit(): void {
     if (this.data.addressList)
     {
@@ -41,7 +42,8 @@ export class AddressDialogComponent implements OnInit{
     if (val === '') {
       this.deleteLine(i);
     } else {
-      this.newList[i] = val;
+      this.newListCopy[i] = val;
+      this.newList = [...this.newListCopy]
     }
     this.newList = this.newList.filter(item => item.trim() !== '');
 
@@ -52,6 +54,6 @@ export class AddressDialogComponent implements OnInit{
   }
 
   addLine() {
-    this.newList.push("")
+    this.newListCopy.push("")
   }
 }

@@ -43,7 +43,7 @@ updatedContactList: string[] = [];
 ngOnInit(): void {
     this.contactListCopy = this.data.contactInfo
     //this.updatedContactList= this.data.contactInfo
-    
+
     this.formattedDateInit = this.data.contactInfo[0];
 
     if (this.formattedDateInit) {

@@ -4,7 +4,7 @@
     <mat-icon class="close_24px" (click)="onCloseDialog()">clear</mat-icon>
   </div>
   <div  class="inside-dialog">
-    <div  *ngFor="let item of newList ; index as i;" style="display: inline-flex">
+    <div  *ngFor="let item of newListCopy ; index as i;" style="display: inline-flex">
 
       <ways-test-input-ui (onChangeValue)="addAddresse($event , i)" class="input-sender-address-dialog" placeHolder="Line {{i+1}}" [value]="item"></ways-test-input-ui>
       <mat-icon class="delete_24px" fontIcon="delete_forever" (click)="deleteLine(i)"></mat-icon>
@@ -16,7 +16,7 @@
     <mat-divider class="divider" ></mat-divider>
     <p class="preview-text">Preview</p>
     <div class="preview-div">
-      <p *ngFor="let p of newList" class="p-preview">{{p}}</p>
+      <p *ngFor="let p of newListCopy" class="p-preview">{{p}}</p>
     </div>
   </div>
   <mat-divider class="divider-bottom"></mat-divider>
