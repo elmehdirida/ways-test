@@ -33,6 +33,7 @@ import * as moment from 'moment';
 export class ContactDialogComponent implements OnInit{
 contactName = 'Contact Name';
 contactListInit: string[] = [];
+currentDate = new Date();
 contactListCopy = [...this.contactListInit];
 formattedDateInit! : string;
 dateString : Date = new Date(this.formattedDateInit);
@@ -42,7 +43,7 @@ updatedContactList: string[] = [];
 
 ngOnInit(): void {
     this.contactListCopy = this.data.contactInfo
-    //this.updatedContactList= this.data.contactInfo
+    this.updatedContactList= [...this.data.contactInfo];
 
     this.formattedDateInit = this.data.contactInfo[0];
 
@@ -64,7 +65,16 @@ constructor(public dialogRef : MatDialogRef<ContactDialogComponent>
 
   save() {
     if (this.unsavedChanges) {
+      if (this.updatedContactList[0] === undefined || this.updatedContactList[0] === '') {
+        
+        this.updatedContactList[0] = `${this.currentDate.getMonth() + 1}.${this.currentDate.getDate()}.${this.currentDate.getFullYear()}`;
+
+      }
+      if (this.updatedContactList[1] === undefined) {
+        this.updatedContactList[1] = this.contactListCopy[1] ;
+      }
       this.contactListCopy = [...this.updatedContactList];
+
       this.dialogRef.close(this.contactListCopy);
     } else {
       this.dialogRef.close();
