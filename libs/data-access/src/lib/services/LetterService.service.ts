@@ -7,7 +7,7 @@ import { Letter } from '../models/Letter.model';
   providedIn: 'root'
 })
 export class LetterService {
-  
+
     ApiLetters = "http://localhost:3000/letters";
 
 
@@ -16,11 +16,6 @@ export class LetterService {
     getLetters() : Observable<Letter[]>{
     return this.http.get<Letter[]>(this.ApiLetters);
   }
-
-    getletter(id : number) : Observable<Letter>{
-    return this.http.get<Letter>(this.ApiLetters + "/" + id);
-    }
-
     addletter(letter : Letter) : Observable<Letter>{
     return this.http.post<Letter>(this.ApiLetters, letter);
     }

@@ -6,14 +6,6 @@ import { Injectable } from '@angular/core';
 export class DataSharingService {
   private letterData: any;
 
-  setLetterData(data: any) {
-    this.letterData = data;
-  }
-
-  getLetterData() {
-    return this.letterData;
-  }
-
   deleteLetterData() {
     this.letterData = undefined;
   }
