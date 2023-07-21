@@ -46,10 +46,6 @@ export class HomeComponent implements OnInit{
     );
   }
 
-
-    constructor(private letterService : LetterService) {
-    }
-
     onPageChange(event: PageEvent) {
       const startIndex = event.pageIndex * event.pageSize;
       const endIndex = startIndex + event.pageSize;
