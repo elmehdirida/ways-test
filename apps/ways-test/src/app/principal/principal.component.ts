@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {
   DateBlockComponent, DatepickerComponent,
@@ -46,6 +46,7 @@ export class PrincipalComponent implements OnInit{
   isReq = true;
   sender="Sender address";
   subject="Subject (optional)";
+  body ="body"
   footnote  = "Footnote (optional)";
   letter! : Letter
   contactInfoCopy! :string[];
@@ -73,14 +74,10 @@ export class PrincipalComponent implements OnInit{
       this.contactInfoCopy= []
     }
     else{
-
       this.AddressReceiverCopy = [...this.letter.receiverAddress]
       this.contactInfoCopy =[...this.letter.contact]
     }
-
-
   }
-
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddressDialogComponent, {

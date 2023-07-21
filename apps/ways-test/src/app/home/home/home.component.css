@@ -38,7 +38,7 @@
     padding-right: 8px;
     justify-content: flex-start;
     align-items: flex-start;
-    display: flex; 
+    display: flex;
     align-items: center;
     border: none;
 }
@@ -51,7 +51,7 @@
     text-transform: uppercase;
     line-height: 16px;
     letter-spacing: 1.25px;
-    word-wrap: break-word; 
+    word-wrap: break-word;
     display: flex;
     align-items: center;
 }
@@ -63,16 +63,16 @@
 .letters-container {
     width: 1024px;
     left: 32px;
-    
+
     top: 100px;
     position: absolute;
     display: flex;
     gap: 24px;
     flex-wrap: wrap
   }
-  
+
   .letters-container ways-test-card-letter {
-    width: calc((100% - 80px) / 3); 
+    width: calc((100% - 80px) / 3);
   }
 
 
@@ -81,3 +81,10 @@
     position: absolute;
     margin-left: 32px;
   }
+
+.no-letters-message {
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  padding: 20px;
+}
