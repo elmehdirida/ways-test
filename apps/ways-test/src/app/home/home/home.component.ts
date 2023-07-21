@@ -24,6 +24,9 @@ export class HomeComponent implements OnInit{
     pageSizeOptions: number[] = [5, 10, 15];
     displayedCardComponents: CardLetterComponent[] = [];
 
+  constructor(private letterService : LetterService) {
+    }
+
   ngOnInit(): void {
     this.letterService.getLetters().subscribe(value => {
       this.letters = value;
@@ -33,14 +36,7 @@ export class HomeComponent implements OnInit{
       }
       this.displayedCardComponents = this.cardComponents.slice(0, this.itemsPerPage);
     });
-
-
-
   }
-
-
-    constructor(private letterService : LetterService) {
-    }
 
     onPageChange(event: PageEvent) {
       const startIndex = event.pageIndex * event.pageSize;
