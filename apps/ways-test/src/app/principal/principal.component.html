@@ -12,14 +12,12 @@
 </div>
   <mat-card  *ngIf="!preview" class="general-card mat-mdc-elevation-specific mat-elevation-z2">
   <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
-
-  <ways-test-input-ui class="input-sender-address" [value]="letter.senderAddress"  [placeHolder]="sender"
+  <ways-test-input-ui class="input-sender-address" [value]="letter.senderAddress"  [placeHolder]="sender" [control]="letterForm.controls.senderAddressControl"
   [required]="isReq" (onChangeValue)="setSenderAdd($event)"></ways-test-input-ui>
-
   <ways-test-lines style="width: 471px" [addresses]="letter.receiverAddress" (click)="openDialog()"></ways-test-lines>
   <ways-test-date-block style="width: 471px" [contact]="letter.contact" (click)="openContactDialog()"></ways-test-date-block>
   <ways-test-input-ui [placeHolder]="subject" class="input-subject"  [value]="letter.subject" (onChangeValue)="setSubject($event)" ></ways-test-input-ui>
-  <ways-test-text-area class="text-body"  [value]="letter.body" [placeHolder]="body" [required]="isReq" (onChangeValue)="setBody($event)"
+  <ways-test-text-area class="text-body"  [value]="letter.body" [placeHolder]="body" [required]="isReq" (onChangeValue)="setBody($event)" [control]="letterForm.controls.bodyControl"
   ></ways-test-text-area>
 
 

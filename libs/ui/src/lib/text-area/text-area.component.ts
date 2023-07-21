@@ -6,7 +6,7 @@ import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angula
 @Component({
   selector: 'ways-test-text-area',
   standalone: true,
-  imports: [CommonModule, MatInputModule, FormsModule],
+  imports: [CommonModule, MatInputModule, FormsModule, ReactiveFormsModule],
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.css'],
 })
@@ -16,6 +16,7 @@ export class TextAreaComponent {
   @Input() type : string = 'text'
   @Input() required : boolean = false
   @Output() onChangeValue = new EventEmitter<string>()
+  @Input() control  = new FormControl
 
   onChange(){
     this.onChangeValue.emit(this.value);

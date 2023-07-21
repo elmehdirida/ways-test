@@ -16,6 +16,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {Router, RouterLink} from "@angular/router";
 import {DataSharingService, Letter, LetterService} from "@ways-test/data-access";
+import {FormControl, FormGroup} from "@angular/forms";
 
 
 @Component({
@@ -52,9 +53,12 @@ export class PrincipalComponent implements OnInit{
   contactInfoCopy! :string[];
   AddressReceiverCopy! : string[]
 
+  letterForm = new FormGroup({
+    senderAddressControl : new FormControl(),
+    bodyControl : new FormControl()
+  })
   constructor(public dialog :MatDialog , private  data : DataSharingService,private letterService : LetterService,
      private router : Router) {
-
   }
 
 
@@ -134,6 +138,7 @@ export class PrincipalComponent implements OnInit{
   }
 
   saveLetter() {
+  this.letterForm.markAllAsTouched()
       if(this.letter.senderAddress !== '' && this.letter.body !==''){
         if (this.letter.id !==0) {
           this.letterService.updateletter(this.letter).subscribe(
