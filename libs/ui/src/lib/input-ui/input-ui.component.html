@@ -1,7 +1,7 @@
 <mat-form-field
   appearance='outline' style="width: 100%;">
     <mat-label>{{placeHolder}}</mat-label>
-    <input  [type]="type"  [(ngModel)]="value" name="myInput" [required]="required" matInput (change) ="onChange()">
-  <mat-error *ngIf="value===''"> {{placeHolder}} is required
+    <input   [type]="type"  [(ngModel)]="value" name="myInput" [required]="required" matInput (change) ="onChange()">
+  <mat-error  *ngIf="value.length===0"> {{placeHolder}} is required
   </mat-error>
   </mat-form-field>

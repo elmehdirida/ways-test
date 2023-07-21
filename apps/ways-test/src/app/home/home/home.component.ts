@@ -6,17 +6,18 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import {DataSharingService, Letter, LetterService} from '@ways-test/data-access';
 import {RouterLink} from "@angular/router";
 import { ActivatedRoute, Router } from '@angular/router';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @Component({
   selector: 'ways-test-home',
   standalone: true,
-  imports: [CommonModule, UiModule, CardLetterComponent, MatButtonModule, RouterLink, MatPaginatorModule],
+  imports: [CommonModule, UiModule, CardLetterComponent, MatButtonModule, RouterLink, MatPaginatorModule, MatProgressSpinnerModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit{
-
+    isLoading: boolean = true;
     letters: Letter[] = [];
     cardComponents: CardLetterComponent[] = [];
     totalItems: number = 0;
@@ -28,15 +29,26 @@ export class HomeComponent implements OnInit{
     }
 
   ngOnInit(): void {
-    this.letterService.getLetters().subscribe(value => {
-      this.letters = value;
-      this.totalItems = this.letters.length;
-      for (let i = 1; i <= this.letters.length; i++) {
-        this.cardComponents.push({ letter: this.letters[i - 1] });
+    this.letterService.getLetters().subscribe(
+      (value) => {
+        this.letters = value;
+        this.totalItems = this.letters.length;
+        for (let i = 1; i <= this.letters.length; i++) {
+          this.cardComponents.push({ letter: this.letters[i - 1] });
+        }
+        this.displayedCardComponents = this.cardComponents.slice(0, this.itemsPerPage);
+        this.isLoading = false;
+      },
+      (error) => {
+        this.isLoading = false;
+        console.error(error);
       }
-      this.displayedCardComponents = this.cardComponents.slice(0, this.itemsPerPage);
-    });
+    );
   }
+
+
+    constructor(private letterService : LetterService) {
+    }
 
     onPageChange(event: PageEvent) {
       const startIndex = event.pageIndex * event.pageSize;

@@ -1,10 +1,10 @@
   <mat-form-field appearance="outline" style="width: 100%;">
-    <mat-label>Body</mat-label>
-    <textarea #newV [formControl]="value" (change)="onChange(newV.value)" [value]="body" [required]="isRequired"
+    <mat-label>{{placeHolder}}</mat-label>
+    <textarea [(ngModel)]="value" (change)="onChange()" [type]="type"  [required]="required"
       style="max-height: 119px"
               cdkTextareaAutosize
-              matInput >{{body}}</textarea>
-    <mat-error *ngIf="value.hasError('required')">
+              matInput >{{value}}</textarea>
+    <mat-error *ngIf="value.length===0"> {{placeHolder}} is required
     </mat-error>
   </mat-form-field>
 

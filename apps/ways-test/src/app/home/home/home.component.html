@@ -5,12 +5,20 @@
                 <div class="button-text" routerLink="letter/new">ADD NEW LETTER</div>
             </button>
         </div>
-        <div class="letters-container">
-            <div *ngFor="let cardComponent of displayedCardComponents">
-            <ways-test-card-letter [routerLink]="['/letter',cardComponent.letter.id]" [state]="cardComponent.letter" 
-            [letter]="cardComponent.letter"></ways-test-card-letter>
-            </div>
-        </div>
+  <div class="letters-container">
+    <div *ngIf="isLoading; else lettersContent">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <ng-template #lettersContent>
+      <div *ngIf="letters.length === 0" class="no-letters-message">
+        No letters available at the moment.
+      </div>
+      <div *ngFor="let cardComponent of displayedCardComponents">
+        <ways-test-card-letter [routerLink]="['/letter',cardComponent.letter.id]" [state]="cardComponent.letter" [letter]="cardComponent.letter"></ways-test-card-letter>
+      </div>
+    </ng-template>
+  </div>
 </div>
 <div class="pagination">
     <mat-paginator
