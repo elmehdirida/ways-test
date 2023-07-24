@@ -92,6 +92,15 @@
       "footNote": "By me",
       "id": 6,
       "navigationId": 22
+    },
+    {
+      "senderAddress": "Mohsine",
+      "receiverAddress": [],
+      "subject": "",
+      "body": "hajjar",
+      "contact": [],
+      "footNote": "",
+      "id": 7
     }
   ]
 }
