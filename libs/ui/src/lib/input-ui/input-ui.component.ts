@@ -19,7 +19,6 @@ export class InputUiComponent{
   @Input() control  = new FormControl
 
   onChange(){
-    console.log(this.value )
     this.onChangeValue.emit(this.value);
   }
 

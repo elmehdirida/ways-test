@@ -52,6 +52,7 @@ export class PrincipalComponent implements OnInit{
   letter! : Letter
   contactInfoCopy! :string[];
   AddressReceiverCopy! : string[]
+  currentDate = new Date();
 
   letterForm = new FormGroup({
     senderAddressControl : new FormControl(),
@@ -141,7 +142,7 @@ export class PrincipalComponent implements OnInit{
   this.letterForm.markAllAsTouched()
       if(this.letter.senderAddress !== '' && this.letter.body !==''){
         if (this.letter.id !==0) {
-          this.letterService.updateletter(this.letter).subscribe(
+            this.letterService.updateletter(this.letter).subscribe(
             updatedLetter => {
               alert('Letter updated :' + updatedLetter.id);
               this.router.navigateByUrl("");
@@ -153,7 +154,12 @@ export class PrincipalComponent implements OnInit{
             }
           );
         } else {
-          console.log(this.letter.id)
+          if(this.letter.contact.length === 0)
+          {
+            this.letter.contact=[]
+            this.letter.contact[0] = `${this.currentDate.getMonth() + 1}.${this.currentDate.getDate()}.${this.currentDate.getFullYear()}`;
+            this.letter.contact[1] = ""
+          }
           this.letterService.addletter(this.letter).subscribe(
             addedLetter => {
               alert('Letter added:' + addedLetter.id);
@@ -173,6 +179,4 @@ export class PrincipalComponent implements OnInit{
   deleteData(){
     this.data.deleteLetterData()
   }
-
-
 }
