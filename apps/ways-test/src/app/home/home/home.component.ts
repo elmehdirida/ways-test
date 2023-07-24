@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CardLetterComponent, UiModule } from '@ways-test/ui';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
-import {DataSharingService, Letter, LetterService} from '@ways-test/data-access';
+import { Letter, LetterService} from '@ways-test/data-access';
 import {RouterLink} from "@angular/router";
-import { ActivatedRoute, Router } from '@angular/router';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 

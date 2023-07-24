@@ -41,7 +41,7 @@ export class AddressDialogComponent implements OnInit{
   }
 
   addAddresse(val: string, i: number) {
-    if (val === '') {
+    if (val === '' && i !==0) {
       this.deleteLine(i);
     } else {
         this.newListCopy[i] = val
