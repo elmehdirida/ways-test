@@ -12,7 +12,7 @@ import {MatListModule} from "@angular/material/list";
   standalone: true,
   imports: [CommonModule, MatCardModule, MatIconModule, InputUiComponent, MatButtonModule, MatListModule],
   templateUrl: './address-dialog.component.html',
-  styleUrls: ['./address-dialog.component.css'],
+  styleUrls: ['./address-dialog.component.scss'],
 })
 export class AddressDialogComponent implements OnInit{
   newList : string[]=[]

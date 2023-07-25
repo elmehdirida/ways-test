@@ -25,7 +25,7 @@
         ],
         "styles": [
           "@angular/material/prebuilt-themes/deeppurple-amber.css",
-          "apps/ways-test/src/styles.css"
+          "apps/ways-test/src/styles.scss"
         ],
         "scripts": []
       },
@@ -107,6 +107,11 @@
       "options": {
         "buildTarget": "ways-test:build"
       }
+    }
+  },
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   }
 }

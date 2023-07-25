@@ -8,7 +8,7 @@ import {Letter} from "@ways-test/data-access";
   standalone: true,
   imports: [CommonModule,MatCardModule],
   templateUrl: './card-letter.component.html',
-  styleUrls: ['./card-letter.component.css'],
+  styleUrls: ['./card-letter.component.scss'],
 })
 export class CardLetterComponent {
   @Input() letter! : Letter

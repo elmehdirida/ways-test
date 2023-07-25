@@ -14,7 +14,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   imports: [CommonModule, MatDatepickerModule, MatInputModule, MatFormFieldModule, MatNativeDateModule,
     ReactiveFormsModule],
   templateUrl: './datepicker.component.html',
-  styleUrls: ['./datepicker.component.css'],
+  styleUrls: ['./datepicker.component.scss'],
 })
 
 export class DatepickerComponent implements OnInit{

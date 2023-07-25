@@ -8,7 +8,7 @@ import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angula
   standalone: true,
   imports: [CommonModule, MatInputModule, FormsModule, ReactiveFormsModule],
   templateUrl: './text-area.component.html',
-  styleUrls: ['./text-area.component.css'],
+  styleUrls: ['./text-area.component.scss'],
 })
 export class TextAreaComponent {
   @Input() placeHolder: string = '';

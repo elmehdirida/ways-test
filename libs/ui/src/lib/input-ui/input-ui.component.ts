@@ -8,7 +8,7 @@ import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
   standalone: true,
   imports: [CommonModule, MatInputModule, FormsModule, ReactiveFormsModule],
   templateUrl: './input-ui.component.html',
-  styleUrls: ['./input-ui.component.css'],
+  styleUrls: ['./input-ui.component.scss'],
 })
 export class InputUiComponent{
   @Input() placeHolder  =''

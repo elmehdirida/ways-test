@@ -2,7 +2,6 @@
   "name": "@ways-test/source",
   "version": "0.0.0",
   "license": "MIT",
-
   "scripts": {
     "ng": "ng",
     "start": "json-server --watch db.json\"",
@@ -32,6 +31,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rxjs": "~7.8.0",
+    "schematics-scss-migrate": "^2.3.17",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

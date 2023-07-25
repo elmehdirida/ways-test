@@ -17,7 +17,7 @@ import * as moment from 'moment';
     selector: 'ways-test-contact-dialog',
     standalone: true,
     templateUrl: './contact-dialog.component.html',
-    styleUrls: ['./contact-dialog.component.css'],
+    styleUrls: ['./contact-dialog.component.scss'],
     imports: [CommonModule,
         InputUiComponent,
         MatCardModule,

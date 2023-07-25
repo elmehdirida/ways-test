@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './date-block.component.html',
-  styleUrls: ['./date-block.component.css'],
+  styleUrls: ['./date-block.component.scss'],
 })
 export class DateBlockComponent {
   @Input() contact! : string [];

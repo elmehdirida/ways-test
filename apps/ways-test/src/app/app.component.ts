@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home/home.component';
     standalone: true,
     selector: 'ways-test-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+    styleUrls: ['./app.component.scss'],
     imports: [RouterModule, PrincipalComponent, MatNativeDateModule, DataAccessModule, HomeComponent]
 })
 export class AppComponent  {

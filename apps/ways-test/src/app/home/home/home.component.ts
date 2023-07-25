@@ -13,7 +13,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
   standalone: true,
   imports: [CommonModule, UiModule, CardLetterComponent, MatButtonModule, RouterLink, MatPaginatorModule, MatProgressSpinnerModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit{
     isLoading: boolean = true;

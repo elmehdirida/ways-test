@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './lines.component.html',
-  styleUrls: ['./lines.component.css'],
+  styleUrls: ['./lines.component.scss'],
 })
 export class LinesComponent implements OnInit{
   @Input() addresses! : string [];

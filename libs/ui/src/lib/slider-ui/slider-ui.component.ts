@@ -8,7 +8,7 @@ import {MatRadioModule} from "@angular/material/radio";
   standalone: true,
   imports: [CommonModule, MatSlideToggleModule, MatRadioModule],
   templateUrl: './slider-ui.component.html',
-  styleUrls: ['./slider-ui.component.css'],
+  styleUrls: ['./slider-ui.component.scss'],
 })
 export class SliderUiComponent {
   @Input() enable : boolean=false;

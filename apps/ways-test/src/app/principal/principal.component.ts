@@ -23,7 +23,7 @@ import {FormControl, FormGroup} from "@angular/forms";
     selector: 'ways-test-principal',
     standalone: true,
     templateUrl: './principal.component.html',
-    styleUrls: ['./principal.component.css'],
+    styleUrls: ['./principal.component.scss'],
   imports: [
     CommonModule,
     SliderUiComponent,
@@ -52,7 +52,6 @@ export class PrincipalComponent implements OnInit{
   letter! : Letter
   contactInfoCopy! :string[];
   AddressReceiverCopy! : string[]
-  currentDate = new Date();
 
   letterForm = new FormGroup({
     senderAddressControl : new FormControl(),
@@ -142,7 +141,7 @@ export class PrincipalComponent implements OnInit{
   this.letterForm.markAllAsTouched()
       if(this.letter.senderAddress !== '' && this.letter.body !==''){
         if (this.letter.id !==0) {
-            this.letterService.updateletter(this.letter).subscribe(
+          this.letterService.updateletter(this.letter).subscribe(
             updatedLetter => {
               alert('Letter updated :' + updatedLetter.id);
               this.router.navigateByUrl("");
@@ -154,12 +153,7 @@ export class PrincipalComponent implements OnInit{
             }
           );
         } else {
-          if(this.letter.contact.length === 0)
-          {
-            this.letter.contact=[]
-            this.letter.contact[0] = `${this.currentDate.getMonth() + 1}.${this.currentDate.getDate()}.${this.currentDate.getFullYear()}`;
-            this.letter.contact[1] = ""
-          }
+          console.log(this.letter.id)
           this.letterService.addletter(this.letter).subscribe(
             addedLetter => {
               alert('Letter added:' + addedLetter.id);
@@ -179,4 +173,6 @@ export class PrincipalComponent implements OnInit{
   deleteData(){
     this.data.deleteLetterData()
   }
+
+
 }

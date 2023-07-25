@@ -101,6 +101,19 @@
       "contact": [],
       "footNote": "",
       "id": 7
+    },
+    {
+      "senderAddress": "test",
+      "receiverAddress": [],
+      "subject": "",
+      "body": "test",
+      "contact": [
+        "7.24.2023",
+        ""
+      ],
+      "footNote": "",
+      "id": 8,
+      "navigationId": 10
     }
   ]
 }
