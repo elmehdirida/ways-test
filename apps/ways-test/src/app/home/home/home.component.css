@@ -1,4 +1,5 @@
 .card{
+    position: relative;
     width: 1056px;
     height: 1000px;
     background: #FFF;
@@ -65,6 +66,7 @@
   }
 
   .letters-container ways-test-card-letter {
+    position: relative;
     width: calc((100% - 80px) / 3);
   }
 
@@ -80,4 +82,10 @@
   font-size: 18px;
   color: red;
   padding: 20px;
+}
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
