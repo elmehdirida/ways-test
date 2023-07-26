@@ -6,6 +6,7 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Letter, LetterService } from '@ways-test/data-access';
 import { RouterLink } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'ways-test-home',
@@ -18,6 +19,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     RouterLink,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule
+    
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

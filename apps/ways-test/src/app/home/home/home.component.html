@@ -1,11 +1,12 @@
-<div class="card ">
-    <div class="title">My Letters
-      <div class="div-button">
+<div class="card">
+  <div class="title">
+    My Letters
+    <div class="div-button">
       <button mat-button color="primary" class="add-new-button">
         <div class="button-text" routerLink="letter/new">ADD NEW LETTER</div>
       </button>
-      </div>
     </div>
+  </div>
 
   <div class="letters-container">
     <div *ngIf="isLoading; else lettersContent" class="spinner-container">
@@ -17,18 +18,20 @@
         No letters available at the moment.
       </div>
       <div *ngFor="let cardComponent of displayedCardComponents">
-        <ways-test-card-letter [routerLink]="['/letter',cardComponent.letter.id]" [state]="cardComponent.letter" [letter]="cardComponent.letter"></ways-test-card-letter>
+        <ways-test-card-letter
+          [routerLink]="['/letter', cardComponent.letter.id]"
+          [state]="cardComponent.letter"
+          [letter]="cardComponent.letter"
+        ></ways-test-card-letter>
       </div>
     </ng-template>
   </div>
 </div>
 <div class="pagination">
-    <mat-paginator
+  <mat-paginator
     [length]="totalItems"
     [pageSize]="itemsPerPage"
     [pageSizeOptions]="pageSizeOptions"
     (page)="onPageChange($event)"
-    ></mat-paginator>
+  ></mat-paginator>
 </div>
-
-

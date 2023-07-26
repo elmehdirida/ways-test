@@ -37,37 +37,25 @@ $dark-palette: (
   )
 );
 
-// Define the primary and accent palettes for the dark theme
 $dark-theme-primary: mat.define-palette($dark-palette);
 $dark-theme-accent: mat.define-palette($dark-palette);
 
-// Create the dark theme object
 $dark-theme: mat.define-dark-theme((
   color: (
     primary: $dark-theme-primary,
     accent: $dark-theme-accent,
   )
 ));
-
-// Include the dark theme styles for core and all components
 @include mat.all-component-themes($dark-theme);
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-// @include mat.all-component-themes($dark-theme-theme);
-
-/* You can add global styles to this file, and also import other style files */
-
 
 html, body { height: 100%; background-color: mat.get-color-from-palette($dark-theme-primary,50);}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
-mat-card {
-  background: white;
+div{
+  color: mat.get-color-from-palette($dark-theme-primary,A100);
 }
-mat-card-header {
-  color: aliceblue;
-  
+
+button{
+  color: mat.get-color-from-palette($dark-theme-primary,A100);
+  background-color: #424242;
 }
