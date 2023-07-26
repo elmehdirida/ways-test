@@ -114,6 +114,31 @@
       "footNote": "",
       "id": 8,
       "navigationId": 10
+    },
+    {
+      "senderAddress": "Beni Mellal",
+      "receiverAddress": [],
+      "subject": "Interview",
+      "body": "any",
+      "contact": [
+        "7.5.2023",
+        "Mohsine hajjar"
+      ],
+      "footNote": "just come!",
+      "id": 9
+    },
+    {
+      "senderAddress": "Beni Mellal",
+      "receiverAddress": [],
+      "subject": "Interview",
+      "body": "any",
+      "contact": [
+        "7.5.2023",
+        "Mohsine hajjar"
+      ],
+      "footNote": "just come!",
+      "id": 10,
+      "navigationId": 4
     }
   ]
 }

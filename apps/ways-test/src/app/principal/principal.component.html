@@ -5,7 +5,7 @@
   </div>
   <div *ngIf="letter.id!==0" class="letter">Letter {{letter.id}}</div>
   <div *ngIf="letter.id==0" class="letter" style="  margin-left:220px ;">New Letter</div>
-  <ways-test-slider-ui (newP)="changeMode($event)" [enable]="preview" (change)="onDarkModeSwitched($event)" class="slider"></ways-test-slider-ui>
+  <ways-test-slider-ui (newP)="changeMode($event)"  [enable]="preview" (change)="onDarkModeSwitched($event)" class="slider"></ways-test-slider-ui>
     <div class="save-btn-div">
       <button mat-button class="save-btn" (click)="saveLetter()"><p class="save-btn-text">SAVE</p></button>
     </div>
