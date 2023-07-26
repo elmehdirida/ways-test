@@ -21,27 +21,20 @@
     padding-left: 8px;
     padding-right: 6px;
     margin-left: 718px;
-    background: #1976D2;
     border-radius: 10px;
     justify-content: flex-start;
     align-items: flex-start;
     display: inline-flex;
 }
 .add-new-button{
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 6px;
-    background: #1976D2;
-    padding-right: 8px;
-    justify-content: flex-start;
+  padding: 4px 8px 4px 6px;
+  justify-content: flex-start;
     display: flex;
     border: none;
 }
 
 .button-text{
-   color: white;
     font-size: 14px;
-    font-family: Roboto;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 16px;

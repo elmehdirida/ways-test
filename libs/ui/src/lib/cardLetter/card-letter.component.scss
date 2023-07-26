@@ -3,7 +3,6 @@
     cursor: pointer;
     width: 258px;
     height: 128px;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
     border-radius: 4px;
     flex-direction: column;
     justify-content: flex-start;
@@ -13,10 +12,7 @@
 
 .card-header{
     align-self: stretch;
-    padding-top: 14px;
-    padding-bottom: 12px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 14px 16px 12px;
     justify-content: flex-start;
     align-items: center;
     display: inline-flex;
@@ -25,7 +21,6 @@
 .header{
     align-self: stretch;
     font-size: 20px;
-    font-family: Roboto;
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0.15px;
@@ -35,7 +30,6 @@
 .sub-head{
     align-self: stretch;
     font-size: 14px;
-    font-family: Roboto;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.25px;
@@ -54,9 +48,8 @@
 
 
 .subject{
-    width: 226px; 
+    width: 226px;
     font-size: 14px;
-    font-family: Roboto;
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0.10px;
