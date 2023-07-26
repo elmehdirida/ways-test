@@ -13,7 +13,13 @@ import { HomeComponent } from './home/home/home.component';
     imports: [RouterModule, PrincipalComponent, MatNativeDateModule, DataAccessModule, HomeComponent]
 })
 export class AppComponent  {
+  isDarkTheme = true;
   constructor() {}
 
   title = 'ways-test';
+
+
+  onThemeChange(theme: any) {
+    this.isDarkTheme = theme;
+  }
 }

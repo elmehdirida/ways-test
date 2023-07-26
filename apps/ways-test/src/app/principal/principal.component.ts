@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {
   DateBlockComponent, DatepickerComponent,
@@ -43,6 +43,8 @@ import {FormControl, FormGroup} from "@angular/forms";
   ]
 })
 export class PrincipalComponent implements OnInit{
+
+  @Output() readonly darkModeSwitched = new EventEmitter<boolean>();
   preview : boolean=false;
   isReq = true;
   sender="Sender address";
@@ -173,6 +175,15 @@ export class PrincipalComponent implements OnInit{
   deleteData(){
     this.data.deleteLetterData()
   }
+
+
+  onDarkModeSwitched($event: Event) {
+    const target = $event.target as HTMLInputElement;
+    if (target) {
+      this.darkModeSwitched.emit(target.checked);
+    }
+  }
+  
 
 
 }

@@ -1,8 +1,8 @@
+
 .card{
     cursor: pointer;
     width: 258px;
     height: 128px;
-    background: white;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
     border-radius: 4px;
     flex-direction: column;
@@ -12,7 +12,7 @@
 }
 
 .card-header{
-     align-self: stretch;
+    align-self: stretch;
     padding-top: 14px;
     padding-bottom: 12px;
     padding-left: 16px;
@@ -24,7 +24,6 @@
 
 .header{
     align-self: stretch;
-    color: rgba(0, 0, 0, 0.87);
     font-size: 20px;
     font-family: Roboto;
     font-weight: 500;
@@ -35,7 +34,6 @@
 
 .sub-head{
     align-self: stretch;
-    color: rgba(0, 0, 0, 0.87);
     font-size: 14px;
     font-family: Roboto;
     font-weight: 400;
@@ -56,7 +54,7 @@
 
 
 .subject{
-    width: 226px; color: rgba(0, 0, 0, 0.60);
+    width: 226px; 
     font-size: 14px;
     font-family: Roboto;
     font-weight: 500;

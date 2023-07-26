@@ -29,7 +29,7 @@
       "subject": "Example Subject 2",
       "body": "Consectetur adipiscing elit.",
       "footNote": "Example Footnote 2",
-      "navigationId": 5
+      "navigationId": 2
     },
     {
       "id": 3,
@@ -91,7 +91,7 @@
       ],
       "footNote": "By me",
       "id": 6,
-      "navigationId": 22
+      "navigationId": 2
     },
     {
       "senderAddress": "Mohsine",
