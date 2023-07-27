@@ -50,8 +50,9 @@ $dark-theme: mat.define-dark-theme((
 .dark-theme{
   @include mat.all-component-themes($dark-theme);
   height: 100%;
-  background-color: mat.get-color-from-palette($dark-theme-primary,50);
-  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: mat.get-color-from-palette($dark-theme-primary,50)!important;
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 
   div{
     color: mat.get-color-from-palette($dark-theme-primary,A100);
