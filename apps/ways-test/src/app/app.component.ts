@@ -18,7 +18,6 @@ import {ThemeChangeService} from "../assets/service/themeChangeService";
   imports: [RouterModule, PrincipalComponent, MatNativeDateModule, DataAccessModule, HomeComponent, NgClass, MatSelectModule, NgForOf, FormsModule, CardLetterComponent]
 })
 export class AppComponent implements OnInit{
-  @Output() mainTheme = new EventEmitter<string>();
   constructor(private themeService : ThemeChangeService) {}
 
   title = 'ways-test';
@@ -42,10 +41,9 @@ export class AppComponent implements OnInit{
 
   setTheme(newtheme: any) {
     this.themeService.setTheme(newtheme)
-    this.mainTheme.emit(newtheme)
   }
 
   ngOnInit(): void {
-    this.currentTheme = this.themeService.getTheme()
+  this.currentTheme = 'dark-theme';
   }
 }
