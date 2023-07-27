@@ -1,49 +1,110 @@
 <div class="header-div">
-  <div class="back-to-preview-div"  routerLink="" (click)="deleteData()">
+  <div class="back-to-preview-div" routerLink="" (click)="deleteData()">
     <mat-icon fontIcon="keyboard_backspace"></mat-icon>
-    <button class="flat-btn" mat-flat-button><p class="back-to-preview">BACK TO OVERVIEW</p></button>
+    <button class="flat-btn" mat-flat-button>
+      <p class="back-to-preview">BACK TO OVERVIEW</p>
+    </button>
   </div>
-  <div *ngIf="letter.id!==0" class="letter">Letter {{letter.id}}</div>
-  <div *ngIf="letter.id==0" class="letter" style="  margin-left:220px ;">New Letter</div>
-  <ways-test-slider-ui (newP)="changeMode($event)"  [enable]="preview" (change)="onDarkModeSwitched($event)" class="slider"></ways-test-slider-ui>
-    <div class="save-btn-div">
-      <button mat-flat-button color="primary" class="save-btn" (click)="saveLetter()"><p class="save-btn-text">SAVE</p></button>
-    </div>
+  <div *ngIf="letter.id !== 0" class="letter">Letter {{ letter.id }}</div>
+  <div *ngIf="letter.id == 0" class="letter" style="margin-left: 220px">
+    New Letter
+  </div>
+  <ways-test-slider-ui
+    (newP)="changeMode($event)"
+    [enable]="preview"
+    class="slider"
+  ></ways-test-slider-ui>
+  <div class="save-btn-div">
+    <button
+      mat-flat-button
+      color="primary"
+      class="save-btn"
+      (click)="saveLetter()"
+    >
+      <p class="save-btn-text">SAVE</p>
+    </button>
+  </div>
 </div>
-  <mat-card  *ngIf="!preview" class="general-card mat-mdc-elevation-specific mat-elevation-z2">
-  <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
-  <ways-test-input-ui class="input-sender-address" [value]="letter.senderAddress"  [placeHolder]="sender" [control]="letterForm.controls.senderAddressControl"
-  [required]="isReq" (onChangeValue)="setSenderAdd($event)"></ways-test-input-ui>
-  <ways-test-lines style="width: 471px" [addresses]="letter.receiverAddress" (click)="openDialog()"></ways-test-lines>
-  <ways-test-date-block style="width: 471px" [contact]="letter.contact" (click)="openContactDialog()"></ways-test-date-block>
-  <ways-test-input-ui [placeHolder]="subject" class="input-subject"  [value]="letter.subject" (onChangeValue)="setSubject($event)" ></ways-test-input-ui>
-  <ways-test-text-area class="text-body"  [value]="letter.body" [placeHolder]="body" [required]="isReq" (onChangeValue)="setBody($event)" [control]="letterForm.controls.bodyControl"
+<mat-card
+  *ngIf="!preview"
+  class="general-card mat-mdc-elevation-specific mat-elevation-z2"
+>
+  <img
+    class="logo"
+    ngSrc="../../assets/W-AYS%20Logo.jpg"
+    height="32"
+    width="117"
+    alt=""
+  />
+  <ways-test-input-ui
+    class="input-sender-address"
+    [value]="letter.senderAddress"
+    [placeHolder]="sender"
+    [control]="letterForm.controls.senderAddressControl"
+    [required]="isReq"
+    (onChangeValue)="setSenderAdd($event)"
+  ></ways-test-input-ui>
+  <ways-test-lines
+    style="width: 471px"
+    [addresses]="letter.receiverAddress"
+    (click)="openDialog()"
+  ></ways-test-lines>
+  <ways-test-date-block
+    style="width: 471px"
+    [contact]="letter.contact"
+    (click)="openContactDialog()"
+  ></ways-test-date-block>
+  <ways-test-input-ui
+    [placeHolder]="subject"
+    class="input-subject"
+    [value]="letter.subject"
+    (onChangeValue)="setSubject($event)"
+  ></ways-test-input-ui>
+  <ways-test-text-area
+    class="text-body"
+    [value]="letter.body"
+    [placeHolder]="body"
+    [required]="isReq"
+    (onChangeValue)="setBody($event)"
+    [control]="letterForm.controls.bodyControl"
   ></ways-test-text-area>
 
-
-
-  <ways-test-input-ui [placeHolder]="footnote" [value]="letter.footNote"  class="input-footnote" (onChangeValue)="setFootNote($event)"></ways-test-input-ui>
+  <ways-test-input-ui
+    [placeHolder]="footnote"
+    [value]="letter.footNote"
+    class="input-footnote"
+    (onChangeValue)="setFootNote($event)"
+  ></ways-test-input-ui>
 </mat-card>
-<mat-card *ngIf="preview" class="preview-card mat-mdc-elevation-specific mat-elevation-z2">
-  <img class="logo" ngSrc="../../assets/W-AYS%20Logo.jpg" height="32" width="117" alt="">
+<mat-card
+  *ngIf="preview"
+  class="preview-card mat-mdc-elevation-specific mat-elevation-z2"
+>
+  <img
+    class="logo"
+    ngSrc="../../assets/W-AYS%20Logo.jpg"
+    height="32"
+    width="117"
+    alt=""
+  />
   <div class="preview-sender-div">
-    <u class="preview-sender">{{letter.senderAddress}}</u>
+    <u class="preview-sender">{{ letter.senderAddress }}</u>
   </div>
   <div class="preview-add">
-      <div class="preview-add-line" *ngFor="let add of letter.receiverAddress">{{add}} </div>
+    <div class="preview-add-line" *ngFor="let add of letter.receiverAddress">
+      {{ add }}
+    </div>
   </div>
   <div class="preview-contact-div">
-      <div class="preview-contact-line" *ngIf="letter.contact.length !==0">
-        <p>Date:  {{letter.contact[0]}}</p>
-        <p>Contact Person:  {{letter.contact[1]}}</p>
+    <div class="preview-contact-line" *ngIf="letter.contact.length !== 0">
+      <p>Date: {{ letter.contact[0] }}</p>
+      <p>Contact Person: {{ letter.contact[1] }}</p>
     </div>
   </div>
   <div class="preview-subject-div">
-    <div class="preview-subject-line">{{letter.subject}}</div>
+    <div class="preview-subject-line">{{ letter.subject }}</div>
   </div>
   <div class="preview-body-div">
-    <div class="preview-body-line">{{letter.body}}</div>
+    <div class="preview-body-line">{{ letter.body }}</div>
   </div>
 </mat-card>
-
-

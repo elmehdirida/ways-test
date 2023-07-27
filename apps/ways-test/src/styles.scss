@@ -1,24 +1,22 @@
-
 @use '@angular/material' as mat;
 
 @include mat.core();
 
-
-$dark-palette: (
-  50: #424242,
-  100: #303030,
-  200: #212121,
-  300: #121212,
-  400: #0d0d0d,
-  500: #000000,
-  600: #000000,
-  700: #000000,
-  800: #000000,
-  900: #000000,
-  A100: #ffffff,
-  A200: #ffffff,
-  A400: #ffffff,
-  A700: #ffffff,
+$custom-palette: (
+  50: #eef4ff,
+  100: #cfdfff,
+  200: #a1bbff,
+  300: #7396ff,
+  400: #4d7aff,
+  500: #2660ff,
+  600: #2257e6,
+  700: #1c4ecb,
+  800: #1744b0,
+  900: #0e3390,
+  A100: #d2deff,
+  A200: #9faaff,
+  A400: #6c77ff,
+  A700: #5360ff,
   contrast: (
     50: #000000,
     100: #000000,
@@ -32,26 +30,29 @@ $dark-palette: (
     900: #ffffff,
     A100: #000000,
     A200: #000000,
-    A400: #000000,
-    A700: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
   )
 );
 
-$dark-theme-primary: mat.define-palette($dark-palette);
-$dark-theme-accent: mat.define-palette($dark-palette);
+$custom-theme-primary: mat.define-palette($custom-palette);
+$custom-theme-accent: mat.define-palette($custom-palette);
 
-$dark-theme: mat.define-dark-theme((
+$custom-light-theme: mat.define-light-theme((
   color: (
-    primary: $dark-theme-primary,
-    accent: $dark-theme-accent,
+    primary: $custom-theme-primary,
+    accent: $custom-theme-accent
   )
 ));
-@include mat.all-component-themes($dark-theme);
 
-html, body { height: 100%; background-color: mat.get-color-from-palette($dark-theme-primary,50);}
+@include mat.all-component-themes($custom-light-theme);
+
+html, body { height: 100%; background-color: mat.get-color-from-palette($custom-theme-primary, 50); }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-div{
-  color: mat.get-color-from-palette($dark-theme-primary,A100);
+.custom-component {
+  background-color: mat.get-color-from-palette($custom-theme-primary, 100);
+  color: mat.get-color-from-palette($custom-theme-primary, 700);
 }
+
 
