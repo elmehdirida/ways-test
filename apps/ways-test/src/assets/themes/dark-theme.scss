@@ -46,13 +46,19 @@ $dark-theme: mat.define-dark-theme((
     accent: $dark-theme-accent,
   )
 ));
-@include mat.all-component-themes($dark-theme);
 
-html, body { height: 100%; background-color: mat.get-color-from-palette($dark-theme-primary,50);}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.dark-theme{
+  @include mat.all-component-themes($dark-theme);
+  height: 100%;
+  background-color: mat.get-color-from-palette($dark-theme-primary,50);
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 
-div{
-  color: mat.get-color-from-palette($dark-theme-primary,A100);
+  div{
+    color: mat.get-color-from-palette($dark-theme-primary,A100);
+  }
 }
+
+
+
 
 

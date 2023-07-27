@@ -1,1 +1,14 @@
+<mat-form-field>
+  <mat-select [(ngModel)]="currentTheme">
+    <mat-option
+      *ngFor="let theme of themes"
+      [value]="theme.value">
+      {{theme.label}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div [ngClass]="currentTheme">
 <router-outlet></router-outlet>
+</div>
+

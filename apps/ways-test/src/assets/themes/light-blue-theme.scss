@@ -44,15 +44,8 @@ $custom-light-theme: mat.define-light-theme((
     accent: $custom-theme-accent
   )
 ));
-
-@include mat.all-component-themes($custom-light-theme);
-
-html, body { height: 100%; background-color: mat.get-color-from-palette($custom-theme-primary, 50); }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.custom-component {
-  background-color: mat.get-color-from-palette($custom-theme-primary, 100);
-  color: mat.get-color-from-palette($custom-theme-primary, 700);
+.blue-light-theme{
+  @include mat.all-component-themes($custom-light-theme);
+  height: 100%; background-color: mat.get-color-from-palette($custom-theme-primary, 50);
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-
