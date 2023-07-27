@@ -20,7 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatFormFieldModule
-    
+
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
   itemsPerPage: number = 15;
   pageSizeOptions: number[] = [5, 10, 15];
   displayedCardComponents: CardLetterComponent[] = [];
-
   constructor(private letterService: LetterService) {}
 
   ngOnInit(): void {

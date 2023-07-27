@@ -17,7 +17,7 @@
       <div *ngIf="letters.length === 0" class="no-letters-message">
         No letters available at the moment.
       </div>
-      <div *ngFor="let cardComponent of displayedCardComponents">
+      <div  *ngFor="let cardComponent of displayedCardComponents">
         <ways-test-card-letter
           [routerLink]="['/letter', cardComponent.letter.id]"
           [state]="cardComponent.letter"

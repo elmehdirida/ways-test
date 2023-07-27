@@ -1,8 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PrincipalComponent } from './principal/principal.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import { DataAccessModule, LetterService } from '@ways-test/data-access';
+import { DataAccessModule,  } from '@ways-test/data-access';
 import { HomeComponent } from './home/home/home.component';
 import {NgClass, NgForOf} from "@angular/common";
 import {MatSelectModule} from "@angular/material/select";
@@ -44,6 +44,6 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-  this.currentTheme = 'dark-theme';
+  this.currentTheme = this.themeService.getTheme();
   }
 }
