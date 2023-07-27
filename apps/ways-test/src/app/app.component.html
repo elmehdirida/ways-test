@@ -1,4 +1,5 @@
-<mat-form-field>
+<div [ngClass]="currentTheme">
+<mat-form-field >
   <mat-select [(ngModel)]="currentTheme" (ngModelChange) ="setTheme($event)">
     <mat-option
       *ngFor="let theme of themes"
@@ -8,7 +9,7 @@
   </mat-select>
 </mat-form-field>
 
-<div [ngClass]="currentTheme">
+<div >
 <router-outlet></router-outlet>
 </div>
-
+</div>
