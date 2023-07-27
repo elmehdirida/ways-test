@@ -1,4 +1,5 @@
-<mat-card class="dialog-card">
+<div [ngClass]="dialogTheme">
+<mat-card  class="dialog-card">
   <div style="display: inline-flex">
     <p class="dialog-title">Edit receiver address</p>
     <mat-icon class="close_24px" (click)="onCloseDialog()">clear</mat-icon>
@@ -29,3 +30,4 @@
     </div>
   </div>
 </mat-card>
+</div>

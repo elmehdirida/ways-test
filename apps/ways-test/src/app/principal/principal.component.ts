@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import {
   DateBlockComponent,
@@ -22,6 +22,7 @@ import {
   LetterService,
 } from '@ways-test/data-access';
 import { FormControl, FormGroup } from '@angular/forms';
+import {ThemeChangeService} from "../../assets/service/themeChangeService";
 
 @Component({
   selector: 'ways-test-principal',
@@ -47,6 +48,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class PrincipalComponent implements OnInit {
   @Output() readonly darkModeSwitched = new EventEmitter<boolean>();
+  @Input() theme = ""
   preview: boolean = false;
   isReq = true;
   sender = 'Sender address';
@@ -65,7 +67,8 @@ export class PrincipalComponent implements OnInit {
     public dialog: MatDialog,
     private data: DataSharingService,
     private letterService: LetterService,
-    private router: Router
+    private router: Router ,
+    private themeService : ThemeChangeService
   ) {}
 
   ngOnInit(): void {
@@ -90,6 +93,7 @@ export class PrincipalComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddressDialogComponent, {
       data: {
+        theme : this.themeService.getTheme(),
         addressList: this.AddressReceiverCopy,
       },
     });
@@ -105,6 +109,7 @@ export class PrincipalComponent implements OnInit {
   openContactDialog(): void {
     const dialogRef = this.dialog.open(ContactDialogComponent, {
       data: {
+        theme : this.themeService.getTheme(),
         contactInfo: this.contactInfoCopy,
       },
     });

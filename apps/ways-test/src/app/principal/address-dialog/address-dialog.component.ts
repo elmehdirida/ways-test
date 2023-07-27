@@ -18,6 +18,7 @@ export class AddressDialogComponent implements OnInit{
   newList : string[]=[]
   oldList : string []=[]
   newListCopy :string[]=[]
+  dialogTheme = ""
   ngOnInit(): void {
     if (this.data.addressList)
     {
@@ -25,9 +26,13 @@ export class AddressDialogComponent implements OnInit{
       this.oldList = [...this.newList]
       this.newListCopy = [...this.newList]
 
-    }  }
+    }
+    if(this.data.theme){
+      this.dialogTheme = this.data.theme
+    }
+  }
   constructor(public dialogRef : MatDialogRef<AddressDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: { addressList: string[] }) {
+              @Inject(MAT_DIALOG_DATA) public data: { addressList: string[] , theme :string}) {
   }
 
 
