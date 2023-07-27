@@ -1,9 +1,5 @@
 
 @use '@angular/material' as mat;
-
-@include mat.core();
-
-
 $dark-palette: (
   50: #424242,
   100: #303030,
@@ -52,10 +48,8 @@ $dark-theme: mat.define-dark-theme((
   height: 100%;
   background-color: mat.get-color-from-palette($dark-theme-primary,50);
   margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: mat.get-color-from-palette($dark-theme-primary,A100);
 
-  div{
-    color: mat.get-color-from-palette($dark-theme-primary,A100);
-  }
 }
 
 

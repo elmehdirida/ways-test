@@ -1,5 +1,5 @@
 <mat-form-field>
-  <mat-select [(ngModel)]="currentTheme">
+  <mat-select [(ngModel)]="currentTheme" (ngModelChange) ="setTheme($event)">
     <mat-option
       *ngFor="let theme of themes"
       [value]="theme.value">

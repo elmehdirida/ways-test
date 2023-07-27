@@ -39,9 +39,11 @@ formattedDateInit! : string;
 dateString : Date = new Date(this.formattedDateInit);
 unsavedChanges = false;
 updatedContactList: string[] = [];
+dialogTheme = ""
 
 
 ngOnInit(): void {
+  this.dialogTheme = this.data.theme
     this.contactListCopy = this.data.contactInfo
     this.updatedContactList= [...this.data.contactInfo];
 
@@ -58,7 +60,7 @@ ngOnInit(): void {
 
 
 constructor(public dialogRef : MatDialogRef<ContactDialogComponent>
-  ,@Inject(MAT_DIALOG_DATA) public data: { contactInfo: string[] }) {
+  ,@Inject(MAT_DIALOG_DATA) public data: { contactInfo: string[] , theme :string}) {
   }
 
 
@@ -66,7 +68,7 @@ constructor(public dialogRef : MatDialogRef<ContactDialogComponent>
   save() {
     if (this.unsavedChanges) {
       if (this.updatedContactList[0] === undefined || this.updatedContactList[0] === '') {
-        
+
         this.updatedContactList[0] = `${this.currentDate.getMonth() + 1}.${this.currentDate.getDate()}.${this.currentDate.getFullYear()}`;
 
       }
