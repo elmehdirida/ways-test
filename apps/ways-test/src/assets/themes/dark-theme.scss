@@ -34,7 +34,7 @@ $dark-palette: (
 );
 
 $dark-theme-primary: mat.define-palette($dark-palette);
-$dark-theme-accent: mat.define-palette($dark-palette);
+$dark-theme-accent: mat.define-palette($dark-palette,200);
 
 $dark-theme: mat.define-dark-theme((
   color: (
@@ -42,14 +42,12 @@ $dark-theme: mat.define-dark-theme((
     accent: $dark-theme-accent,
   )
 ));
-
 .dark-theme{
   @include mat.all-component-themes($dark-theme);
-  height: 100%;
   background-color: mat.get-color-from-palette($dark-theme-primary,50);
-  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   color: mat.get-color-from-palette($dark-theme-primary,A100);
-
 }
 
 

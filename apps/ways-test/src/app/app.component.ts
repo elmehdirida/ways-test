@@ -35,6 +35,10 @@ export class AppComponent implements OnInit{
       label: 'blue-light',
       value: 'blue-light-theme',
     },
+    {
+      label: 'green',
+      value: 'my-green-theme',
+    },
 
   ]
 

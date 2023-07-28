@@ -1,1 +1,59 @@
 
+
+@use '@angular/material' as mat;
+$my-green-palette: (
+  50 : #effbea,
+  100 : #d8f5cb,
+  200 : #beefa8,
+  300 : #a4e985,
+  400 : #91e46b,
+  500 : #7ddf51,
+  600 : #75db4a,
+  700 : #6ad740,
+  800 : #60d237,
+  900 : #4dca27,
+  A100 : #ffffff,
+  A200 : #ddffd4,
+  A400 : #b5ffa1,
+  A700 : #a1ff88,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+
+$my-green-theme-primary: mat.define-palette($my-green-palette);
+$my-green-theme-accent: mat.define-palette($my-green-palette,200);
+
+$my-green-theme: mat.define-light-theme((
+  color: (
+    primary: $my-green-theme-primary,
+    accent: $my-green-theme-accent,
+  )
+));
+
+.my-green-theme{
+  @include mat.all-component-themes($my-green-theme);
+  background-color: mat.get-color-from-palette($my-green-theme-primary,50);
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: mat.get-color-from-palette($my-green-theme-primary,900);
+}
+
+
+
+
+
