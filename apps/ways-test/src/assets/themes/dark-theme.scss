@@ -44,7 +44,7 @@ $dark-theme: mat.define-dark-theme((
 ));
 .dark-theme{
   @include mat.all-component-themes($dark-theme);
-  background-color: mat.get-color-from-palette($dark-theme-primary,50);
+  background-color: mat.get-color-from-palette($dark-theme-primary,100);
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: mat.get-color-from-palette($dark-theme-primary,A100);
