@@ -4,12 +4,11 @@ import {Injectable} from "@angular/core";
   providedIn: 'root'
 })
 export  class ThemeChangeService {
-  currentTheme = ""
    setTheme(theme:string){
-    this.currentTheme =theme
+     localStorage.setItem("theme",theme)
   }
 
-   getTheme():string{
-    return this.currentTheme
+   getTheme():any{
+     return localStorage.getItem("theme")
   }
 }
