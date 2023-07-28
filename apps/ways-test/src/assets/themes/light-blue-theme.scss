@@ -45,7 +45,7 @@ $custom-light-theme: mat.define-light-theme((
   )
 ));
 .blue-light-theme{
-  @include mat.all-component-themes($custom-light-theme);
+  @include mat.all-component-colors($custom-light-theme);
   height: 100%;
   background-color: mat.get-color-from-palette($custom-theme-primary, 50);
   margin: 0;
