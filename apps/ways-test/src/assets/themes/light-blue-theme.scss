@@ -36,7 +36,7 @@ $custom-palette: (
 );
 
 $custom-theme-primary: mat.define-palette($custom-palette);
-$custom-theme-accent: mat.define-palette($custom-palette);
+$custom-theme-accent: mat.define-palette($custom-palette,200);
 
 $custom-light-theme: mat.define-light-theme((
   color: (
