@@ -47,7 +47,7 @@ $my-green-theme: mat.define-light-theme((
 ));
 
 .my-green-theme{
-  @include mat.all-component-themes($my-green-theme);
+  @include mat.all-component-colors($my-green-theme);
   background-color: mat.get-color-from-palette($my-green-theme-primary,50);
   margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   color: mat.get-color-from-palette($my-green-theme-primary,900);
