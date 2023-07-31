@@ -49,5 +49,6 @@ $custom-light-theme: mat.define-light-theme((
   height: 100%;
   background-color: mat.get-color-from-palette($custom-theme-primary, 50);
   margin: 0;
+  color: mat.get-color-from-palette($custom-palette,900);
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
