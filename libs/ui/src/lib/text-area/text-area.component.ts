@@ -1,16 +1,16 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatInputModule} from "@angular/material/input";
-import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'ways-test-text-area',
   standalone: true,
-  imports: [MatInputModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule ,MatInputModule, FormsModule, ReactiveFormsModule],
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.scss'],
 })
-export class TextAreaComponent {
+export class TextAreaComponent  implements OnInit{
   @Input() placeHolder: string = '';
   @Input() value : string=''
   @Input() type : string = 'text'
@@ -18,7 +18,10 @@ export class TextAreaComponent {
   @Output() onChangeValue = new EventEmitter<string>()
   @Input() control  = new FormControl
 
-  onChange(){
-    this.onChangeValue.emit(this.value);
+  ngOnInit(): void {
+    this.control.setValue(this.value);
   }
+  onChange(){
+    this.value = this.control.value;
+    this.onChangeValue.emit(this.value);  }
 }

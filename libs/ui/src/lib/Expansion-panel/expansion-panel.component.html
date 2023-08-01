@@ -1,0 +1,18 @@
+<mat-accordion multi>
+  <div>
+    <ways-test-divider></ways-test-divider>
+    <mat-expansion-panel hideToggle [class.mat-elevation-z0]="true"
+                         (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>{{ panelOpenState ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+          <p>{{panelTitle}}</p>
+        </mat-panel-title>
+        <mat-tab-nav-panel ><span [matBadge]="elementsCount" matBadgeOverlap="false" matBadgePosition="before"></span>
+        </mat-tab-nav-panel>
+      </mat-expansion-panel-header>
+      <p>{{content}}</p>
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>

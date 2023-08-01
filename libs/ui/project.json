@@ -38,7 +38,8 @@
       "executor": "@storybook/angular:start-storybook",
       "options": {
         "styles": [
-          "@angular/material/prebuilt-themes/deeppurple-amber.css"
+          "@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "node_modules/material-design-icons/iconfont/material-icons.css"
         ],
         "port": 4400,
         "configDir": "libs/ui/.storybook",
