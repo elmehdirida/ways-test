@@ -6,7 +6,7 @@ import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angula
 @Component({
   selector: 'ways-test-text-area',
   standalone: true,
-  imports: [CommonModule, MatInputModule, FormsModule, ReactiveFormsModule],
+  imports: [MatInputModule, FormsModule, ReactiveFormsModule],
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.scss'],
 })

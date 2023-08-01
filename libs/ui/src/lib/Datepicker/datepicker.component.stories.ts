@@ -1,12 +1,16 @@
-import { Meta } from '@storybook/angular';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {Meta, moduleMetadata} from '@storybook/angular';
 import { DatepickerComponent } from './datepicker.component';
 import { CommonModule } from '@angular/common';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export default {
   title: 'DatepickerComponent',
   component: DatepickerComponent,
-  imports: [CommonModule, BrowserAnimationsModule],
+  decorators : [
+    moduleMetadata({
+    imports: [CommonModule,BrowserAnimationsModule],
+  }),
+  ]
 } as Meta<DatepickerComponent>;
 
 export const Primary = {
