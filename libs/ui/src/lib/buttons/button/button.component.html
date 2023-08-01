@@ -84,7 +84,7 @@
   href="https://fonts.googleapis.com/icon?family=Material+Icons"
 />
 
- <button
+<button
   mat-button
   [color]="color"
   [attr.disabled]="disabled ? true : null"
@@ -92,21 +92,26 @@
   [ngSwitch]="icon"
 >
   <ng-container *ngSwitchCase="'add'">
-    <mat-icon>add</mat-icon> {{ label }}
+    <div style="display: flex; align-items: center; justify-content: center">
+      <mat-icon style="padding-right: 6px">add</mat-icon> {{ label }}
+    </div>
   </ng-container>
   <ng-container *ngSwitchCase="'textWithIcon'">
     <mat-icon>more_vert</mat-icon>
   </ng-container>
   <ng-container *ngSwitchCase="'textWithBadge'">
-    <mat-icon
-      matBadge="{{ badge }}"
-      matBadgePosition="before"
-      matBadgeSize="small"
-      [matBadgeColor]="color"
-    >
-      add
-    </mat-icon>
-    {{ label }}
+    <div style="display: flex; align-items: center; justify-content: center">
+      <mat-icon
+        style="padding-right: 6px"
+        matBadge="{{ badge }}"
+        matBadgePosition="before"
+        matBadgeSize="small"
+        [matBadgeColor]="color"
+      >
+        add
+      </mat-icon>
+      {{ label }}
+    </div>
   </ng-container>
   <ng-container *ngSwitchDefault>
     {{ label }}

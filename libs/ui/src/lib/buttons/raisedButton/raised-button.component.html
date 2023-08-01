@@ -11,10 +11,9 @@
   [ngSwitch]="icon"
 >
   <ng-container *ngSwitchCase="'add'">
-   <div style=" display: flex;
-   align-items: center; 
-   justify-content: center;"> <mat-icon>add </mat-icon> 
-    {{ label }}</div>
+    <div style="display: flex; align-items: center; justify-content: center">
+      <mat-icon style="padding-right: 6px">add </mat-icon> {{ label }}
+    </div>
   </ng-container>
   <ng-container *ngSwitchDefault>
     {{ label }}
