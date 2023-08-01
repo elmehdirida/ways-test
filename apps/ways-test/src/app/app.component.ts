@@ -43,8 +43,8 @@ export class AppComponent implements OnInit{
   ]
 
 
-  setTheme(newtheme: any) {
-    this.themeService.setTheme(newtheme)
+  setTheme(theme: string) {
+    this.themeService.setTheme(theme)
   }
 
   ngOnInit(): void {
