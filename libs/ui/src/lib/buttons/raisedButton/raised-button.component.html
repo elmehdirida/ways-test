@@ -1,0 +1,22 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+
+<button
+  mat-raised-button
+  [color]="color"
+  [attr.disabled]="disabled ? true : null"
+  [attr.type]="type"
+  [ngSwitch]="icon"
+>
+  <ng-container *ngSwitchCase="'add'">
+   <div style=" display: flex;
+   align-items: center; 
+   justify-content: center;"> <mat-icon>add </mat-icon> 
+    {{ label }}</div>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    {{ label }}
+  </ng-container>
+</button>

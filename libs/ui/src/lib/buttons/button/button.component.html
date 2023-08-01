@@ -1,0 +1,114 @@
+<!-- <link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+
+<button
+  mat-raised-button
+  [disabled]="disabled"
+  class="button"
+  [color]="color"
+  (click)="handleOnClick()"
+>
+  {{ label }}
+</button>
+
+<hr />
+
+<button
+  mat-fab
+  extended
+  [disabled]="disabled"
+  [color]="color"
+  (click)="handleOnClick()"
+>
+  <mat-icon>add</mat-icon>
+  {{ label }}
+</button>
+
+<hr />
+
+<button
+  mat-button
+  [disabled]="disabled"
+  [color]="color"
+  (click)="handleOnClick()"
+>
+  {{ label }}
+</button>
+
+<hr />
+
+<button
+  mat-button
+  [disabled]="disabled"
+  [color]="color"
+  (click)="handleOnClick()"
+>
+  <mat-icon>add</mat-icon>
+  {{ label }}
+</button>
+
+<hr />
+
+<button
+  mat-button
+  [disabled]="disabled"
+  [color]="color"
+  (click)="handleOnClick()"
+>
+  <mat-icon
+    matBadge="1"
+    matBadgePosition="before"
+    matBadgeSize="small"
+    [matBadgeColor]="color"
+    >add</mat-icon
+  >
+  {{ label }}
+</button>
+
+<hr />
+
+<button
+  mat-icon-button
+  [color]="color"
+  [disabled]="disabled"
+  aria-label="Example icon button with a vertical three dot icon"
+  (click)="handleOnClick()"
+>
+  <mat-icon>more_vert</mat-icon>
+</button> -->
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+
+ <button
+  mat-button
+  [color]="color"
+  [attr.disabled]="disabled ? true : null"
+  [attr.type]="type"
+  [ngSwitch]="icon"
+>
+  <ng-container *ngSwitchCase="'add'">
+    <mat-icon>add</mat-icon> {{ label }}
+  </ng-container>
+  <ng-container *ngSwitchCase="'textWithIcon'">
+    <mat-icon>more_vert</mat-icon>
+  </ng-container>
+  <ng-container *ngSwitchCase="'textWithBadge'">
+    <mat-icon
+      matBadge="{{ badge }}"
+      matBadgePosition="before"
+      matBadgeSize="small"
+      [matBadgeColor]="color"
+    >
+      add
+    </mat-icon>
+    {{ label }}
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    {{ label }}
+  </ng-container>
+</button>
