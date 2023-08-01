@@ -14,6 +14,11 @@ export * from './lib/Datepicker/datepicker.component';
 
 export * from './lib/cardLetter/card-letter.component';
 
+export * from './lib/Expansion-panel/expansion-panel.component';
+
+export * from './lib/dividers/Divider/divider.component';
+
+export * from './lib/dividers/Side-nav-divider/side-nav-divider.component';
 export * from './lib/buttons/button/button.component';
 
 export * from './lib/buttons/button/button.component.stories';

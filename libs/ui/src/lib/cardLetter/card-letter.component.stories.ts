@@ -10,5 +10,13 @@ export const Primary = {
   render: (args: CardLetterComponent) => ({
     props: args,
   }),
-  args: {},
+  args: {
+    letter :    {
+      id: 1,
+      receiverAddress: [
+        "456 Elm St, City"
+      ],
+      subject: "Example Subject 1",
+    }
+  },
 };
