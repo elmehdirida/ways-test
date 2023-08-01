@@ -14,3 +14,4 @@ export * from './lib/Datepicker/datepicker.component';
 
 export * from './lib/cardLetter/card-letter.component';
 
+export * from './lib/button/button.component';
