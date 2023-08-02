@@ -1,4 +1,8 @@
 <mat-selection-list [color]="color">
+  <!-- I've imported ThemePalette from @angular/material/core
+    and set the color property to the 'primary' value. You can
+    replace 'primary' with any other valid ThemePalette value,
+    such as 'accent' or 'warn'. -->
   <mat-list-option
     checkboxPosition="before"
     *ngFor="let shoe of typesOfShoes; let i = index"
