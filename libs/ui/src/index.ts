@@ -29,3 +29,5 @@ export * from './lib/lists/list/list.component';
 
 export * from './lib/lists/selectionList/selection-list.component';
 export * from './lib/lists/actionList/actionList.component';
+
+export * from './lib/menu/menu.component';

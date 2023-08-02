@@ -15,7 +15,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 export class ButtonComponent {
   @Input() label!: string;
   @Input() icon!: string;
-  @Input() color : 'primary' | 'accent' | 'warn' = 'primary';
+  @Input() color= 'primary';
   @Input() disabled = false;
   @Input() type : 'button' | 'submit' | 'reset' = 'button';
   @Input() badge  = 0;
