@@ -19,6 +19,7 @@ export * from './lib/Expansion-panel/expansion-panel.component';
 export * from './lib/dividers/Divider/divider.component';
 
 export * from './lib/dividers/Side-nav-divider/side-nav-divider.component';
+
 export * from './lib/buttons/button/button.component';
 
 export * from './lib/buttons/button/button.component.stories';
@@ -28,6 +29,13 @@ export * from './lib/buttons/raisedButton/raised-button.component';
 export * from './lib/lists/list/list.component';
 
 export * from './lib/lists/selectionList/selection-list.component';
+<<<<<<< HEAD
 export * from './lib/lists/actionList/actionList.component';
 
 export * from './lib/menu/menu.component';
+=======
+
+export * from './lib/nativeSelect/native-select.component';
+
+export * from './lib/lists/actionList/action-list.component';
+>>>>>>> refs/remotes/origin/main

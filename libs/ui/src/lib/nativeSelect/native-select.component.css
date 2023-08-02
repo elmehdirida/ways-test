@@ -1,0 +1,13 @@
+mat-form-field{
+  width: 280px;
+}
+
+select{
+  width: 180px;
+}
+
+.option-title{
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+}

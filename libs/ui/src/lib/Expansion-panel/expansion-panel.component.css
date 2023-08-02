@@ -1,4 +1,18 @@
 .mat-badge-content{
   background: rgba(0, 0, 0, 0.6);
-  margin-top:20px ;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text-space {
+  margin-right: 8px;
+}
+
+.badge-right {
+  position: absolute;
+  top: 50%;
+  right: 38px;
 }
