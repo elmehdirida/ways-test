@@ -13,4 +13,9 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class MenuComponent {
   @Input() color= 'primary';
+  @Input() menuOptions = ['Menu Item 1', 'Menu Item 2'];
+
+  handleClick(option: any, index: number) {
+    console.log(option, index);
+  }
 }

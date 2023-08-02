@@ -1,22 +1,26 @@
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/>
-
-<mat-list class="example-list-wrapping">
-  <mat-list-item style="display: flex; align-items: center" lines="3">
-    <span matListItemTitle>
-      {{ title }}
-    </span>
-
-    <span matListItemLine style="width: 356px; ">
-      {{ content }}
-    </span>
-    <mat-icon
-      color="warn"
-      style="margin-left: 80px"
-      class="delete_24px"
-      fontIcon="delete_forever"
-    ></mat-icon>
-  </mat-list-item>
-</mat-list>
+<div>
+  <mat-list class="example-list-wrapping">
+    <mat-list-item
+      style="display: flex; align-items: center"
+      *ngFor="let item of listInformations; let i = index"
+    >
+      <span matListItemTitle>{{ item.title }}</span>
+      <span
+        matListItemLine
+        style="width: 356px; word-wrap: break-word; word-break: break-all"
+        >{{ item.content }}
+      </span>
+      <mat-icon
+        color="warn"
+        style="
+          margin-left: 504px;
+          display: block;
+          cursor: pointer;
+          margin-top: -30px;
+        "
+        class="delete_24px"
+        fontIcon="delete_forever"
+      ></mat-icon>
+    </mat-list-item>
+  </mat-list>
+</div>
