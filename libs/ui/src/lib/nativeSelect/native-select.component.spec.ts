@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NativeSelectComponent } from './native-select.component';
+import { NativeSelectComponent } from '@ways-test/ui';
 
 describe('NativeSelectComponent', () => {
   let component: NativeSelectComponent;
