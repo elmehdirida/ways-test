@@ -8,8 +8,8 @@ export default {
     color: {
       control: 'radio',
       options: ['primary', 'accent', 'warn'],
-    },
-  },
+    }
+},
 } as Meta<SelectionListComponent>;
 
 export const Primary = {
@@ -17,6 +17,16 @@ export const Primary = {
     props: args,
   }),
   args: {
-    typesOfShoes: ['Field name 1', 'Field name 2', 'Field name 3'],
+    typesOfShoes : [
+      'verfügbar', 
+      'reserviert',
+      'nicht verfügbar',
+    ],
+    
+    shoeColors : [
+      {bgColor: '#b5ffd2', textColor: '#00752E'},
+      {bgColor: '#FDF5CA', textColor: '#B44100'},
+      {bgColor: '#FFCDD6', textColor: '#B44100'},
+    ],
   },
 };

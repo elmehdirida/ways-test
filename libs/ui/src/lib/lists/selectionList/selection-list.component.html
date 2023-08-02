@@ -1,8 +1,14 @@
-<mat-selection-list [color]="color" >
-    <mat-list-option *ngFor="let shoe of typesOfShoes">
-      {{shoe}}
-    </mat-list-option>
-  </mat-selection-list>
-  
- 
-  
+<mat-selection-list [color]="color">
+  <mat-list-option
+    checkboxPosition="before"
+    *ngFor="let shoe of typesOfShoes; let i = index"
+  >
+    <div
+      class="row-position"
+      [style.color]="getTextColor(i)"
+      [style.background-color]="getBackgroundColor(i)"
+    >
+      {{ shoe }}
+    </div>
+  </mat-list-option>
+</mat-selection-list>

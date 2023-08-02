@@ -1,0 +1,10 @@
+<mat-selection-list>
+  <mat-list-item
+    *ngFor="let item of items"
+    role="listitem"
+    matRipple
+    (click)="handleClickedItem(item, items.indexOf(item))"
+  >
+    {{ item }}
+  </mat-list-item>
+</mat-selection-list>
