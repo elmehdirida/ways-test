@@ -2,7 +2,7 @@ import { Meta } from '@storybook/angular';
 import { ListComponent } from './list.component';
 
 export default {
-  title: 'ListComponent',
+  title: 'lists/ListComponent',
   component: ListComponent,
 } as Meta<ListComponent>;
 
@@ -11,7 +11,7 @@ export const Primary = {
     props: args,
   }),
   args: {
-    listInformations : [
+    listInformations: [
       {
         title: 'Saved export template 1',
         content:

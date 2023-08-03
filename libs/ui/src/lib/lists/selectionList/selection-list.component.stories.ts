@@ -2,7 +2,7 @@ import { Meta } from '@storybook/angular';
 import { SelectionListComponent } from './selection-list.component';
 
 export default {
-  title: 'SelectionListComponent',
+  title: 'lists/SelectionListComponent',
   component: SelectionListComponent,
   argTypes: {
     color: {

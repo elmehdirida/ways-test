@@ -2,7 +2,7 @@ import { Meta } from '@storybook/angular';
 import { ActionListComponent } from './action-list.component';
 
 export default {
-  title: 'ActionListComponent',
+  title: 'lists/ActionListComponent',
   component: ActionListComponent,
 } as Meta<ActionListComponent>;
 

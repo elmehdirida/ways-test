@@ -2,15 +2,12 @@ import { Meta } from '@storybook/angular';
 import { RaisedButtonComponent } from './raised-button.component';
 
 export default {
-  title: 'RaisedButtonComponent',
+  title: 'Buttons/RaisedButtonComponent',
   component: RaisedButtonComponent,
   argTypes: {
     icon: {
       control: 'radio',
-      options: [
-        '',
-        'add',
-      ],
+      options: ['', 'add'],
     },
     color: {
       control: 'radio',
@@ -19,7 +16,7 @@ export default {
     type: {
       control: 'radio',
       options: ['button', 'submit', 'reset'],
-    }
+    },
   },
 } as Meta<RaisedButtonComponent>;
 
