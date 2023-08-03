@@ -4,7 +4,7 @@ import {CommonModule} from "@angular/common";
 import {MatListModule} from "@angular/material/list";
 
 export default {
-  title: 'SideNavDividerComponent',
+  title: 'Dividers/SideNavDividerComponent',
   component: SideNavDividerComponent,
   decorators : [
     moduleMetadata({

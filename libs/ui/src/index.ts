@@ -30,10 +30,14 @@ export * from './lib/lists/list/list.component';
 
 export * from './lib/lists/selectionList/selection-list.component';
 
+export * from './lib/lists/actionList/action-list.component';
+
 export * from './lib/menu/menu.component';
 
 export * from './lib/nativeSelect/native-select.component';
 
 export * from './lib/lists/actionList/action-list.component';
+
+export * from "./lib/rangeDatePicker/range-date-picker.component";
 
 export * from "./lib/checkbox/checkbox.component";
