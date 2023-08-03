@@ -22,5 +22,6 @@ export const Primary = {
   }),
   args: {
     defaultLabel :'Saved Filter' ,
+    selectOptions : ["Filter Name 1","Filter Name 2","Filter Name 3","Filter Name 4"]
   },
 };

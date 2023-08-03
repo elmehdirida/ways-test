@@ -4,7 +4,7 @@ import {CommonModule} from "@angular/common";
 import {DividersModule} from "../dividers.module";
 
 export default {
-  title: 'DividerComponent',
+  title: 'Dividers/DividerComponent',
   component: DividerComponent,
   decorators : [
     moduleMetadata({

@@ -29,13 +29,13 @@ export * from './lib/buttons/raisedButton/raised-button.component';
 export * from './lib/lists/list/list.component';
 
 export * from './lib/lists/selectionList/selection-list.component';
-<<<<<<< HEAD
-export * from './lib/lists/actionList/actionList.component';
+
+export * from './lib/lists/actionList/action-list.component';
 
 export * from './lib/menu/menu.component';
-=======
 
 export * from './lib/nativeSelect/native-select.component';
 
 export * from './lib/lists/actionList/action-list.component';
->>>>>>> refs/remotes/origin/main
+
+export * from "./lib/rangeDatePicker/range-date-picker.component";
