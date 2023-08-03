@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemePalette } from '@angular/material/core';
-
 @Component({
   selector: 'ways-test-selection-list',
   standalone: true,
@@ -12,34 +11,29 @@ import { ThemePalette } from '@angular/material/core';
   styleUrls: ['./selection-list.component.scss'],
 })
 export class SelectionListComponent {
-  //   typesOfShoes: string[] = ['Field name 1', 'Field name 2', 'Field name 3'];
   @Input() color: ThemePalette = 'primary';
+  @Input() options = ['verfügbar', 'reserviert', 'nicht verfügbar', 'Loafers'];
 
-  //   @Input() backgroundColors: string[] = ['#b5ffd2', '#FDF5CA', '#FFCDD6'];
-
-  // getBackgroundColor(index: number): string {
-  //   return this.backgroundColors[index] || 'transparent';
-  // }
-
-  @Input() typesOfShoes = [
-    'verfügbar',
-    'reserviert',
-    'nicht verfügbar',
-    'Loafers',
-  ];
-
-  @Input() shoeColors = [
+  @Input() optionColors = [
     { bgColor: '#b5ffd2', textColor: '#00752E' },
     { bgColor: '#FDF5CA', textColor: '#B44100' },
     { bgColor: '#FFCDD6', textColor: '#B44100' },
-    { bgColor: 'yellow', textColor: 'orange' },
   ];
 
   getBackgroundColor(i: number) {
-    return this.shoeColors[i].bgColor;
+    if (i < this.optionColors.length) {
+      return this.optionColors[i].bgColor;
+    } else {
+      return '#fff'; 
+    }
   }
 
   getTextColor(i: number) {
-    return this.shoeColors[i].textColor;
+    if (i < this.optionColors.length) {
+      return this.optionColors[i].textColor;
+    } else {
+    
+    return '#000'; 
   }
+}
 }

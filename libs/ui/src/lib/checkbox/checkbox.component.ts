@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
@@ -10,4 +10,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
 })
-export class CheckboxComponent {}
+export class CheckboxComponent {
+  @Input() checked = false;
+  @Input() indeterminate = false;
+  @Input() labelPosition: 'before' | 'after' = 'after';
+  @Input() disabled = false;
+  @Input() color: 'primary' | 'accent' | 'warn' = 'primary';
+}

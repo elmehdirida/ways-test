@@ -1,19 +1,13 @@
 import { Meta } from '@storybook/angular';
-import { SelectionListComponent } from './selection-list.component';
+import { ChipComponent } from './chip.component';
 
 export default {
-  title: 'SelectionListComponent',
-  component: SelectionListComponent,
-  argTypes: {
-    color: {
-      control: 'radio',
-      options: ['primary', 'accent', 'warn'],
-    },
-  },
-} as Meta<SelectionListComponent>;
+  title: 'ChipComponent',
+  component: ChipComponent,
+} as Meta<ChipComponent>;
 
 export const Primary = {
-  render: (args: SelectionListComponent) => ({
+  render: (args: ChipComponent) => ({
     props: args,
   }),
   args: {
