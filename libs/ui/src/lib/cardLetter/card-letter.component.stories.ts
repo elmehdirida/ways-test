@@ -2,8 +2,11 @@ import { Meta } from '@storybook/angular';
 import { CardLetterComponent } from './card-letter.component';
 
 export default {
-  title: 'CardLetterComponent',
+  title: 'Cards/NormalCardComponent',
   component: CardLetterComponent,
+  argTypes: {
+    letter: { control: 'object' },
+  },
 } as Meta<CardLetterComponent>;
 
 export const Primary = {

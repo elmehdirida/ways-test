@@ -1,0 +1,19 @@
+<mat-card class="card">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image">
+      <img [src]="src" alt="Logo">
+    </div>
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="card-content">
+    <img [src]="Imgsrc" alt="Content Image" class="content-image">
+    <p class="content-paragraph">
+      {{content}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="card-actions">
+    <ways-test-button color="primary" label="Button" type="submit"></ways-test-button>
+    <ways-test-button color="accent" label="Button" type="reset"></ways-test-button>
+  </mat-card-actions>
+</mat-card>

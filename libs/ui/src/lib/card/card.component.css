@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 344px;
+  height: 382px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content-image {
+  margin-top: 12px;
+  flex: 1; /* Let the image take the available space above the paragraph */
+  width: 100%;
+}
+
+.content-paragraph {
+  margin-top: 16px; /* Push the paragraph to the bottom */
+}
+
+.header-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.card-actions {
+  margin-top: 16px;
+}

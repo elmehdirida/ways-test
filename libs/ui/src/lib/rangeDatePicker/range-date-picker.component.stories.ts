@@ -4,7 +4,7 @@ import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export default {
-  title: 'RangeDatePickerComponent',
+  title: 'DatePickers/RangeDatePickerComponent',
   component: RangeDatePickerComponent,
   decorators : [
     moduleMetadata({

@@ -52,10 +52,6 @@ export class RangeDatePickerComponent implements OnInit{
     this.newEndDate.emit(this.datePipe.transform(this.dateform.controls.endDateControl.value, 'dd.MM.yyyy'))
   }
 
-  formatDatePicker  (date: Date): string {
-    return this.datePipe.transform(date, 'dd.MM.yyyy') || '';
-  };
-
   parseDatePicker  (text: string): Date {
     const parts = text.split('.');
     if (parts.length === 3) {

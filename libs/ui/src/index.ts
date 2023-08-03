@@ -41,6 +41,12 @@ export * from './lib/lists/actionList/action-list.component';
 export * from './lib/rangeDatePicker/range-date-picker.component';
 
 export * from './lib/checkbox/checkbox.component';
+export * from './lib/card/card.component';
+export * from './lib/rangeDatePicker/range-date-picker.component';
+
+export * from './lib/checkbox/checkbox.component';
 export * from './lib/radio/radio.component';
+
+export * from './lib/Tree/tree.component';
 
 export * from './lib/chip/chip.component';
