@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
 export default {
-  title: 'MenuComponent',
+  title: 'select/MenuComponent',
   component: MenuComponent,
   decorators : [
     moduleMetadata({

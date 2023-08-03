@@ -2,7 +2,7 @@ import { Meta } from '@storybook/angular';
 import { ChipComponent } from './chip.component';
 
 export default {
-  title: 'ChipComponent',
+  title: 'select/ChipComponent',
   component: ChipComponent,
 } as Meta<ChipComponent>;
 

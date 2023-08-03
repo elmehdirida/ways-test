@@ -2,7 +2,7 @@ import { Meta } from '@storybook/angular';
 import { SliderUiComponent } from './slider-ui.component';
 
 export default {
-  title: 'SliderUiComponent',
+  title: 'select/SliderUiComponent',
   component: SliderUiComponent,
 } as Meta<SliderUiComponent>;
 

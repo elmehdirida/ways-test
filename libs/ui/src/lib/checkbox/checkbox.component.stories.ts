@@ -2,7 +2,7 @@ import { Meta } from '@storybook/angular';
 import { CheckboxComponent } from './checkbox.component';
 
 export default {
-  title: 'CheckboxRadio/CheckboxComponent',
+  title: 'select/CheckboxComponent',
   component: CheckboxComponent,
   argTypes: {
     color: { control: 'radio',
@@ -13,8 +13,8 @@ export default {
     options: [true, false] },
     disabled: { control: 'boolean',
     options: [true, false] },
-    
-   
+
+
   },
 } as Meta<CheckboxComponent>;
 

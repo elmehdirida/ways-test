@@ -2,7 +2,7 @@ import { Meta } from '@storybook/angular';
 import { TreeComponent } from './tree.component';
 
 export default {
-  title: 'TreeComponent',
+  title: 'lists/TreeComponent',
   component: TreeComponent,
 } as Meta<TreeComponent>;
 

@@ -7,7 +7,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatBadgeModule} from "@angular/material/badge";
 
 export default {
-  title: 'ExpansionPanelComponent',
+  title: 'lists/ExpansionPanelComponent',
   component: ExpansionPanelComponent,
   argTypes: {
     elementsCount: { control: 'number' },

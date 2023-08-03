@@ -4,7 +4,7 @@ import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export default {
-  title: 'NativeSelectComponent',
+  title: 'select/NativeSelectComponent',
   component: NativeSelectComponent,
   argTypes: {
     defaultLabel: { control: 'text' },

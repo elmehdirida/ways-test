@@ -2,7 +2,7 @@ import { Meta } from '@storybook/angular';
 import { RadioComponent } from './radio.component';
 
 export default {
-  title: 'CheckboxRadio/RadioComponent',
+    title: 'select/RadioComponent',
   component: RadioComponent,
   argTypes: {
     label: { control: 'text', label: 'Label' },
