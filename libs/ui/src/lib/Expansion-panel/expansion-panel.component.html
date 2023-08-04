@@ -9,7 +9,7 @@
           <span class="icon-text-space"></span> <!-- Add this spacer -->
           {{panelTitle}}
         </div>
-        <span matBadge="4" matBadgeColor="warn" matBadgeOverlap="false" class="badge-right"></span>
+        <span [matBadge]="elementsCount" matBadgeColor="warn" matBadgeOverlap="false" class="badge-right"></span>
       </mat-panel-title>
     </mat-expansion-panel-header>
     {{content}}

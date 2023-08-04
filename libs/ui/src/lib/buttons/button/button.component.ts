@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ThemePalette } from '@angular/material/core';
 
 
 @Component({
@@ -15,7 +16,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 export class ButtonComponent {
   @Input() label!: string;
   @Input() icon!: string;
-  @Input() color= 'primary';
+  @Input() color:ThemePalette= 'primary';
   @Input() disabled = false;
   @Input() type : 'button' | 'submit' | 'reset' = 'button';
   @Input() badge  = 0;

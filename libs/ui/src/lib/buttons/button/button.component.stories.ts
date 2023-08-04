@@ -30,15 +30,8 @@ export const Primary = {
   args: {
     label: 'Button',
     disabled: false,
+    badge: 0,
   },
 };
 
-// export const InteractiveButton : Story = {
-//   play: async ({ canvasElement }) => {
-//     const canvas = within(canvasElement);
 
-//     // Simulate a click on the button
-//     const button = canvas.getByRole('button');
-//     await userEvent.click(button);
-//   },
-// }
