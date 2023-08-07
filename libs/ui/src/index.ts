@@ -50,3 +50,5 @@ export * from './lib/radio/radio.component';
 export * from './lib/Tree/tree.component';
 
 export * from './lib/chip/chip.component';
+
+export * from './lib/dialog/dialog.component';
