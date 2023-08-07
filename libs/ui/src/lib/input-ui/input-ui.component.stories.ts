@@ -8,7 +8,8 @@ export default {
   title: 'Inputs/InputUiComponent',
   component: InputUiComponent,
   argTypes: {
-    placeHolder: { control: 'text' },
+    onChangeValue : {action : "changed value"},
+    placeHolder: { control: 'text'  },
     value: { control: 'text' },
     required: {
       control: 'boolean',

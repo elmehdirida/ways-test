@@ -6,6 +6,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 export default {
   title: 'DatePickers/DatepickerComponent',
   component: DatepickerComponent,
+  argTypes : {
+    newDate : {action : "new Date"}
+  },
   decorators : [
     moduleMetadata({
     imports: [CommonModule,BrowserAnimationsModule],

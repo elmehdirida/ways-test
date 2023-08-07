@@ -6,6 +6,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 export default {
   title: 'DatePickers/RangeDatePickerComponent',
   component: RangeDatePickerComponent,
+  argTypes : {
+    newStartDate : {action : "start"},
+    newEndDate : {action : "end "}
+  },
   decorators : [
     moduleMetadata({
       imports: [CommonModule,BrowserAnimationsModule],
