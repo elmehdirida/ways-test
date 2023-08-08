@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import {ThemePalette} from "@angular/material/core";
 
 @Component({
   selector: 'ways-test-menu',
@@ -12,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  @Input() color= 'primary';
+  @Input() color:ThemePalette= 'primary';
   @Input() menuOptions = ['Menu Item 1', 'Menu Item 2'];
 
   handleClick(option: any, index: number) {

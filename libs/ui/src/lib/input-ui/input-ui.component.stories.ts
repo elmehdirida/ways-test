@@ -1,8 +1,10 @@
-import { Meta, moduleMetadata } from '@storybook/angular';
+import {applicationConfig, Meta, moduleMetadata} from '@storybook/angular';
 import { InputUiComponent } from './input-ui.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import {importProvidersFrom} from "@angular/core";
+import {HttpClientModule} from "@angular/common/http";
 
 export default {
   title: 'Inputs/InputUiComponent',
@@ -21,8 +23,12 @@ export default {
   },
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, BrowserAnimationsModule, MatIconModule],
+      imports: [CommonModule, MatIconModule],
     }),
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+
   ],
 } as Meta<InputUiComponent>;
 

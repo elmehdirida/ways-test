@@ -7,16 +7,16 @@ import {CardComponent} from "../card/card.component";
 @Component({
   selector: 'ways-test-dialog',
   standalone: true,
-  imports: [CommonModule, MatDialogModule],
+  imports: [CommonModule, MatDialogModule, CardComponent],
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent implements OnInit{
-  @Input() title!: string;
-  @Input() content!: string;
-  @Input() buttons!: any[];
-  component!:  DatepickerComponent;
-
+  @Input() title!: string
+  @Input() content!: string
+  @Input() subtitle!: string
+  @Input() imgSrc! : string
+  @Input() avatarSrc! : string
   ngOnInit() {
     this.openDialog()
   }
@@ -26,7 +26,13 @@ export class DialogComponent implements OnInit{
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CardComponent, {
-      data: {},
+      data: {
+        title: this.title,
+        content: this.content,
+        subtitle: this.subtitle,
+        imgSrc: this.imgSrc,
+        avatarSrc: this.avatarSrc,
+      },
     });
 
     dialogRef.afterClosed().subscribe(result => {

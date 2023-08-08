@@ -1,14 +1,14 @@
 <mat-card class="card">
   <mat-card-header>
-    <div mat-card-avatar class="header-image">
-      <img [src]="src" alt="Logo">
+    <div *ngIf="avatarSrc" mat-card-avatar class="header-image">
+      <img [src]="avatarSrc" alt="Logo">
     </div>
-    <mat-card-title>{{title}}</mat-card-title>
-    <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+    <mat-card-title *ngIf="title">{{title}}</mat-card-title>
+    <mat-card-subtitle *ngIf="subtitle">{{subtitle}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content class="card-content">
-    <img [src]="Imgsrc" alt="Content Image" class="content-image">
-    <p class="content-paragraph ">
+    <img [src]="imgSrc" *ngIf="imgSrc" alt="Content Image" class="content-image">
+    <p  *ngIf="content" class="content-paragraph ">
       {{content}}
     </p>
   </mat-card-content>

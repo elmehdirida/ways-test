@@ -8,6 +8,8 @@ export default {
     title: { control: 'text' },
     subtitle: { control: 'text' },
     content: { control: 'text' },
+    avatarSrc : {control: 'text'},
+    imgSrc : {control: 'text'}
   },
 } as Meta<CardComponent>;
 
@@ -18,6 +20,8 @@ export const Primary = {
   args: {
     title: "Card Title",
     subtitle: "subtitle",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    avatarSrc: "/logo.png",
+    imgSrc : "/logo.png"
   },
 };

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatRadioModule } from '@angular/material/radio';
 import { ThemePalette } from '@angular/material/core';
@@ -15,4 +15,10 @@ export class RadioComponent {
   @Input() disabled = false;
   @Input() color: ThemePalette = 'primary';
   @Input() labelPosition: 'before' | 'after' = 'after';
+  @Output() newStatus  = new EventEmitter<boolean>()
+
+  onCheck (){
+    console.log(true)
+    this.newStatus.emit(true)
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
@@ -16,4 +16,11 @@ export class CheckboxComponent {
   @Input() labelPosition: 'before' | 'after' = 'after';
   @Input() disabled = false;
   @Input() color: 'primary' | 'accent' | 'warn' = 'primary';
+  @Output() newStatus  = new EventEmitter<boolean>()
+
+
+  onCheck (){
+    this.checked = !this.checked
+    this.newStatus.emit(this.checked)
+  }
 }

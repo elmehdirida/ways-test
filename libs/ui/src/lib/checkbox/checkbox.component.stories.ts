@@ -5,6 +5,9 @@ export default {
   title: 'select/CheckboxComponent',
   component: CheckboxComponent,
   argTypes: {
+    checked : {
+      control : 'boolean'
+    },
     color: { control: 'radio',
     options: ['primary', 'accent', 'warn'] },
     labelPosition: { control: 'radio',
@@ -13,6 +16,7 @@ export default {
     options: [true, false] },
     disabled: { control: 'boolean',
     options: [true, false] },
+    newStatus : {action : 'status' , control : 'boolean'}
 
 
   },
