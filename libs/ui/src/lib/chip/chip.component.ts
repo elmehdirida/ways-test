@@ -11,7 +11,7 @@ import { ThemePalette } from '@angular/material/core';
   styleUrls: ['./chip.component.scss'],
 })
 export class ChipComponent {
-  @Input() options = [];
+  @Input() options = [''];
   @Input() color: ThemePalette = 'primary';
   @Input() optionColors = [{ bgColor: '', textColor: '' }];
 

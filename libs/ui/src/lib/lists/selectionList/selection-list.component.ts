@@ -12,12 +12,11 @@ import { ThemePalette } from '@angular/material/core';
 })
 export class SelectionListComponent {
   @Input() color: ThemePalette = 'primary';
-  @Input() options = ['verfügbar', 'reserviert', 'nicht verfügbar', 'Loafers'];
+  @Input() options = [''];
 
   @Input() optionColors = [
-    { bgColor: '#b5ffd2', textColor: '#00752E' },
-    { bgColor: '#FDF5CA', textColor: '#B44100' },
-    { bgColor: '#FFCDD6', textColor: '#B44100' },
+    { bgColor: '', textColor: '' },
+
   ];
 
   getBackgroundColor(i: number) {

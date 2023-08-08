@@ -1,8 +1,6 @@
-<mat-chip-listbox
-  aria-label="chips selection"
-  *ngFor="let option of options; let i = index"
->
+<mat-chip-listbox aria-label="chips selection">
   <mat-chip-option
+    *ngFor="let option of options; let i = index"
     [style.background-color]="getBackgroundColor(i)"
     [style.color]="getTextColor(i)"
   >

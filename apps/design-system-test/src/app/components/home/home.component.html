@@ -1,0 +1,83 @@
+<div class="card">
+  <div class="title">My Form</div>
+
+  <div class="inputs">
+    <ways-test-input-ui
+      [type]="type"
+      [required]="required"
+      [placeHolder]="placeHolder"
+    ></ways-test-input-ui>
+  </div>
+  <ways-test-divider></ways-test-divider>
+  <div class="datePicker">
+    <ways-test-datepicker></ways-test-datepicker>
+  </div>
+  <ways-test-divider></ways-test-divider>
+  <div class="dateRangePicker">
+    <ways-test-range-date-picker></ways-test-range-date-picker>
+  </div>
+  <ways-test-divider></ways-test-divider>
+  <div class="list">
+    <ways-test-list
+      [listInformations]="listInformations"
+      *ngFor="let list of listInformations"
+      [title]="list.title"
+      [content]="list.content"
+    ></ways-test-list>
+  </div>
+  <ways-test-divider></ways-test-divider>
+
+  <div class="list">
+    <ways-test-selection-list
+      [optionColors]="optionColors"
+      [options]="options"
+    ></ways-test-selection-list>
+  </div>
+  <ways-test-divider></ways-test-divider>
+
+  <div class="list">
+    <ways-test-action-list [items]="items"></ways-test-action-list>
+  </div>
+  <ways-test-divider></ways-test-divider>
+
+  <div class="list">
+    <ways-test-native-select
+      [defaultEmptyValue]="defaultEmptyValue"
+      [defaultLabel]="defaultLabel"
+      [selectOptions]="selectOptions"
+    ></ways-test-native-select>
+  </div>
+  <ways-test-divider></ways-test-divider>
+
+  <div class="list">
+    <ways-test-menu [menuOptions]="menuOptions"></ways-test-menu>
+  </div>
+  <ways-test-divider></ways-test-divider>
+
+  <div class="list">
+    <ways-test-chip
+      [optionColors]="chipOptionColors"
+      [options]="chipOptions"
+    ></ways-test-chip>
+  </div>
+  <ways-test-divider></ways-test-divider>
+  <div>
+    <ways-test-expansion-panel
+      [content]="content"
+      [elementsCount]="elementsCount"
+      [panelTitle]="panelTitle"
+    ></ways-test-expansion-panel>
+  </div>
+  <ways-test-divider></ways-test-divider>
+  <div>
+    <ways-test-radio
+      [label]="label"
+      [color]="color"
+      [disabled]="disabled"
+      [labelPosition]="labelPosition"
+    ></ways-test-radio>
+  </div>
+  <div style="margin-top: 300px">
+    <ways-test-divider></ways-test-divider>
+  </div>
+</div>

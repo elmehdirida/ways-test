@@ -19,7 +19,12 @@
           "apps/design-system-test/src/favicon.ico",
           "apps/design-system-test/src/assets"
         ],
-        "styles": ["apps/design-system-test/src/styles.css"],
+        "styles": [
+                "apps/design-system-test/src/styles.css",
+      
+                "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+                "node_modules/material-design-icons/iconfont/material-icons.css"
+              ],
         "scripts": []
       },
       "configurations": {
@@ -96,6 +101,11 @@
       "options": {
         "buildTarget": "design-system-test:build"
       }
+    }
+  },
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   }
 }
