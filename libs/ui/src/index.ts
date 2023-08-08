@@ -51,4 +51,6 @@ export * from './lib/Tree/tree.component';
 
 export * from './lib/chip/chip.component';
 
+export * from './lib/Table/Table.component';
+
 export * from './lib/dialog/dialog.component';

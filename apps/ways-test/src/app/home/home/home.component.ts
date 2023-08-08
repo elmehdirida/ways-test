@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardLetterComponent, UiModule } from '@ways-test/ui';
+import {CardLetterComponent, TableComponent, UiModule} from '@ways-test/ui';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Letter, LetterService } from '@ways-test/data-access';
@@ -11,17 +11,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
   selector: 'ways-test-home',
   standalone: true,
-  imports: [
-    CommonModule,
-    UiModule,
-    CardLetterComponent,
-    MatButtonModule,
-    RouterLink,
-    MatPaginatorModule,
-    MatProgressSpinnerModule,
-    MatFormFieldModule
+    imports: [
+        CommonModule,
+        UiModule,
+        CardLetterComponent,
+        MatButtonModule,
+        RouterLink,
+        MatPaginatorModule,
+        MatProgressSpinnerModule,
+        MatFormFieldModule,
+        TableComponent
 
-  ],
+    ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.letterService.getLetters().subscribe(
+      { next :
       (value) => {
         this.letters = value;
         this.totalItems = this.letters.length;
@@ -49,10 +51,12 @@ export class HomeComponent implements OnInit {
         );
         this.isLoading = false;
       },
-      (error) => {
-        this.isLoading = false;
-        console.error(error);
+        error :
+              (error) => {
+              this.isLoading = false;
+              console.error(error);
       }
+  }
     );
   }
 

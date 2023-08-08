@@ -1,7 +1,8 @@
-import { Component,Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatDialogRef } from '@angular/material/dialog';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {DatepickerComponent} from "../Datepicker/datepicker.component";
+import {CardComponent} from "../card/card.component";
 
 @Component({
   selector: 'ways-test-dialog',
@@ -10,11 +11,27 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
 })
-export class DialogComponent {
+export class DialogComponent implements OnInit{
   @Input() title!: string;
   @Input() content!: string;
   @Input() buttons!: any[];
+  component!:  DatepickerComponent;
 
+  ngOnInit() {
+    this.openDialog()
+  }
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>) { }
+  constructor(public dialog: MatDialog) {
+   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CardComponent, {
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
 }

@@ -1,0 +1,17 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Loop through the displayedColumns array to generate columns -->
+  <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef> {{ column | titlecase }} </th>
+    <td mat-cell *matCellDef="let element">
+      <!-- Handle array values by joining them into a single string -->
+      <ng-container *ngIf="Array.isArray(element[column])">
+        {{ element[column].join(' ') }}
+      </ng-container>
+      <ng-container *ngIf="!Array.isArray(element[column])">
+        {{ element[column] }}
+      </ng-container>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
