@@ -16,7 +16,5 @@ export class DialogComponent {
   @Input() buttons!: any[];
 
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>) {
-    
-   }
+  constructor(public dialogRef: MatDialogRef<DialogComponent>) { }
 }
