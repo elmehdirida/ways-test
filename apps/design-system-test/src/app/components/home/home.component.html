@@ -8,6 +8,20 @@
       [placeHolder]="placeHolder"
     ></ways-test-input-ui>
   </div>
+  <div class="inputs">
+    <ways-test-input-ui
+      type="password"
+      [required]="true"
+      placeHolder="Enter the password"
+    ></ways-test-input-ui>
+  </div>
+  <div class="inputs">
+    <ways-test-input-ui
+      type="search"
+      [required]="false"
+      placeHolder="Search"
+    ></ways-test-input-ui>
+  </div>
   <ways-test-divider></ways-test-divider>
   <div class="datePicker">
     <ways-test-datepicker></ways-test-datepicker>
@@ -61,7 +75,7 @@
     ></ways-test-chip>
   </div>
   <ways-test-divider></ways-test-divider>
-  <div>
+  <div class="list">
     <ways-test-expansion-panel
       [content]="content"
       [elementsCount]="elementsCount"
@@ -69,13 +83,95 @@
     ></ways-test-expansion-panel>
   </div>
   <ways-test-divider></ways-test-divider>
-  <div>
-    <ways-test-radio
-      [label]="label"
-      [color]="color"
-      [disabled]="disabled"
-      [labelPosition]="labelPosition"
-    ></ways-test-radio>
+  <div class="list">
+    <mat-radio-group aria-label="Select an option">
+      <ways-test-radio
+        [label]="label"
+        [color]="color"
+        [disabled]="disabled"
+        [labelPosition]="labelPosition"
+      ></ways-test-radio>
+
+      <ways-test-radio
+        label="label 2"
+        [color]="color"
+        [disabled]="disabled"
+        [labelPosition]="labelPosition"
+      ></ways-test-radio>
+
+      <ways-test-radio
+        label="label 3"
+        [color]="color"
+        [disabled]="disabled"
+        [labelPosition]="labelPosition"
+      ></ways-test-radio>
+
+      <ways-test-radio
+        label="label 4"
+        [color]="color"
+        [disabled]="disabled"
+        [labelPosition]="labelPosition"
+      ></ways-test-radio>
+    </mat-radio-group>
+  </div>
+  <ways-test-divider></ways-test-divider>
+  <mat-selection-list>
+    <div>
+      <ways-test-checkbox
+        [label]="checkboxLabel"
+        class="list"
+        [color]="checkboxColor"
+        [disabled]="checkboxDisabled"
+        [labelPosition]="checkboxLabelPosition"
+        [checked]=true
+        [indeterminate]=false
+      ></ways-test-checkbox>
+    </div>
+    <div>
+        <ways-test-checkbox
+          label="Label Before"
+          class="list"
+          color="accent"
+          [disabled]="checkboxDisabled"
+          labelPosition="before"
+          [checked]="checked"
+          [indeterminate]="indeterminate"
+        ></ways-test-checkbox>
+      </div>
+      <div>
+        <ways-test-checkbox
+          label="Check me!"
+          class="list"
+          color="warn"
+          [disabled]="checkboxDisabled"
+          [labelPosition]="checkboxLabelPosition"
+          [checked]=false
+          [indeterminate]=false
+        ></ways-test-checkbox>
+      </div>
+    
+  </mat-selection-list>
+  <ways-test-divider></ways-test-divider>
+  <div class="button-container">
+    <div class="button">
+      <ways-test-button
+        label="Submit"
+        [disabled]="false"
+        type="button"
+        buttonIcon="done"
+        icon="add"
+      ></ways-test-button>
+    </div>
+    <div class="button">
+      <ways-test-button
+        label="Reset"
+        [disabled]="false"
+        type="reset"
+        buttonIcon="close"
+        icon="add"
+        color="warn"
+      ></ways-test-button>
+    </div>
   </div>
   <div style="margin-top: 300px">
     <ways-test-divider></ways-test-divider>

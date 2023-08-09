@@ -14,9 +14,14 @@ import {
   DividerComponent,
   ExpansionPanelComponent,
   RadioComponent,
+  CheckboxComponent,
+  ButtonComponent,
+  RaisedButtonComponent
 } from '@ways-test/ui';
 import { FormControl } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatListModule } from '@angular/material/list';
 @Component({
   selector: 'ways-test-home',
   standalone: true,
@@ -35,11 +40,17 @@ import { ThemePalette } from '@angular/material/core';
     DividerComponent,
     ExpansionPanelComponent,
     RadioComponent,
+    CheckboxComponent,
+    ButtonComponent,
+    RaisedButtonComponent,
+    MatRadioModule,
+    MatListModule,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  // Input
   placeHolder = 'Test';
   value = '';
   type = 'text';
@@ -57,6 +68,11 @@ export class HomeComponent {
       content:
         'Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X',
     },
+    {
+      title: 'Saved export template 1',
+      content:
+        'Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X',
+    }
   ];
 
   // SelectionList
@@ -107,4 +123,17 @@ export class HomeComponent {
   disabled = false;
   color: ThemePalette = 'accent';
   labelPosition: 'before' | 'after' = 'before';
+
+  // Checkbox
+  checkboxLabel = 'Label after';
+  checked = false;
+  indeterminate = true;
+  checkboxLabelPosition: 'before' | 'after' = 'after';
+  checkboxDisabled = false;
+  checkboxColor: 'primary' | 'accent' | 'warn' = 'primary';
+
+  // Button
+  
+
+  // RaisedButton
 }

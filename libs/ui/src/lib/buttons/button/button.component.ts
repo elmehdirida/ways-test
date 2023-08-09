@@ -20,6 +20,7 @@ export class ButtonComponent {
   @Input() disabled = false;
   @Input() type : 'button' | 'submit' | 'reset' = 'button';
   @Input() badge  = 0;
+  @Input()buttonIcon!: string;
 
  
 }
