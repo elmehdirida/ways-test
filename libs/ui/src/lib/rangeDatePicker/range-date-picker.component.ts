@@ -38,6 +38,7 @@ export class RangeDatePickerComponent implements OnInit{
   }
   @Input() startDefaultDate!: string;
   @Input() endDefaultDate!: string;
+  @Input() placeHolder  = ""
   @Output() newStartDate = new EventEmitter<string | null>();
   @Output() newEndDate = new EventEmitter<string | null>();
 

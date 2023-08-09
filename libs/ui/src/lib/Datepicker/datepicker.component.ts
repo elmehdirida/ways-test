@@ -19,6 +19,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 export class DatepickerComponent implements OnInit{
   @Input() defaultDate!: Date;
   @Input() date = this.defaultDate;
+  @Input() dateLabel!:string
   @Output() newDate = new EventEmitter<Date>();
   dateform = new FormControl(this.defaultDate);
 

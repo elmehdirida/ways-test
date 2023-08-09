@@ -7,8 +7,9 @@ export default {
   title: 'DatePickers/RangeDatePickerComponent',
   component: RangeDatePickerComponent,
   argTypes : {
-    newStartDate : {action : "start"},
-    newEndDate : {action : "end "}
+    //newStartDate : {action : "start" , control : 'date'},
+   // newEndDate : {action : "end " , control : 'date'} ,
+    placeHolder : {control : "text"}
   },
   decorators : [
     moduleMetadata({
@@ -21,5 +22,7 @@ export const Primary = {
   render: (args: RangeDatePickerComponent) => ({
     props: args,
   }),
-  args: {},
+  args: {
+    placeHolder: "test"
+  },
 };

@@ -4,6 +4,9 @@ import { ChipComponent } from './chip.component';
 export default {
   title: 'select/ChipComponent',
   component: ChipComponent,
+  argTypes:{
+    selectedValueEvent : {action : 'selected value'}
+  },
 } as Meta<ChipComponent>;
 
 export const Primary = {

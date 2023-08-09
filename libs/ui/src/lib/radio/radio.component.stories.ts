@@ -16,5 +16,8 @@ export const Primary = {
   render: (args: RadioComponent) => ({
     props: args,
   }),
-  args: {},
+  args: {
+    label : 'radio',
+    disabled: true
+  },
 };

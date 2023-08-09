@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 export default {
   title: 'DialogComponent',
   component: DialogComponent,
-  decorators: [
-    moduleMetadata({
-      imports: [CommonModule],
-    }),
-  ],
+  argTypes: {
+    title: { control: 'text' },
+    subtitle: { control: 'text' },
+    content: { control: 'text' },
+    avatarSrc : {control: 'text'},
+    imgSrc : {control: 'text'}
+  },
 } as Meta<DialogComponent>;
 
 export const Primary = {
@@ -17,5 +19,10 @@ export const Primary = {
     props: args,
   }),
   args: {
+    title: 'titlee',
+    content: 'content',
+    subtitle : "subtitle",
+    imgSrc : "logo.png",
+    avatarSrc : "logo.png"
   },
 };

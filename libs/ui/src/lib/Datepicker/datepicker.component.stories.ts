@@ -7,7 +7,7 @@ export default {
   title: 'DatePickers/DatepickerComponent',
   component: DatepickerComponent,
   argTypes : {
-    newDate : {action : "new Date"}
+    dateLabel : {type : "string"}
   },
   decorators : [
     moduleMetadata({
@@ -20,5 +20,7 @@ export const Primary = {
   render: (args: DatepickerComponent) => ({
     props: args,
   }),
-  args: {},
+  args: {
+    dateLabel : "chose a date "
+  },
 };
