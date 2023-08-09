@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 
@@ -11,8 +11,9 @@ import { MatListModule } from '@angular/material/list';
 })
 export class ActionListComponent {
   @Input() items!: string[];
+  @Output() selectedValueClicked = new EventEmitter<[string,number]>();
 
-  handleClickedItem(item: any, index: number) {
-    console.log('Item clicked, is located at the positon : ', item, index);
+  handleClickedItem(item: string, index: number) {
+    this.selectedValueClicked.emit([item,index])
   }
 }

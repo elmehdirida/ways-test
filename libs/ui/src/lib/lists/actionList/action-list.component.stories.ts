@@ -1,9 +1,13 @@
-import { Meta } from '@storybook/angular';
+import {Meta} from '@storybook/angular';
 import { ActionListComponent } from './action-list.component';
+
 
 export default {
   title: 'lists/ActionListComponent',
   component: ActionListComponent,
+  argTypes : {
+    selectedValueClicked : {action : "selected"}
+  }
 } as Meta<ActionListComponent>;
 
 export const Primary = {

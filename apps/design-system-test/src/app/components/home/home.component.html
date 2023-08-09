@@ -34,9 +34,6 @@
   <div class="list">
     <ways-test-list
       [listInformations]="listInformations"
-      *ngFor="let list of listInformations"
-      [title]="list.title"
-      [content]="list.content"
     ></ways-test-list>
   </div>
   <ways-test-divider></ways-test-divider>
@@ -149,7 +146,7 @@
           [indeterminate]=false
         ></ways-test-checkbox>
       </div>
-    
+
   </mat-selection-list>
   <ways-test-divider></ways-test-divider>
   <div class="button-container">

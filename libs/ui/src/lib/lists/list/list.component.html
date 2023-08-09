@@ -1,5 +1,5 @@
 <div>
-  <mat-list class="example-list-wrapping">
+  <mat-list>
     <mat-list-item
       style="display: flex; align-items: center"
       *ngFor="let item of listInformations; let i = index"
@@ -10,7 +10,7 @@
         style="width: 356px; word-wrap: break-word; word-break: break-all"
         >{{ item.content }}
       </span>
-      <mat-icon
+      <mat-icon (click)="deleteItem(i)"
         color="warn"
         style="
           margin-left: 504px;
@@ -23,4 +23,13 @@
       ></mat-icon>
     </mat-list-item>
   </mat-list>
+  <button mat-flat-button color="primary" (click)="showInputs()" *ngIf="!showInput || listInformations.length==0">+</button>
+  <mat-form-field appearance="outline" *ngIf="showInput">
+    <input matInput  placeholder="New Item Title" [(ngModel)]="newItemTitle">
+  </mat-form-field>
+  <mat-form-field appearance="outline" *ngIf="showInput">
+    <input matInput placeholder="New Item Content" [(ngModel)]="newItemContent">
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="addNewItem()" *ngIf="showInput">save</button>
+
 </div>

@@ -6,7 +6,7 @@ import { HomeComponent } from './components/home/home.component';
   imports: [HomeComponent, RouterModule],
   selector: 'ways-test-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'design-system-test';

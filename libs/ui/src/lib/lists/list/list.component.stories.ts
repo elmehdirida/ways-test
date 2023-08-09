@@ -1,9 +1,16 @@
-import { Meta } from '@storybook/angular';
+import {applicationConfig, Meta} from '@storybook/angular';
 import { ListComponent } from './list.component';
+import {importProvidersFrom} from "@angular/core";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export default {
   title: 'lists/ListComponent',
   component: ListComponent,
+  decorators :[
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+    }),
+  ],
 } as Meta<ListComponent>;
 
 export const Primary = {
