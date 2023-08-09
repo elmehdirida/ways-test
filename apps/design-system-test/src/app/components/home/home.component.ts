@@ -16,7 +16,7 @@ import {
   RadioComponent,
   CheckboxComponent,
   ButtonComponent,
-  RaisedButtonComponent
+  RaisedButtonComponent,
 } from '@ways-test/ui';
 import { FormControl } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
@@ -72,12 +72,12 @@ export class HomeComponent {
       title: 'Saved export template 1',
       content:
         'Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X',
-    }
+    },
   ];
 
   // SelectionList
 
-  options = ['verfügbar', 'reserviert', 'nicht verfügbar', 'Loafers'];
+  options = ['verfügbar', 'reserviert', 'nicht verfügbar', ];
 
   optionColors = [
     { bgColor: '#b5ffd2', textColor: '#00752E' },
@@ -86,7 +86,7 @@ export class HomeComponent {
   ];
 
   // ActionList
-  items = ['Frauen', 'Mode', 'Geht doch!', 'Mohsine'];
+  items = ['Frauen', 'Mode', 'Geht doch!'];
 
   // NativeSelect
   defaultLabel = 'Saved Filter';
@@ -133,7 +133,6 @@ export class HomeComponent {
   checkboxColor: 'primary' | 'accent' | 'warn' = 'primary';
 
   // Button
-  
 
   // RaisedButton
 }

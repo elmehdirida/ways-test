@@ -1,20 +1,54 @@
-<mat-selection-list [color]="color">
-  <!-- I've imported ThemePalette from @angular/material/core
+<div>
+  <mat-selection-list [color]="color">
+    <!-- I've imported ThemePalette from @angular/material/core
     and set the color property to the 'primary' value. You can
     replace 'primary' with any other valid ThemePalette value,
     such as 'accent' or 'warn'. -->
-  <mat-list-option
-    checkboxPosition="before"
-    *ngFor="let option of options; let i = index"
-  >
-    <div
-      class="row-position"
-      [style.color]="getTextColor(i)"
-      [style.background-color]="getBackgroundColor(i)"
+    <mat-list-option
+      checkboxPosition="before"
+      *ngFor="let option of options; let i = index"
     >
-      {{ option }}
-    </div>
-  </mat-list-option>
-</mat-selection-list>
-
-
+      <div
+        class="row-position"
+        [style.color]="getTextColor(i)"
+        [style.background-color]="getBackgroundColor(i)"
+      >
+        {{ option }}
+      </div>
+    </mat-list-option>
+  </mat-selection-list>
+  <button
+    mat-flat-button
+    color="primary"
+    (click)="HandleshowForm()"
+    *ngIf="!showForm || options.length == 0"
+  >
+    +
+  </button>
+  <div *ngIf="showForm" class="form">
+    <mat-form-field>
+      <input matInput placeholder="New Item Title" [(ngModel)]="newOption" />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder=" color of the text "
+        [ngxMatColorPicker]="picker"
+        [(ngModel)]="newTextColor"
+      />
+      <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+      <ngx-mat-color-picker #picker [color]="color"></ngx-mat-color-picker>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder=" background color"
+        [ngxMatColorPicker]="picker1"
+        [(ngModel)]="newBgColor"
+      />
+      <ngx-mat-color-toggle matSuffix [for]="picker1"></ngx-mat-color-toggle>
+      <ngx-mat-color-picker #picker1 [color]="color"></ngx-mat-color-picker>
+    </mat-form-field>
+    <button mat-flat-button color="primary" style="height: 56px; width: 80px;" (click)="addNewItem()">save</button>
+  </div>
+</div>
