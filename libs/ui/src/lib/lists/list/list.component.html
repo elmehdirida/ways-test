@@ -23,6 +23,7 @@
       ></mat-icon>
     </mat-list-item>
   </mat-list>
+  <div class="newInput">
   <button mat-flat-button color="primary" (click)="showInputs()" *ngIf="!showInput || listInformations.length==0">+</button>
   <mat-form-field appearance="outline" *ngIf="showInput">
     <input matInput  placeholder="New Item Title" [(ngModel)]="newItemTitle">
@@ -30,6 +31,8 @@
   <mat-form-field appearance="outline" *ngIf="showInput">
     <input matInput placeholder="New Item Content" [(ngModel)]="newItemContent">
   </mat-form-field>
-  <button mat-flat-button color="primary" (click)="addNewItem()" *ngIf="showInput">save</button>
-
+    <div class="btn">
+  <button  mat-flat-button color="primary" (click)="addNewItem()" *ngIf="showInput">save</button>
+    </div>
+</div>
 </div>

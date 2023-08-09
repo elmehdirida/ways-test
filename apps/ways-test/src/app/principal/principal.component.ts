@@ -47,7 +47,6 @@ import {ThemeChangeService} from "../../assets/service/themeChangeService";
   ],
 })
 export class PrincipalComponent implements OnInit {
-  @Output() readonly darkModeSwitched = new EventEmitter<boolean>();
   @Input() theme = ""
   preview: boolean = false;
   isReq = true;

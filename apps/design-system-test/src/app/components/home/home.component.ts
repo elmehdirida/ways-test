@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   InputUiComponent,
@@ -18,7 +18,7 @@ import {
   ButtonComponent,
   RaisedButtonComponent,
 } from '@ways-test/ui';
-import { FormControl } from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
@@ -45,22 +45,31 @@ import { MatListModule } from '@angular/material/list';
     RaisedButtonComponent,
     MatRadioModule,
     MatListModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   // Input
-  placeHolder = 'Test';
+  placeHolder = 'text Input';
   value = '';
   type = 'text';
   required = false;
-  control = new FormControl();
 
-  // Datepicker
-
-  // DateRangePicker
-
+  formGroup = new FormGroup({
+    inputTextValue: new FormControl(),
+    inputPasswordValue: new FormControl(),
+    inputSearchValue: new FormControl(),
+    datePickerValue: new FormControl(),
+    rangeDatePickerValue: new FormGroup({
+      startDateControl :new  FormControl(),
+      endDateControl : new FormControl()
+    }),
+    inputValue: new FormControl(),
+  })
+  ngOnInit() {
+  }
   // List
   listInformations = [
     {
@@ -134,5 +143,15 @@ export class HomeComponent {
 
   // Button
 
+
   // RaisedButton
+  onFormSubmit() {
+    if (this.formGroup.valid) {
+      const formValues = this.formGroup.value;
+      // Process form values, perform actions, etc.
+      console.log(formValues);
+    } else {
+      // Handle form validation errors
+    }
+  }
 }

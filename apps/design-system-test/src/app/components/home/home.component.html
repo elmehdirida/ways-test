@@ -1,18 +1,20 @@
-<div class="card">
+<form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
+<div class="card" >
   <div class="title">My Form</div>
-
   <div class="inputs">
     <ways-test-input-ui
       [type]="type"
       [required]="required"
       [placeHolder]="placeHolder"
+      [control]="formGroup.controls.inputTextValue"
     ></ways-test-input-ui>
   </div>
   <div class="inputs">
     <ways-test-input-ui
       type="password"
       [required]="true"
-      placeHolder="Enter the password"
+      placeHolder="password"
+      [control]="formGroup.controls.inputPasswordValue"
     ></ways-test-input-ui>
   </div>
   <div class="inputs">
@@ -20,15 +22,22 @@
       type="search"
       [required]="false"
       placeHolder="Search"
+      [control]="formGroup.controls.inputSearchValue"
     ></ways-test-input-ui>
   </div>
   <ways-test-divider></ways-test-divider>
   <div class="datePicker">
-    <ways-test-datepicker></ways-test-datepicker>
+    <ways-test-datepicker
+      dateLabel="chose a date"
+        [control]="formGroup.controls.datePickerValue"
+    ></ways-test-datepicker>
   </div>
   <ways-test-divider></ways-test-divider>
   <div class="dateRangePicker">
-    <ways-test-range-date-picker></ways-test-range-date-picker>
+    <ways-test-range-date-picker
+      placeHolder="chose a range date"
+      [control]="formGroup.controls.rangeDatePickerValue"
+    ></ways-test-range-date-picker>
   </div>
   <ways-test-divider></ways-test-divider>
   <div class="list">
@@ -37,7 +46,6 @@
     ></ways-test-list>
   </div>
   <ways-test-divider></ways-test-divider>
-
   <div class="list">
     <ways-test-selection-list
       [optionColors]="optionColors"
@@ -50,7 +58,6 @@
     <ways-test-action-list [items]="items"></ways-test-action-list>
   </div>
   <ways-test-divider></ways-test-divider>
-
   <div class="list">
     <ways-test-native-select
       [defaultEmptyValue]="defaultEmptyValue"
@@ -59,12 +66,10 @@
     ></ways-test-native-select>
   </div>
   <ways-test-divider></ways-test-divider>
-
   <div class="list">
     <ways-test-menu [menuOptions]="menuOptions"></ways-test-menu>
   </div>
   <ways-test-divider></ways-test-divider>
-
   <div class="list">
     <ways-test-chip
       [optionColors]="chipOptionColors"
@@ -154,7 +159,7 @@
       <ways-test-button
         label="Submit"
         [disabled]="false"
-        type="button"
+        type="submit"
         buttonIcon="done"
         icon="add"
       ></ways-test-button>
@@ -174,3 +179,4 @@
     <ways-test-divider></ways-test-divider>
   </div>
 </div>
+</form>

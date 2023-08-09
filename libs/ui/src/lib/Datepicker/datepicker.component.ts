@@ -21,7 +21,7 @@ export class DatepickerComponent implements OnInit{
   @Input() date = this.defaultDate;
   @Input() dateLabel!:string
   @Output() newDate = new EventEmitter<Date>();
-  dateform = new FormControl(this.defaultDate);
+  @Input() control = new FormControl();
 
 
   OnDateChange(date: Date) {
@@ -31,7 +31,7 @@ export class DatepickerComponent implements OnInit{
 
   ngOnInit(): void {
     if (this.defaultDate) {
-      this.dateform.setValue(this.defaultDate);
+      this.control.setValue(this.defaultDate);
     }
   }
 

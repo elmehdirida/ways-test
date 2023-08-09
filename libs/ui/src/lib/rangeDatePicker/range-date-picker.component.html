@@ -1,6 +1,6 @@
 <mat-form-field>
   <mat-label>{{placeHolder}}</mat-label>
-  <mat-date-range-input  [formGroup]="dateform" [rangePicker]="picker">
+  <mat-date-range-input  [formGroup]="control" [rangePicker]="picker">
     <input  matStartDate placeholder="Start date" formControlName="startDateControl"  (dateChange)="OnDateChange()" [readonly]="true">
     <input  matEndDate placeholder="End date" formControlName="endDateControl" (dateChange)="OnDateChange()" [readonly]="true">
   </mat-date-range-input>

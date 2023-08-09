@@ -41,16 +41,12 @@ export class RangeDatePickerComponent implements OnInit{
   @Input() placeHolder  = ""
   @Output() newStartDate = new EventEmitter<string | null>();
   @Output() newEndDate = new EventEmitter<string | null>();
-
-  dateform = new FormGroup({
-    startDateControl: new FormControl(new Date),
-    endDateControl: new FormControl(new Date),
-  });
+  @Input() control!: FormGroup
 
 
   OnDateChange() {
-    this.newStartDate.emit(this.datePipe.transform(this.dateform.controls.startDateControl.value, 'dd.MM.yyyy'))
-    this.newEndDate.emit(this.datePipe.transform(this.dateform.controls.endDateControl.value, 'dd.MM.yyyy'))
+    this.newStartDate.emit(this.datePipe.transform(this.control.controls["startDateControl"].value, 'dd.MM.yyyy'))
+    this.newEndDate.emit(this.datePipe.transform(this.control.controls["endDateControl"].value, 'dd.MM.yyyy'))
   }
 
   parseDatePicker  (text: string): Date {
@@ -67,10 +63,10 @@ export class RangeDatePickerComponent implements OnInit{
 
   ngOnInit(): void {
     if(this.startDefaultDate){
-      this.dateform.controls.startDateControl.setValue(this.parseDatePicker(this.startDefaultDate))
+      this.control.controls["startDateControl"].setValue(this.parseDatePicker(this.startDefaultDate))
     }
     if(this.endDefaultDate){
-      this.dateform.controls.endDateControl.setValue(this.parseDatePicker(this.endDefaultDate))
+      this.control.controls["sendDateControl"].setValue(this.parseDatePicker(this.endDefaultDate))
     }
   }
 }

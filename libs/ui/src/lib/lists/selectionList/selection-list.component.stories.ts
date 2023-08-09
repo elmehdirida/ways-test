@@ -1,9 +1,17 @@
-import { Meta } from '@storybook/angular';
+import {applicationConfig, Meta} from '@storybook/angular';
 import { SelectionListComponent } from './selection-list.component';
+import {importProvidersFrom} from "@angular/core";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgxMatColorPickerModule} from "@angular-material-components/color-picker";
 
 export default {
   title: 'lists/SelectionListComponent',
   component: SelectionListComponent,
+  decorators : [
+    applicationConfig({
+      providers: [importProvidersFrom(NgxMatColorPickerModule , BrowserAnimationsModule)],
+    }),
+  ],
   argTypes: {
     color: {
       control: 'radio',
