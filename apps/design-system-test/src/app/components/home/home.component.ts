@@ -23,8 +23,7 @@ import { ThemePalette } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
 import { FormService ,} from 'libs/data-access/src/lib/services/Form.service';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {applicationConfig} from "@storybook/angular";
+
 @Component({
 
   selector: 'ways-test-home',
@@ -56,6 +55,8 @@ import {applicationConfig} from "@storybook/angular";
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  constructor(private formService: FormService) {}
+
   // Input
   placeHolder = 'text Input';
   value = '';
@@ -75,7 +76,6 @@ export class HomeComponent implements OnInit {
     menuControl : new FormControl(),
     chipsControl : new FormControl()
   });
-   constructor(private formService: FormService) {}
 
   ngOnInit() {
     this.radioSelectedOption = this.radioOptions[this.radioOptions.length -1]
