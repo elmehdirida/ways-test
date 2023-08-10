@@ -15,10 +15,9 @@ export class RadioComponent {
   @Input() disabled = false;
   @Input() color: ThemePalette = 'primary';
   @Input() labelPosition: 'before' | 'after' = 'after';
-  @Output() newStatus  = new EventEmitter<boolean>()
+  @Output() newStatus  = new EventEmitter<string>()
 
   onCheck (){
-    console.log(true)
-    this.newStatus.emit(true)
+    this.newStatus.emit(this.label)
   }
 }

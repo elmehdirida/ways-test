@@ -1,12 +1,13 @@
-<button mat-button [color]="color" [matMenuTriggerFor]="menu">
+<button type="button" mat-button [color]="color" [matMenuTriggerFor]="menu">
   <mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
   <button
+    type="button"
     mat-menu-item
     matRipple
     *ngFor="let option of menuOptions"
-    (click)="handleClick(option, menuOptions.indexOf(option))"
+    (click)="handleClick(option)"
   >
     {{ option }}
   </button>

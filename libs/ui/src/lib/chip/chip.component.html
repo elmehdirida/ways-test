@@ -1,4 +1,4 @@
-<mat-chip-listbox aria-label="chips selection">
+<mat-chip-listbox aria-label="chips selection" [formControl]="control" (change)="selectedChips($event.value)">
   <mat-chip-option
     *ngFor="let option of options; let i = index"
     [style.background-color]="getBackgroundColor(i)"

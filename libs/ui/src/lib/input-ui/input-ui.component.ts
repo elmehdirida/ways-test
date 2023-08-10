@@ -15,7 +15,7 @@ export class InputUiComponent implements OnInit,OnChanges {
   @Input() placeHolder = '';
   @Input() value = '';
   @Input() type = 'text';
-  @Input() required: boolean = false;
+  @Input() required =false;
   @Output() onChangeValue = new EventEmitter<string>();
   @Input() control = new FormControl();
   inputType = this.type;

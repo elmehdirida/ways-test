@@ -49,7 +49,7 @@ import { Form } from 'libs/data-access/src/lib/models/Form.model';
     MatRadioModule,
     MatListModule,
     ReactiveFormsModule,
-    
+
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
   placeHolder = 'text Input';
   value = '';
   type = 'text';
-  required = false;
+  isReq = true;
 
   formGroup = new FormGroup({
     inputTextValue: new FormControl(),
@@ -70,7 +70,9 @@ export class HomeComponent implements OnInit {
       startDateControl: new FormControl(),
       endDateControl: new FormControl(),
     }),
-    inputValue: new FormControl(),
+    nativeSelectValue: new FormControl(),
+    menuControl : new FormControl(),
+    chipsControl : new FormControl()
   });
   // constructor(private formService: FormService) {}
 
@@ -111,6 +113,13 @@ export class HomeComponent implements OnInit {
     'Filter Name 3',
     'Filter Name 4',
   ];
+  radioSelectedOption! : string
+  radioOptions: string[] = [
+    'option 1',
+    'option 2',
+    'option 3',
+    'option 4',
+  ];
 
   // Menu
   menuOptions = ['Menu Item 1', 'Menu Item 2'];
@@ -128,20 +137,21 @@ export class HomeComponent implements OnInit {
   // Divider
 
   // ExpansionPanel
-  elementsCount = 5;
-  panelTitle = 'title';
   content = ' this is the content ';
 
   // Radio
-  label = 'Radio';
   disabled = false;
   color: ThemePalette = 'accent';
   labelPosition: 'before' | 'after' = 'before';
 
   // Checkbox
+  checkBoxOptions: string[] = [
+    'option 1',
+    'option 2',
+    'option 3',
+  ];
+  selectedCheckBox:string[] =[]
   checkboxLabel = 'Label after';
-  checked = false;
-  indeterminate = true;
   checkboxLabelPosition: 'before' | 'after' = 'after';
   checkboxDisabled = false;
   checkboxColor: 'primary' | 'accent' | 'warn' = 'primary';
@@ -154,6 +164,7 @@ export class HomeComponent implements OnInit {
       const formValues = this.formGroup.value;
       // Process form values, perform actions, etc.
       console.log(formValues);
+      console.log(this.radioSelectedOption)
     } else {
       // Handle form validation errors
     }
@@ -176,5 +187,14 @@ export class HomeComponent implements OnInit {
     //   console.log(data);
     // });
     //this.formService.addForm();
+  }
+
+  setRadioValue($event: string) {
+    this.radioSelectedOption = $event
+  }
+
+  checkBoxAdd(value : string) {
+    console.log(value)
+    this.selectedCheckBox.push(value)
   }
 }

@@ -1,19 +1,21 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatChipsModule } from '@angular/material/chips';
 import { ThemePalette } from '@angular/material/core';
+import {FormControl, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'ways-test-chip',
   standalone: true,
-  imports: [CommonModule, MatChipsModule],
+  imports: [CommonModule, MatChipsModule, ReactiveFormsModule],
   templateUrl: './chip.component.html',
   styleUrls: ['./chip.component.scss'],
 })
-export class ChipComponent {
+export class ChipComponent implements OnInit{
   @Input() options = [''];
   @Input() color: ThemePalette = 'primary';
   @Input() optionColors = [{ bgColor: '', textColor: '' }];
+  @Input() control = new FormControl()
   @Output() selectedValueEvent   = new EventEmitter<string>()
   getBackgroundColor(i: number) {
     if (i < this.optionColors.length) {
@@ -33,5 +35,8 @@ export class ChipComponent {
 
   selectedChips(value: string) {
     this.selectedValueEvent.emit(value)
+  }
+
+  ngOnInit(): void {
   }
 }
