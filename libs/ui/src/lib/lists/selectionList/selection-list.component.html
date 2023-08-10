@@ -1,12 +1,13 @@
 <div>
-  <mat-selection-list [color]="color">
+  <mat-selection-list [color]="color" #selected >
     <!-- I've imported ThemePalette from @angular/material/core
     and set the color property to the 'primary' value. You can
     replace 'primary' with any other valid ThemePalette value,
     such as 'accent' or 'warn'. -->
-    <mat-list-option
+    <mat-list-option (click)="handleNewState(selected.selectedOptions.selected)"
       checkboxPosition="before"
       *ngFor="let option of options; let i = index"
+                     [value]="option"
     >
       <div
         class="row-position"

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, importProvidersFrom, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   InputUiComponent,
@@ -23,7 +23,8 @@ import { ThemePalette } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
 import { FormService ,} from 'libs/data-access/src/lib/services/Form.service';
-import { Form } from 'libs/data-access/src/lib/models/Form.model';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {applicationConfig} from "@storybook/angular";
 @Component({
 
   selector: 'ways-test-home',
@@ -74,9 +75,11 @@ export class HomeComponent implements OnInit {
     menuControl : new FormControl(),
     chipsControl : new FormControl()
   });
-  // constructor(private formService: FormService) {}
+   constructor(private formService: FormService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.radioSelectedOption = this.radioOptions[this.radioOptions.length -1]
+  }
   // List
   listInformations = [
     {
@@ -94,7 +97,7 @@ export class HomeComponent implements OnInit {
   // SelectionList
 
   options = ['verfügbar', 'reserviert', 'nicht verfügbar'];
-
+  selectedCheckBoxOptions = Array(this.options.length).fill("")
   optionColors = [
     { bgColor: '#b5ffd2', textColor: '#00752E' },
     { bgColor: '#FDF5CA', textColor: '#B44100' },
@@ -103,6 +106,7 @@ export class HomeComponent implements OnInit {
 
   // ActionList
   items = ['Frauen', 'Mode', 'Geht doch!'];
+  selectedAction =this.items[0]
 
   // NativeSelect
   defaultLabel = 'Saved Filter';
@@ -134,7 +138,6 @@ export class HomeComponent implements OnInit {
     { bgColor: '#FFCDD6', textColor: '#B44100' },
   ];
 
-  // Divider
 
   // ExpansionPanel
   content = ' this is the content ';
@@ -145,13 +148,13 @@ export class HomeComponent implements OnInit {
   labelPosition: 'before' | 'after' = 'before';
 
   // Checkbox
-  checkBoxOptions: string[] = [
-    'option 1',
-    'option 2',
-    'option 3',
+  checkBoxLabels: string[] = [
+    'label 1',
+    'label 2',
+    'label 3',
   ];
-  selectedCheckBox:string[] =[]
-  checkboxLabel = 'Label after';
+
+  selectedCheckBox:string[] = Array(this.checkBoxLabels.length).fill("")
   checkboxLabelPosition: 'before' | 'after' = 'after';
   checkboxDisabled = false;
   checkboxColor: 'primary' | 'accent' | 'warn' = 'primary';
@@ -162,9 +165,13 @@ export class HomeComponent implements OnInit {
   onFormSubmit() {
     if (this.formGroup.valid) {
       const formValues = this.formGroup.value;
-      // Process form values, perform actions, etc.
+      console.log(this.listInformations)
       console.log(formValues);
       console.log(this.radioSelectedOption)
+      console.log(this.selectedCheckBox.filter(value1 => value1!==''))
+      console.log(this.selectedAction)
+      console.log(this.optionColors)
+      console.log(this.selectedCheckBoxOptions)
     } else {
       // Handle form validation errors
     }
@@ -193,8 +200,10 @@ export class HomeComponent implements OnInit {
     this.radioSelectedOption = $event
   }
 
-  checkBoxAdd(value : string) {
-    console.log(value)
-    this.selectedCheckBox.push(value)
+  checkBoxAdd(value: string, i: number) {
+      this.selectedCheckBox[i]=value
+  }
+  optionsAdd($event: string[]) {
+      this.selectedCheckBoxOptions=$event
   }
 }

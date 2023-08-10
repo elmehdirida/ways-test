@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatListModule } from '@angular/material/list';
+import {MatListModule, MatListOption} from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemePalette } from '@angular/material/core';
 import {
@@ -10,7 +10,7 @@ import {
 } from '@angular-material-components/color-picker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {FormControl, FormsModule} from '@angular/forms';
 import { InputUiComponent } from '../../input-ui/input-ui.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
@@ -40,6 +40,7 @@ export class SelectionListComponent {
   @Input() newTextColor: string = '';
   @Input() newOption: string = '';
   showForm = false;
+  @Output() newState = new EventEmitter<string[]>
 
   getBackgroundColor(i: number) {
     if (i < this.optionColors.length) {
@@ -89,5 +90,13 @@ export class SelectionListComponent {
   }
   HandleshowForm() {
     this.showForm = !this.showForm;
+  }
+
+  handleNewState(selected: MatListOption[]){
+    let newList:string[] = []
+    selected.forEach(value => {
+      newList.push(value.value)
+    })
+    this.newState.emit(newList)
   }
 }

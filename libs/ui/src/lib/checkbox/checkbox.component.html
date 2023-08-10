@@ -1,8 +1,8 @@
-<mat-checkbox
+<mat-checkbox (change)="onCheck()"
   [disabled]="disabled"
   [checked]="checked"
   [indeterminate]="indeterminate"
   [color]="color"
   [labelPosition]="labelPosition"
-  >{{ label }}</mat-checkbox
->
+  >{{ label }}
+</mat-checkbox>

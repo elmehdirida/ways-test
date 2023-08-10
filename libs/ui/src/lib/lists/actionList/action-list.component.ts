@@ -11,9 +11,10 @@ import { MatListModule } from '@angular/material/list';
 })
 export class ActionListComponent {
   @Input() items!: string[];
-  @Output() selectedValueClicked = new EventEmitter<[string,number]>();
+  @Output() selectedValueClicked = new EventEmitter<string>();
 
-  handleClickedItem(item: string, index: number) {
-    this.selectedValueClicked.emit([item,index])
+  handleClickedItem(item: string) {
+    console.log(item)
+    this.selectedValueClicked.emit(item)
   }
 }

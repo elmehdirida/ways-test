@@ -17,11 +17,17 @@ export class CheckboxComponent {
   @Input() labelPosition: 'before' | 'after' = 'after';
   @Input() disabled = false;
   @Input() color: 'primary' | 'accent' | 'warn' = 'primary';
-  @Output() newStatus  = new EventEmitter<boolean>()
+  @Output() newStatus  = new EventEmitter<string>()
 
 
   onCheck (){
-    this.checked = !this.checked
-    this.newStatus.emit(this.checked)
+    this.checked=!this.checked
+    if(this.checked){
+      this.newStatus.emit(this.label)
+    }
+    else {
+      this.newStatus.emit("")
+    }
+
   }
 }

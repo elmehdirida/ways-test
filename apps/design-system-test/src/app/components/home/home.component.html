@@ -46,12 +46,13 @@
     <ways-test-selection-list
       [optionColors]="optionColors"
       [options]="options"
+      (newState)="optionsAdd($event)"
     ></ways-test-selection-list>
   </div>
   <ways-test-divider></ways-test-divider>
 
   <div class="list">
-    <ways-test-action-list [items]="items"></ways-test-action-list>
+    <ways-test-action-list  (selectedValueClicked)="selectedAction=$event" [items]="items"></ways-test-action-list>
   </div>
   <ways-test-divider></ways-test-divider>
   <div class="list">
@@ -76,7 +77,7 @@
   </div>
   <ways-test-divider></ways-test-divider>
   <div class="list">
-    <mat-radio-group aria-label="Select an option">
+    <mat-radio-group>
       <ways-test-radio *ngFor="let opt of radioOptions"
         [label]="opt"
         [color]="color"
@@ -89,8 +90,8 @@
   <ways-test-divider></ways-test-divider>
   <mat-selection-list>
     <div >
-      <ways-test-checkbox *ngFor="let opt of checkBoxOptions" (change)="checkBoxAdd(opt)"
-        [label]="checkboxLabel"
+      <ways-test-checkbox *ngFor="let opt of checkBoxLabels ; let i = index" (newStatus)="checkBoxAdd($event ,i)"
+        [label]="opt"
         class="list checkBox"
         [color]="checkboxColor"
         [disabled]="checkboxDisabled"
