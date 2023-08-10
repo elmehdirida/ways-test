@@ -16,6 +16,9 @@ export default {
     required: {
       control: 'boolean',
     },
+    disable: {
+      control: 'boolean',
+    },
     type: {
       control: 'radio',
       options: ['text', 'password', 'search'],

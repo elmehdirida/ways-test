@@ -153,7 +153,6 @@ export class HomeComponent implements OnInit {
 
   // RaisedButton
   onFormSubmit() {
-    console.log('test');
     if (this.formGroup.valid) {
       this.form = {
         textInput: this.formGroup.get('inputTextValue')?.value,
@@ -163,15 +162,14 @@ export class HomeComponent implements OnInit {
         dateRangePicker: {
           start:
             this.formGroup.controls.rangeDatePickerValue.controls
-              .startDateControl.value,
+              .startDateControl.value._d,
           end: this.formGroup.controls.rangeDatePickerValue.controls
-            .endDateControl.value,
+            .endDateControl.value._d,
         },
         listOfInformations: this.listInformations,
 
         selectionList: {
-          selectionOptions: this.selectedCheckBoxOptions,
-          optionColors: this.optionColors,
+          selectionOptions: this.selectedCheckBoxOptions.filter(value1 => value1 !== ''),
         },
         actionList: this.selectedAction,
         nativeSelect: this.formGroup.controls.nativeSelectValue.value,
@@ -180,8 +178,8 @@ export class HomeComponent implements OnInit {
         radio: this.radioSelectedOption,
         checkbox: this.selectedCheckBox.filter((value1) => value1 !== ''),
       };
-      console.log(this.form);
-    } else {
+      this.formService.addForm(this.form).subscribe((res) => {});
+      } else {
       // Handle form validation errors
     }
   }

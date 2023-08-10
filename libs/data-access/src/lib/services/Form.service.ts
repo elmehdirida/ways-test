@@ -7,7 +7,7 @@ import { Form } from '../models/Form.model';
   providedIn: 'root',
 })
 export class FormService {
-  ApiForms = 'http://localhost:3000/Form';
+  ApiForms = 'http://localhost:3000/form';
 
   constructor(private http: HttpClient) {}
 

@@ -16,12 +16,16 @@ export class InputUiComponent implements OnInit,OnChanges {
   @Input() value = '';
   @Input() type = 'text';
   @Input() required =false;
+  @Input() disable =false;
   @Output() onChangeValue = new EventEmitter<string>();
   @Input() control = new FormControl();
   inputType = this.type;
   showPassword = false;
 
   ngOnInit(): void {
+    if(this.disable){
+      this.control.disable()
+    }
     this.control.setValue(this.value);
     this.inputType = this.type;
   }
@@ -43,5 +47,13 @@ export class InputUiComponent implements OnInit,OnChanges {
         this.showPassword = false;
       }
     }
+    if (changes["disable"]) {
+            if(this.disable){
+              this.control.disable()
+            }
+            else {
+              this.control.enable()
+            }
+      }
   }
 }

@@ -3,10 +3,7 @@ export class Formation {
   content!: string;
 }
 
-export class OptionColors {
-  bgColor!: string;
-  textColor!: string;
-}
+
 
 export class Form {
   id?: number;
@@ -18,7 +15,6 @@ export class Form {
   listOfInformations!: Formation[]
   selectionList!: {
     selectionOptions: string[],
-    optionColors: OptionColors[]
   };
   actionList!: string;
   nativeSelect!: string;
