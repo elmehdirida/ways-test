@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   InputUiComponent,
@@ -18,11 +18,14 @@ import {
   ButtonComponent,
   RaisedButtonComponent,
 } from '@ways-test/ui';
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
+import { FormService ,} from 'libs/data-access/src/lib/services/Form.service';
+import { Form } from 'libs/data-access/src/lib/models/Form.model';
 @Component({
+
   selector: 'ways-test-home',
   standalone: true,
   imports: [
@@ -46,11 +49,12 @@ import { MatListModule } from '@angular/material/list';
     MatRadioModule,
     MatListModule,
     ReactiveFormsModule,
+    
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   // Input
   placeHolder = 'text Input';
   value = '';
@@ -63,13 +67,14 @@ export class HomeComponent implements OnInit{
     inputSearchValue: new FormControl(),
     datePickerValue: new FormControl(),
     rangeDatePickerValue: new FormGroup({
-      startDateControl :new  FormControl(),
-      endDateControl : new FormControl()
+      startDateControl: new FormControl(),
+      endDateControl: new FormControl(),
     }),
     inputValue: new FormControl(),
-  })
-  ngOnInit() {
-  }
+  });
+  // constructor(private formService: FormService) {}
+
+  ngOnInit() {}
   // List
   listInformations = [
     {
@@ -86,7 +91,7 @@ export class HomeComponent implements OnInit{
 
   // SelectionList
 
-  options = ['verfügbar', 'reserviert', 'nicht verfügbar', ];
+  options = ['verfügbar', 'reserviert', 'nicht verfügbar'];
 
   optionColors = [
     { bgColor: '#b5ffd2', textColor: '#00752E' },
@@ -143,7 +148,6 @@ export class HomeComponent implements OnInit{
 
   // Button
 
-
   // RaisedButton
   onFormSubmit() {
     if (this.formGroup.valid) {
@@ -153,5 +157,24 @@ export class HomeComponent implements OnInit{
     } else {
       // Handle form validation errors
     }
+  }
+
+  // save form
+
+  saveForm() {
+    // const formValues = this.formGroup.value;
+    // const form: Form = {
+    //   id: 1,
+    //   inputTextValue: formValues.inputTextValue,
+    //   inputPasswordValue: formValues.inputPasswordValue,
+    //   inputSearchValue: formValues.inputSearchValue,
+    //   datePickerValue: formValues.datePickerValue,
+    //   rangeDatePickerValue: formValues.rangeDatePickerValue,
+    //   inputValue: formValues.inputValue,
+    // };
+    // this.formService.addForm(form).subscribe((data) => {
+    //   console.log(data);
+    // });
+    //this.formService.addForm();
   }
 }

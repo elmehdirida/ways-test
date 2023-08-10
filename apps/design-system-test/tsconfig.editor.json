@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "../../libs/data-access/src/lib/models/Form.model.ts"],
   "compilerOptions": {
     "types": ["jest", "node"]
   }
