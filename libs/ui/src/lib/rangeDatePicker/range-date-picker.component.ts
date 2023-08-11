@@ -3,7 +3,7 @@ import {CommonModule, DatePipe} from '@angular/common';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import { FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {MomentDateAdapter} from '@angular/material-moment-adapter';
 
@@ -42,7 +42,7 @@ export class RangeDatePickerComponent implements OnInit{
   @Output() newStartDate = new EventEmitter<string | null>();
   @Output() newEndDate = new EventEmitter<string | null>();
   @Input() control!: FormGroup
-
+  @Input() required =true;
 
   OnDateChange() {
     this.newStartDate.emit(this.datePipe.transform(this.control.controls["startDateControl"].value, 'dd.MM.yyyy'))

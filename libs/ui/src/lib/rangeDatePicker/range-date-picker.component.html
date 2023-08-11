@@ -1,10 +1,11 @@
 <mat-form-field appearance="outline">
   <mat-label>{{placeHolder}}</mat-label>
-  <mat-date-range-input  [formGroup]="control" [rangePicker]="picker">
-    <input  matStartDate placeholder="Start date" formControlName="startDateControl"  (dateChange)="OnDateChange()" [readonly]="true">
-    <input  matEndDate placeholder="End date" formControlName="endDateControl" (dateChange)="OnDateChange()" [readonly]="true">
+  <mat-date-range-input  [formGroup]="control" [rangePicker]="picker" >
+    <input [required]="required" matStartDate placeholder="Start date" formControlName="startDateControl"  (dateChange)="OnDateChange()" [readonly]="true">
+    <input  [required]="required"  matEndDate placeholder="End date" formControlName="endDateControl" (dateChange)="OnDateChange()" [readonly]="true">
   </mat-date-range-input>
   <mat-hint>TT.MM.JJJJ – TT.MM.JJJJ</mat-hint>
+  <mat-error>required</mat-error>
   <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-date-range-picker  #picker></mat-date-range-picker>
 </mat-form-field>

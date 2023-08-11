@@ -18,12 +18,13 @@ import {
   ButtonComponent,
   RaisedButtonComponent,
 } from '@ways-test/ui';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
 import { FormService } from 'libs/data-access/src/lib/services/Form.service';
 import { Form } from 'libs/data-access/src/lib/models/Form.model';
+import {Router, Routes} from "@angular/router";
 
 @Component({
   selector: 'ways-test-home',
@@ -54,7 +55,7 @@ import { Form } from 'libs/data-access/src/lib/models/Form.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private formService: FormService) {}
+  constructor(private formService: FormService , private router : Router) {}
 
   // Input
   placeHolder = 'text Input';
@@ -153,6 +154,7 @@ export class HomeComponent implements OnInit {
 
   // RaisedButton
   onFormSubmit() {
+    this.formGroup.markAllAsTouched()
     if (this.formGroup.valid) {
       this.form = {
         textInput: this.formGroup.get('inputTextValue')?.value,
@@ -162,12 +164,11 @@ export class HomeComponent implements OnInit {
         dateRangePicker: {
           start:
             this.formGroup.controls.rangeDatePickerValue.controls
-              .startDateControl.value._d,
+              .startDateControl.value._d ,
           end: this.formGroup.controls.rangeDatePickerValue.controls
             .endDateControl.value._d,
         },
         listOfInformations: this.listInformations,
-
         selectionList: {
           selectionOptions: this.selectedCheckBoxOptions.filter(value1 => value1 !== ''),
         },
@@ -178,7 +179,13 @@ export class HomeComponent implements OnInit {
         radio: this.radioSelectedOption,
         checkbox: this.selectedCheckBox.filter((value1) => value1 !== ''),
       };
-      this.formService.addForm(this.form).subscribe((res) => {});
+      this.formService.addForm(this.form).subscribe((res) => {
+        this.router.navigateByUrl('').then(r =>         {
+          alert('form saved successfully')
+        window.location.reload()
+        }
+      )
+      });
       } else {
       // Handle form validation errors
     }
