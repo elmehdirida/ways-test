@@ -1,0 +1,45 @@
+<!-- <mat-form-field>
+  <mat-select
+    placeholder="Select options"
+    multiple
+    [(ngModel)]="selectedValues"
+    name="options"
+  >
+    <mat-option *ngFor="let option of options" [value]="option.value">{{
+      option.label
+    }}</mat-option>
+  </mat-select>
+</mat-form-field> -->
+
+<mat-form-field>
+  <mat-select
+    placeholder="Select options"
+    multiple
+    [(ngModel)]="selectedValues"
+    name="options"
+  >
+    <input
+      matInput
+      placeholder="Search options"
+      [(ngModel)]="searchValue"
+      (input)="filterOptions()"
+    />
+    <!-- <ways-test-input-ui
+      placeholder="Search options"
+      type="search"
+      [(ngModel)]="searchValue"
+      (input)="filterOptions()"
+    ></ways-test-input-ui> -->
+
+    <mat-option
+      *ngIf="options.length > 6"
+      value="all"
+      (click)="toggleAllSelection()"
+    >
+      Check All
+    </mat-option>
+    <mat-option *ngFor="let option of filteredOptions" [value]="option.value">
+      {{ option.label }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
