@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { InputUiComponent } from '../input-ui/input-ui.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'ways-test-multi-select',
@@ -14,6 +15,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSelectModule,
     InputUiComponent,
     MatCheckboxModule,
+    MatIconModule,
   ],
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
@@ -54,5 +56,12 @@ export class MultiSelectComponent {
   filterOptions($event: string) {
     this.searchValue = $event;
     console.log(this.searchValue);
+  }
+
+
+  deleteSelectedOption() {
+    if (this.selectedValues.length > 0) {
+      this.selectedValues.pop(); 
+    }
   }
 }

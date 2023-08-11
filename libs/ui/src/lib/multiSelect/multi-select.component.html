@@ -1,7 +1,6 @@
-<mat-form-field style="width: 50%" appearance="outline">
+<!-- <mat-form-field style="width: 50%" appearance="outline">
   <mat-select
-
-                    placeholder="Select options"
+    placeholder="Select options"
     multiple
     [(ngModel)]="selectedValues"
     name="options"
@@ -10,12 +9,34 @@
       *ngIf="options.length > 4"
       placeHolder="Search options"
       type="search"
-      (onChangeValue) ="filterOptions($event)"
+      (onChangeValue)="filterOptions($event)"
     ></ways-test-input-ui>
 
-    <mat-option  (click)="toggleAllSelection()"
-    >
-      {{selectAll ? "Check All" : "Uncheck All"}}
+    <mat-option (click)="toggleAllSelection()">
+      {{ selectAll ? 'Check All' : 'Uncheck All' }}
+    </mat-option>
+    <mat-option *ngFor="let option of filteredOptions" [value]="option.value">
+      {{ option.label }}
+    </mat-option>
+  </mat-select>
+</mat-form-field> -->
+
+<mat-form-field style="width: 50%" appearance="outline">
+  <mat-select
+    placeholder="Select options"
+    multiple
+    [(ngModel)]="selectedValues"
+    name="options"
+  >
+    <ways-test-input-ui
+      *ngIf="options.length > 4"
+      placeHolder="Search options"
+      type="search"
+      (onChangeValue)="filterOptions($event)"
+    ></ways-test-input-ui>
+    <mat-icon class="delete-icon">delete</mat-icon>
+    <mat-option (click)="toggleAllSelection()">
+      {{ selectAll ? 'Check All' : 'Uncheck All' }}
     </mat-option>
     <mat-option *ngFor="let option of filteredOptions" [value]="option.value">
       {{ option.label }}

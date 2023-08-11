@@ -51,8 +51,8 @@ export * from './lib/Tree/tree.component';
 
 export * from './lib/chip/chip.component';
 
-export * from './lib/Table/Table.component';
+export * from './lib/Table/table.component';
 
 export * from './lib/dialog/dialog.component';
 
-export * from './lib/multiSelect/multiSelect.component';
+export * from './lib/multiSelect/multi-select.component';
