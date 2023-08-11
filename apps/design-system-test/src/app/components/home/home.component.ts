@@ -169,7 +169,9 @@ export class HomeComponent implements OnInit {
         listOfInformations: this.listInformations,
 
         selectionList: {
-          selectionOptions: this.selectedCheckBoxOptions.filter(value1 => value1 !== ''),
+          selectionOptions: this.selectedCheckBoxOptions.filter(
+            (value1) => value1 !== ''
+          ),
         },
         actionList: this.selectedAction,
         nativeSelect: this.formGroup.controls.nativeSelectValue.value,
@@ -179,7 +181,7 @@ export class HomeComponent implements OnInit {
         checkbox: this.selectedCheckBox.filter((value1) => value1 !== ''),
       };
       this.formService.addForm(this.form).subscribe((res) => {});
-      } else {
+    } else {
       // Handle form validation errors
     }
   }
