@@ -1,42 +1,21 @@
-<!-- <mat-form-field>
+<mat-form-field style="width: 50%" appearance="outline">
   <mat-select
-    placeholder="Select options"
-    multiple
-    [(ngModel)]="selectedValues"
-    name="options"
-  >
-    <mat-option *ngFor="let option of options" [value]="option.value">{{
-      option.label
-    }}</mat-option>
-  </mat-select>
-</mat-form-field> -->
 
-<mat-form-field>
-  <mat-select
-    placeholder="Select options"
+                    placeholder="Select options"
     multiple
     [(ngModel)]="selectedValues"
     name="options"
   >
-    <input
-      matInput
-      placeholder="Search options"
-      [(ngModel)]="searchValue"
-      (input)="filterOptions()"
-    />
-    <!-- <ways-test-input-ui
-      placeholder="Search options"
+    <ways-test-input-ui
+      *ngIf="options.length > 4"
+      placeHolder="Search options"
       type="search"
-      [(ngModel)]="searchValue"
-      (input)="filterOptions()"
-    ></ways-test-input-ui> -->
+      (onChangeValue) ="filterOptions($event)"
+    ></ways-test-input-ui>
 
-    <mat-option
-      *ngIf="options.length > 6"
-      value="all"
-      (click)="toggleAllSelection()"
+    <mat-option  (click)="toggleAllSelection()"
     >
-      Check All
+      {{selectAll ? "Check All" : "Uncheck All"}}
     </mat-option>
     <mat-option *ngFor="let option of filteredOptions" [value]="option.value">
       {{ option.label }}

@@ -606,6 +606,18 @@
       "contact": [],
       "footNote": "",
       "id": 1
+    },
+    {
+      "senderAddress": "test",
+      "receiverAddress": [],
+      "subject": "test",
+      "body": "skdjks",
+      "contact": [
+        "8.9.2023",
+        ""
+      ],
+      "footNote": "",
+      "id": 2
     }
   ]
 }

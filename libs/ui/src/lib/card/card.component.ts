@@ -1,9 +1,8 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component,Input} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {ButtonComponent} from "../buttons/button/button.component";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'ways-test-card',
@@ -12,7 +11,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
 })
-export class CardComponent implements OnInit{
+export class CardComponent {
 
   @Input()  title! :string
   @Input()  avatarSrc ! :string
@@ -20,25 +19,6 @@ export class CardComponent implements OnInit{
   @Input()  subtitle!:string
   @Input()  content! :string
 
-  constructor(@Inject(MAT_DIALOG_DATA) public  data : any) {
-  }
 
-  ngOnInit() {
-    console.log(this.data)
-    if(this.data.title){
-      this.title = this.data.title
-    }
-    if(this.data.content){
-      this.content = this.data.content
-    }
-    if(this.data.avatarSrc){
-      this.avatarSrc = this.data.avatarSrc
-    }
-    if(this.data.subtitle){
-      this.subtitle = this.data.subtitle
-    }
-    if(this.data.imgSrc){
-      this.imgSrc = this.data.imgSrc
-    }
-  }
+
 }

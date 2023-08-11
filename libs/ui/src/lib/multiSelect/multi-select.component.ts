@@ -19,17 +19,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   styleUrls: ['./multi-select.component.scss'],
 })
 export class MultiSelectComponent {
-  // selectedValues: number[] = []; // Store the selected values
-  // options = [
-  //   { value: 1, label: 'One' },
-  //   { value: 2, label: 'Two' },
-  //   { value: 3, label: 'Three' },
-  //   { value: 4, label: 'Four' },
-  //   { value: 5, label: 'Five' },
-  //   { value: 6, label: 'Six' },
-  //   { value: 7, label: 'Seven' },
-  //   { value: 8, label: 'Eight' },
-  // ];
 
   selectedValues: number[] = [];
   options = [
@@ -42,7 +31,7 @@ export class MultiSelectComponent {
     { value: 7, label: 'Seven' },
     { value: 8, label: 'Eight' },
   ];
-  selectAll = false;
+  selectAll = true;
   searchValue = '';
 
   get filteredOptions() {
@@ -52,29 +41,18 @@ export class MultiSelectComponent {
   }
 
   toggleAllSelection() {
-    this.selectAll = !this.selectAll;
     if (this.selectAll) {
+      console.log(this.filteredOptions)
       this.selectedValues = this.filteredOptions.map((option) => option.value);
+      this.selectAll = !this.selectAll;
     } else {
       this.selectedValues = [];
+      this.selectAll = !this.selectAll;
     }
   }
 
-  toggleOptionSelection(value: number) {
-    const index = this.selectedValues.indexOf(value);
-    if (index === -1) {
-      this.selectedValues.push(value);
-    } else {
-      this.selectedValues.splice(index, 1);
-    }
-    this.selectAll = this.selectedValues.length === this.filteredOptions.length;
-  }
-
-  isSelected(value: number): boolean {
-    return this.selectedValues.includes(value);
-  }
-
-  filterOptions() {
-    this.selectedValues = [];
+  filterOptions($event: string) {
+    this.searchValue = $event;
+    console.log(this.searchValue);
   }
 }
