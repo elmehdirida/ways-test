@@ -5,12 +5,13 @@
   [attr.type]="type"
   [ngSwitch]="icon"
 >
-  <ng-container *ngSwitchCase="'add'">
-    <div style="display: flex; align-items: center; justify-content: center">
-      <mat-icon style="padding-right: 6px">add </mat-icon> {{ label }}
-    </div>
-  </ng-container>
-  <ng-container *ngSwitchDefault>
+  <ng-container *ngSwitchCase="''">
     {{ label }}
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <div style="display: flex; align-items: center; justify-content: center">
+      <mat-icon style="padding-right: 6px">{{icon}}</mat-icon> {{ label }}
+    </div>
   </ng-container>
 </button>

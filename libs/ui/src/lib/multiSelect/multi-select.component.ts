@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-import { InputUiComponent } from '../input-ui/input-ui.component';
+import {ButtonComponent, DividerComponent, InputUiComponent, RaisedButtonComponent} from '@ways-test/ui';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatIconModule } from '@angular/material/icon';
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'ways-test-multi-select',
@@ -16,6 +17,10 @@ import { MatIconModule } from '@angular/material/icon';
     InputUiComponent,
     MatCheckboxModule,
     MatIconModule,
+    MatButtonModule,
+    ButtonComponent,
+    RaisedButtonComponent,
+    DividerComponent,
   ],
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
@@ -34,7 +39,9 @@ export class MultiSelectComponent {
     { value: 8, label: 'Eight' },
   ];
   selectAll = true;
+  showAddOption = true;
   searchValue = '';
+  newValue = { value: this.options.length+1, label: '' };
 
   get filteredOptions() {
     return this.options.filter((option) =>
@@ -59,9 +66,32 @@ export class MultiSelectComponent {
   }
 
 
-  deleteSelectedOption() {
-    if (this.selectedValues.length > 0) {
-      this.selectedValues.pop(); 
+  deleteSelectedOption($event: Event , option: { value: number; label: string }) {
+    $event.stopPropagation();
+    if (this.options.length > 0) {
+      this.options = this.options.filter((item) => item.value !== option.value);
+    }
+  }
+
+  clearAll($event :Event) {
+    $event.stopPropagation();
+    if(this.selectedValues.length > 0){
+      this.options = [...this.options.filter((item) => !this.selectedValues.includes(item.value)
+      )];
+      this.selectedValues = [];
+    }
+  }
+
+  addOption($event: string) {
+    if ($event) {
+      this.newValue = { value: this.options.length + 1, label: $event };
+    }
+  }
+  saveOption() {
+    if (this.newValue.label!=='') {
+      this.options = [...this.options, this.newValue];
+      this.newValue = { value: this.options.length + 1, label: '' };
+      this.showAddOption = !this.showAddOption;
     }
   }
 }
