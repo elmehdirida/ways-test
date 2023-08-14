@@ -34,7 +34,9 @@
       type="search"
       (onChangeValue)="filterOptions($event)"
     ></ways-test-input-ui>
-    <mat-icon class="delete-icon">delete</mat-icon>
+    <mat-icon class="delete-icon" (click)="deleteSelectedOption()"
+      >delete</mat-icon
+    >
     <mat-option (click)="toggleAllSelection()">
       {{ selectAll ? 'Check All' : 'Uncheck All' }}
     </mat-option>
