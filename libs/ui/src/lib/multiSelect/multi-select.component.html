@@ -6,14 +6,24 @@
     name="options"
   >
     <ways-test-input-ui
+      *ngIf="options.length > 3"
       type="search"
       (onChangeValue)="filterOptions($event)"
     ></ways-test-input-ui>
+    <ways-test-raised-button
+      *ngIf="options.length > 0"
+      class="clearAll"
+      label="Clear Selected"
+      color="warn"
+      icon="clear"
+      (click)="clearAll($event)"
+    ></ways-test-raised-button>
+
     <mat-checkbox
       [checked]="isAllSelected()"
       [indeterminate]="isIndeterminate()"
       color="primary"
-      (click)="toggleAllSelection()"
+      (change)="toggleAllSelection()"
     >
       {{ isAllSelected() ? 'Uncheck All' : 'Check All' }}
     </mat-checkbox>
@@ -29,49 +39,39 @@
         <mat-icon fontIcon="delete"></mat-icon>
       </button>
     </mat-option>
+
     <ways-test-divider></ways-test-divider>
-    <div
-      style="
-        display: flex;
-        justify-content: space-evenly;
-        align-items: baseline;
-        margin-top: 15px;
-      "
-    >
-      <ways-test-raised-button
-        *ngIf="showAddOption"
-        label="Add"
-        color="primary"
-        icon="add"
-        type="button"
-        (click)="showAddOption = false"
-      >
-      </ways-test-raised-button>
-      <ways-test-input-ui
-        *ngIf="!showAddOption"
-        type="text"
-        placeHolder="Add option"
-        (onChangeValue)="addOption($event)"
-      >
-      </ways-test-input-ui>
-      <ways-test-raised-button
-        *ngIf="!showAddOption"
-        label="Save"
-        color="accent"
-        icon="save"
-        type="button"
-        (click)="saveOption()"
-      >
-      </ways-test-raised-button>
-      <ways-test-raised-button
-        *ngIf="!showAddOption"
-        label="Cancel"
-        color="warn"
-        icon="cancel"
-        type="button"
-        (click)="showAddOption = true"
-      >
-      </ways-test-raised-button>
+    <div class="addOption">
+      <div *ngIf="showAddOption">
+        <ways-test-raised-button
+          label="Add"
+          color="primary"
+          icon="add"
+          type="button"
+          (click)="showAddOption = false"
+        ></ways-test-raised-button>
+      </div>
+      <div *ngIf="!showAddOption">
+        <ways-test-input-ui
+          type="text"
+          placeHolder="Add option"
+          (onChangeValue)="addOption($event)"
+        ></ways-test-input-ui>
+        <ways-test-raised-button
+          label="Save"
+          color="accent"
+          icon="save"
+          type="button"
+          (click)="saveOption()"
+        ></ways-test-raised-button>
+        <ways-test-raised-button
+          label="Cancel"
+          color="warn"
+          icon="cancel"
+          type="button"
+          (click)="showAddOption = true"
+        ></ways-test-raised-button>
+      </div>
     </div>
   </mat-select>
 </mat-form-field>

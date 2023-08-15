@@ -7,7 +7,6 @@ import {
   DividerComponent,
   InputUiComponent,
   RaisedButtonComponent,
-  CheckboxComponent,
 } from '@ways-test/ui';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,7 +26,6 @@ import { MatButtonModule } from '@angular/material/button';
     ButtonComponent,
     RaisedButtonComponent,
     DividerComponent,
-    CheckboxComponent,
   ],
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
@@ -44,7 +42,6 @@ export class MultiSelectComponent {
     { value: 7, label: 'Seven' },
     { value: 8, label: 'Eight' },
   ];
-  selectAll = true;
   showAddOption = true;
   searchValue = '';
   newValue = { value: this.options.length + 1, label: '' };
@@ -89,10 +86,15 @@ export class MultiSelectComponent {
     $event.stopPropagation();
     if (this.options.length > 0) {
       this.options = this.options.filter((item) => item.value !== option.value);
+      this.selectedValues = this.selectedValues.filter(
+        (item) => item !== option.value
+      );
+      console.log(this.selectedValues.length)
     }
   }
 
   clearAll($event: Event) {
+    console.log(this.selectedValues.length)
     $event.stopPropagation();
     if (this.selectedValues.length > 0) {
       this.options = [
