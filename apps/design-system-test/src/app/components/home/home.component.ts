@@ -71,6 +71,7 @@ export class HomeComponent implements OnInit {
   isReq = true;
   form!: Form;
   option!: Option;
+  data!: Form;
 
   formGroup = new FormGroup({
     inputTextValue: new FormControl(),
@@ -172,7 +173,7 @@ export class HomeComponent implements OnInit {
     { value: 7, label: 'Seven' },
     { value: 8, label: 'Eight' },
   ];
-  selectedMultiSelectOptions!: Option[];
+  selectedMultiSelectOptions: Option[]= []
 
   // RaisedButton
   onFormSubmit() {
@@ -216,6 +217,7 @@ export class HomeComponent implements OnInit {
   }
 
   // save form
+  number: any= 1;
 
   setRadioValue($event: string) {
     this.radioSelectedOption = $event;
@@ -230,5 +232,29 @@ export class HomeComponent implements OnInit {
 
   handleChangeValues(multiSelectedOptions: Option[]) {
     this.selectedMultiSelectOptions = multiSelectedOptions;
+  }
+
+  getDate(number: any) {
+      this.formService.getFormById(number).subscribe((res) => {
+      this.formGroup.controls.inputTextValue.setValue(res.textInput);
+      this.formGroup.controls.inputPasswordValue.setValue(res.passwordInput);
+      this.formGroup.controls.inputSearchValue.setValue(res.searchInput);
+      this.formGroup.controls.datePickerValue.setValue(res.datePicker);
+      this.formGroup.controls.rangeDatePickerValue.controls.startDateControl.setValue(
+        res.dateRangePicker.start);
+      this.formGroup.controls.rangeDatePickerValue.controls.endDateControl.setValue(
+        res.dateRangePicker.end);
+      this.listInformations = res.listOfInformations;
+      this.selectedCheckBoxOptions = res.selectionList.selectionOptions;
+      this.selectedAction = res.actionList;
+      this.formGroup.controls.nativeSelectValue.setValue(res.nativeSelect);
+      this.formGroup.controls.menuControl.setValue(res.menu);
+      this.formGroup.controls.chipsControl.setValue(res.chip);
+      this.radioSelectedOption = res.radio;
+      this.selectedCheckBox = res.checkbox;
+      this.selectedMultiSelectOptions = res.multiOptions;
+      this.number = res.id;
+      }
+      );
   }
 }

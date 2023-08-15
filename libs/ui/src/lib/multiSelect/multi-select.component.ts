@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
@@ -33,14 +33,20 @@ import {Option} from "@ways-test/data-access";
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
 })
-export class MultiSelectComponent {
+export class MultiSelectComponent implements OnChanges{
   selectedValues: number[] = [];
+  @Input() selectedOptions: Option[] = [];
   @Input() options = [] as Option[];
-  @Output() selectedOptions = new EventEmitter<Option[]>();
+  @Output() eventSelectedOptions = new EventEmitter<Option[]>();
   showAddOption = true;
   searchValue = '';
   newValue = { value: this.options.length + 1, label: '' };
 
+  ngOnChanges() {
+    if(this.selectedOptions){
+    this.selectedValues = this.selectedOptions.map((option) => option.value);
+  }
+  }
   get filteredOptions() {
     return this.options.filter((option) =>
       option.label.toLowerCase().includes(this.searchValue.toLowerCase())
@@ -115,7 +121,7 @@ export class MultiSelectComponent {
   }
 
   emitNewOptions() {
-    this.selectedOptions.emit(
+    this.eventSelectedOptions.emit(
       this.options.filter((option) =>
         this.selectedValues.includes(option.value)
       )

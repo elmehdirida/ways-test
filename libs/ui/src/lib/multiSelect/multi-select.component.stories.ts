@@ -8,7 +8,7 @@ export default {
   title: 'MultiSelectComponent',
   component: MultiSelectComponent,
   argTypes: {
-    selectedOptions: { action: 'selectedOptions' },
+    eventSelectedOptions: { action: 'selectedOptions' },
   },
   decorators: [
     moduleMetadata({

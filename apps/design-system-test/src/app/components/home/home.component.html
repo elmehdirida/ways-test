@@ -1,143 +1,162 @@
-<form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
-  <div class="card">
-    <div class="title">My Form</div>
-    <div class="inputs">
-      <ways-test-input-ui
-        [placeHolder]="placeHolder"
-        [control]="formGroup.controls.inputTextValue"
-      ></ways-test-input-ui>
-    </div>
-    <div class="inputs">
-      <ways-test-input-ui
-        type="password"
-        placeHolder="password"
-        [control]="formGroup.controls.inputPasswordValue"
-      ></ways-test-input-ui>
-    </div>
-    <div class="inputs">
-      <ways-test-input-ui
-        type="search"
-        placeHolder="Search"
-        [control]="formGroup.controls.inputSearchValue"
-      ></ways-test-input-ui>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <ways-test-multi-select
-      [options]="multiSelectOptions"
-      (selectedOptions)="handleChangeValues($event)"
-    ></ways-test-multi-select>
-    <ways-test-divider></ways-test-divider>
-    <div class="datePicker">
-      <ways-test-datepicker
-        dateLabel="chose a date"
-        [control]="formGroup.controls.datePickerValue"
-      ></ways-test-datepicker>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <div class="dateRangePicker">
-      <ways-test-range-date-picker
-        placeHolder="chose a range date"
-        [control]="formGroup.controls.rangeDatePickerValue"
-      ></ways-test-range-date-picker>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <div class="list">
-      <ways-test-list [listInformations]="listInformations"></ways-test-list>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <div class="list">
-      <ways-test-selection-list
-        [optionColors]="optionColors"
-        [options]="options"
-        (newState)="optionsAdd($event)"
-      ></ways-test-selection-list>
-    </div>
-    <ways-test-divider></ways-test-divider>
-
-    <div class="list">
-      <ways-test-action-list
-        (selectedValueClicked)="selectedAction = $event"
-        [items]="items"
-      ></ways-test-action-list>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <div class="list">
-      <ways-test-native-select
-        [defaultEmptyValue]="defaultEmptyValue"
-        [defaultLabel]="defaultLabel"
-        [selectOptions]="selectOptions"
-        [control]="formGroup.controls.nativeSelectValue"
-      ></ways-test-native-select>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <div class="list">
-      <ways-test-menu
-        [control]="formGroup.controls.menuControl"
-        [menuOptions]="menuOptions"
-      ></ways-test-menu>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <div class="list">
-      <ways-test-chip
-        [optionColors]="chipOptionColors"
-        [options]="chipOptions"
-        [control]="formGroup.controls.chipsControl"
-      ></ways-test-chip>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <div class="list">
-      <mat-radio-group>
-        <ways-test-radio
-          *ngFor="let opt of radioOptions"
-          [label]="opt"
-          [color]="color"
-          [disabled]="disabled"
-          [labelPosition]="labelPosition"
-          (newStatus)="setRadioValue($event)"
-        ></ways-test-radio>
-      </mat-radio-group>
-    </div>
-    <ways-test-divider></ways-test-divider>
-    <mat-selection-list>
-      <div>
-        <ways-test-checkbox
-          *ngFor="let opt of checkBoxLabels; let i = index"
-          (newStatus)="checkBoxAdd($event, i)"
-          [label]="opt"
-          class="list checkBox"
-          [color]="checkboxColor"
-          [disabled]="checkboxDisabled"
-          [labelPosition]="checkboxLabelPosition"
-          [checked]="false"
-          [indeterminate]="false"
-        ></ways-test-checkbox>
+<div style="display:flex;width: 100%">
+  <form class="card" [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
+    <div >
+      <div class="title">My Form</div>
+      <div class="inputs">
+        <ways-test-input-ui
+          [placeHolder]="placeHolder"
+          [control]="formGroup.controls.inputTextValue"
+        ></ways-test-input-ui>
       </div>
-    </mat-selection-list>
-    <ways-test-divider></ways-test-divider>
-
-    <div class="button-container">
-      <div class="button">
-        <ways-test-button
-          label="Submit"
-          [disabled]="false"
-          type="submit"
-          buttonIcon="done"
-          icon="add"
-        ></ways-test-button>
+      <div class="inputs">
+        <ways-test-input-ui
+          type="password"
+          placeHolder="password"
+          [control]="formGroup.controls.inputPasswordValue"
+        ></ways-test-input-ui>
       </div>
-      <div class="button">
-        <ways-test-button
-          label="Reset"
-          [disabled]="false"
-          type="reset"
-          buttonIcon="close"
-          icon="add"
-          color="warn"
-        ></ways-test-button>
+      <div class="inputs">
+        <ways-test-input-ui
+          type="search"
+          placeHolder="Search"
+          [control]="formGroup.controls.inputSearchValue"
+        ></ways-test-input-ui>
       </div>
-    </div>
-    <div style="margin-top: 300px">
       <ways-test-divider></ways-test-divider>
+      <div class="inputs">
+        <ways-test-multi-select
+          [options]="multiSelectOptions"
+          (eventSelectedOptions)="handleChangeValues($event)"
+          [selectedOptions]="selectedMultiSelectOptions"
+
+        ></ways-test-multi-select>
+      </div>
+
+      <ways-test-divider></ways-test-divider>
+      <div class="datePicker">
+        <ways-test-datepicker
+          dateLabel="chose a date"
+          [control]="formGroup.controls.datePickerValue"
+        ></ways-test-datepicker>
+      </div>
+      <ways-test-divider></ways-test-divider>
+      <div class="dateRangePicker">
+        <ways-test-range-date-picker
+          placeHolder="chose a range date"
+          [control]="formGroup.controls.rangeDatePickerValue"
+        ></ways-test-range-date-picker>
+      </div>
+      <ways-test-divider></ways-test-divider>
+      <div class="list">
+        <ways-test-list
+          [listInformations]="listInformations"
+        ></ways-test-list>
+      </div>
+      <ways-test-divider></ways-test-divider>
+      <div class="list">
+        <ways-test-selection-list
+          [optionColors]="optionColors"
+          [options]="options"
+          (newState)="optionsAdd($event)"
+        ></ways-test-selection-list>
+      </div>
+      <ways-test-divider></ways-test-divider>
+
+      <div class="list">
+        <ways-test-action-list (selectedValueClicked)="selectedAction=$event" [items]="items"></ways-test-action-list>
+      </div>
+      <ways-test-divider></ways-test-divider>
+      <div class="list">
+        <ways-test-native-select
+          [defaultEmptyValue]="defaultEmptyValue"
+          [defaultLabel]="defaultLabel"
+          [selectOptions]="selectOptions"
+          [control]="formGroup.controls.nativeSelectValue"
+        ></ways-test-native-select>
+      </div>
+      <ways-test-divider></ways-test-divider>
+      <div class="list">
+        <ways-test-menu [control]="formGroup.controls.menuControl" [menuOptions]="menuOptions"></ways-test-menu>
+      </div>
+      <ways-test-divider></ways-test-divider>
+      <div class="list">
+        <ways-test-chip
+          [optionColors]="chipOptionColors"
+          [options]="chipOptions"
+          [control]="formGroup.controls.chipsControl"
+        ></ways-test-chip>
+      </div>
+      <ways-test-divider></ways-test-divider>
+      <div class="list">
+        <mat-radio-group>
+          <ways-test-radio *ngFor="let opt of radioOptions"
+                           [label]="opt"
+                           [color]="color"
+                           [disabled]="disabled"
+                           [labelPosition]="labelPosition"
+                           (newStatus)="setRadioValue($event)"
+          ></ways-test-radio>
+        </mat-radio-group>
+      </div>
+      <ways-test-divider></ways-test-divider>
+      <mat-selection-list>
+        <div>
+          <ways-test-checkbox *ngFor="let opt of checkBoxLabels ; let i = index" (newStatus)="checkBoxAdd($event ,i)"
+                              [label]="opt"
+                              class="list checkBox"
+                              [color]="checkboxColor"
+                              [disabled]="checkboxDisabled"
+                              [labelPosition]="checkboxLabelPosition"
+                              [checked]=false
+                              [indeterminate]=false
+          ></ways-test-checkbox>
+        </div>
+      </mat-selection-list>
+      <ways-test-divider></ways-test-divider>
+      <div class="button-container">
+        <div class="button">
+          <ways-test-button
+            label="Submit"
+            [disabled]="false"
+            type="submit"
+            buttonIcon="done"
+            icon="add"
+          ></ways-test-button>
+        </div>
+        <div class="button">
+          <ways-test-button
+            label="Reset"
+            [disabled]="false"
+            type="reset"
+            buttonIcon="close"
+            icon="add"
+            color="warn"
+          ></ways-test-button>
+        </div>
+      </div>
+      <div style="margin-top: 300px">
+        <ways-test-divider></ways-test-divider>
+      </div>
+    </div>
+  </form>
+  <div class="right-section">
+    <ways-test-input-ui
+      placeHolder="number"
+      [value]="number"
+      (onChangeValue)="number=$event"
+      type="number"
+    ></ways-test-input-ui>
+  <div style="display:flex;justify-content: space-around;">
+    <ways-test-raised-button
+      label="get Data"
+      icon="search"
+      [disabled]="false"
+      (click)="getDate(number)"
+    ></ways-test-raised-button>
+    <div>
+      {{data | json}}
     </div>
   </div>
-</form>
+  </div>
+</div>
+

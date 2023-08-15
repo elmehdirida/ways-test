@@ -25,5 +25,5 @@ export class Form {
   chip!: string;
   radio!: string;
   checkbox!: string[];
-  multiOptions?: Option[];
+  multiOptions!: Option[];
 }

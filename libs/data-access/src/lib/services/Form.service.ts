@@ -18,6 +18,9 @@ export class FormService {
     return this.http.post<Form>(this.ApiForms, Form);
   }
 
+  getFormById(id: number): Observable<Form> {
+    return this.http.get<Form>(this.ApiForms + '/' + id);
+  }
   updateForm(form: Form): Observable<Form> {
     return this.http.put<Form>(this.ApiForms + '/' + form.id, form);
   }
