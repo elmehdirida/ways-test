@@ -42,36 +42,40 @@
 
     <ways-test-divider></ways-test-divider>
     <div class="addOption">
-      <div *ngIf="showAddOption">
-        <ways-test-raised-button
-          label="Add"
-          color="primary"
-          icon="add"
-          type="button"
-          (click)="showAddOption = false"
-        ></ways-test-raised-button>
-      </div>
-      <div *ngIf="!showAddOption">
-        <ways-test-input-ui
-          type="text"
-          placeHolder="Add option"
-          (onChangeValue)="addOption($event)"
-        ></ways-test-input-ui>
-        <ways-test-raised-button
-          label="Save"
-          color="accent"
-          icon="save"
-          type="button"
-          (click)="saveOption()"
-        ></ways-test-raised-button>
-        <ways-test-raised-button
-          label="Cancel"
-          color="warn"
-          icon="cancel"
-          type="button"
-          (click)="showAddOption = true"
-        ></ways-test-raised-button>
-      </div>
+      <ways-test-raised-button
+        *ngIf="showAddOption"
+        label="Add"
+        color="primary"
+        icon="add"
+        type="button"
+        (click)="showAddOption = false"
+      >
+      </ways-test-raised-button>
+      <ways-test-input-ui
+        *ngIf="!showAddOption"
+        type="text"
+        placeHolder="Add option"
+        (onChangeValue)="addOption($event)"
+      >
+      </ways-test-input-ui>
+      <ways-test-raised-button
+        *ngIf="!showAddOption"
+        label="Save"
+        color="accent"
+        icon="save"
+        type="button"
+        (click)="saveOption()"
+      >
+      </ways-test-raised-button>
+      <ways-test-raised-button
+        *ngIf="!showAddOption"
+        label="Cancel"
+        color="warn"
+        icon="cancel"
+        type="button"
+        (click)="showAddOption = true"
+      >
+      </ways-test-raised-button>
     </div>
   </mat-select>
 </mat-form-field>
