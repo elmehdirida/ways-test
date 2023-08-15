@@ -10,21 +10,13 @@
       (onChangeValue)="filterOptions($event)"
     ></ways-test-input-ui>
     <mat-checkbox
+      [checked]="isAllSelected()"
+      [indeterminate]="isIndeterminate()"
       color="primary"
-      *ngIf="filteredOptions.length > 0"
-      (change)="toggleAllSelection()"
-      >{{ selectAll ? 'Check All' : 'Uncheck All' }}</mat-checkbox
+      (click)="toggleAllSelection()"
     >
-    <!-- <mat-option >
-      <button
-        color="warn"
-        mat-icon-button
-        class="delete-icon"
-        (click)="clearAll($event)"
-      >
-        <mat-icon fontIcon="delete"></mat-icon>
-      </button>
-    </mat-option> -->
+      {{ isAllSelected() ? 'Uncheck All' : 'Check All' }}
+    </mat-checkbox>
 
     <mat-option *ngFor="let option of filteredOptions" [value]="option.value">
       {{ option.label }}

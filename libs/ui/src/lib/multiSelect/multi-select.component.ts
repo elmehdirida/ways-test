@@ -7,6 +7,7 @@ import {
   DividerComponent,
   InputUiComponent,
   RaisedButtonComponent,
+  CheckboxComponent,
 } from '@ways-test/ui';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
     ButtonComponent,
     RaisedButtonComponent,
     DividerComponent,
+    CheckboxComponent,
   ],
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
@@ -53,14 +55,25 @@ export class MultiSelectComponent {
     );
   }
 
+  isAllSelected(): boolean {
+    return (
+      this.selectedValues.length === this.filteredOptions.length &&
+      this.filteredOptions.length > 0
+    );
+  }
+
+  isIndeterminate(): boolean {
+    return (
+      this.selectedValues.length > 0 &&
+      this.selectedValues.length < this.filteredOptions.length
+    );
+  }
+
   toggleAllSelection() {
-    if (this.selectAll) {
-      console.log(this.filteredOptions);
-      this.selectedValues = this.filteredOptions.map((option) => option.value);
-      this.selectAll = !this.selectAll;
-    } else {
+    if (this.isAllSelected()) {
       this.selectedValues = [];
-      this.selectAll = !this.selectAll;
+    } else {
+      this.selectedValues = this.filteredOptions.map((option) => option.value);
     }
   }
 
