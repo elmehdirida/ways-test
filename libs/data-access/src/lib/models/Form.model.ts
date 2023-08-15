@@ -3,7 +3,10 @@ export class Formation {
   content!: string;
 }
 
-
+export interface Option {
+  value: number;
+  label: string;
+}
 
 export class Form {
   id?: number;
@@ -22,4 +25,5 @@ export class Form {
   chip!: string;
   radio!: string;
   checkbox!: string[];
+  multiOptions!: Option[];
 }

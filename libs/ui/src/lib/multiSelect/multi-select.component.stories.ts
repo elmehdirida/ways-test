@@ -1,15 +1,23 @@
-import { Meta, moduleMetadata } from '@storybook/angular';
+import {applicationConfig, Meta, moduleMetadata} from '@storybook/angular';
 import { MultiSelectComponent } from './multi-select.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {importProvidersFrom} from "@angular/core";
 
 export default {
   title: 'MultiSelectComponent',
   component: MultiSelectComponent,
+  argTypes: {
+    selectedOptions: { action: 'selectedOptions' },
+  },
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, BrowserAnimationsModule],
+      imports: [CommonModule],
     }),
+    applicationConfig({
+      providers: [importProvidersFrom(BrowserAnimationsModule)],
+      }
+    ),
   ],
 } as Meta<MultiSelectComponent>;
 
