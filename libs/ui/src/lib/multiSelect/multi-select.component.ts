@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
@@ -34,16 +34,8 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class MultiSelectComponent {
   selectedValues: number[] = [];
-  options = [
-    { value: 1, label: 'One' },
-    { value: 2, label: 'Two' },
-    { value: 3, label: 'Three' },
-    { value: 4, label: 'Four' },
-    { value: 5, label: 'Five' },
-    { value: 6, label: 'Six' },
-    { value: 7, label: 'Seven' },
-    { value: 8, label: 'Eight' },
-  ];
+  @Input() options = [{ value: 0, label: '' }];
+  @Output() selectedOptions = new EventEmitter<typeof this.options>();
   selectAll = true;
   showAddOption = true;
   searchValue = '';
