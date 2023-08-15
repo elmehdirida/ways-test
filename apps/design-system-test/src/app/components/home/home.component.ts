@@ -17,6 +17,7 @@ import {
   CheckboxComponent,
   ButtonComponent,
   RaisedButtonComponent,
+  MultiSelectComponent
 } from '@ways-test/ui';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
@@ -50,6 +51,7 @@ import {Router, Routes} from "@angular/router";
     MatRadioModule,
     MatListModule,
     ReactiveFormsModule,
+    MultiSelectComponent
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -151,6 +153,20 @@ export class HomeComponent implements OnInit {
   checkboxColor: 'primary' | 'accent' | 'warn' = 'primary';
 
   // Button
+
+
+  // MultiSelect
+
+  multiSelectOptions = [
+    { value: 1, label: 'One' },
+    { value: 2, label: 'Two' },
+    { value: 3, label: 'Three' },
+    { value: 4, label: 'Four' },
+    { value: 5, label: 'Five' },
+    { value: 6, label: 'Six' },
+    { value: 7, label: 'Seven' },
+    { value: 8, label: 'Eight' },
+  ];
 
   // RaisedButton
   onFormSubmit() {

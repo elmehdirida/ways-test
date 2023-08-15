@@ -82,12 +82,12 @@ export class MultiSelectComponent {
       this.selectedValues = this.selectedValues.filter(
         (item) => item !== option.value
       );
-      console.log(this.selectedValues.length)
+      console.log(this.selectedValues.length);
     }
   }
 
   clearAll($event: Event) {
-    console.log(this.selectedValues.length)
+    console.log(this.selectedValues.length);
     $event.stopPropagation();
     if (this.selectedValues.length > 0) {
       this.options = [
