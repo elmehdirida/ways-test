@@ -54,8 +54,8 @@
       "searchInput": "",
       "datePicker": null,
       "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-16T23:00:00.000Z"
+        "start": "2023-08-08T23:00:00.000Z",
+        "end": "2023-08-08T23:00:00.000Z"
       },
       "listOfInformations": [
         {
@@ -68,21 +68,7 @@
         }
       ],
       "selectionList": {
-        "selectionOptions": [],
-        "optionColors": [
-          {
-            "bgColor": "#b5ffd2",
-            "textColor": "#00752E"
-          },
-          {
-            "bgColor": "#FDF5CA",
-            "textColor": "#B44100"
-          },
-          {
-            "bgColor": "#FFCDD6",
-            "textColor": "#B44100"
-          }
-        ]
+        "selectionOptions": []
       },
       "actionList": "Frauen",
       "nativeSelect": "Filter Name 1",
@@ -90,6 +76,40 @@
       "chip": null,
       "radio": "option 4",
       "checkbox": [],
+      "multiOptions": [
+        {
+          "value": 1,
+          "label": "One"
+        },
+        {
+          "value": 2,
+          "label": "Two"
+        },
+        {
+          "value": 3,
+          "label": "Three"
+        },
+        {
+          "value": 4,
+          "label": "Four"
+        },
+        {
+          "value": 5,
+          "label": "Five"
+        },
+        {
+          "value": 6,
+          "label": "Six"
+        },
+        {
+          "value": 7,
+          "label": "Seven"
+        },
+        {
+          "value": 8,
+          "label": "Eight"
+        }
+      ],
       "id": 2
     },
     {
@@ -98,8 +118,8 @@
       "searchInput": "",
       "datePicker": null,
       "dateRangePicker": {
-        "start": "2023-08-01T23:00:00.000Z",
-        "end": "2023-08-24T23:00:00.000Z"
+        "start": "2023-08-16T23:00:00.000Z",
+        "end": "2023-08-23T23:00:00.000Z"
       },
       "listOfInformations": [
         {
@@ -120,6 +140,40 @@
       "chip": null,
       "radio": "option 4",
       "checkbox": [],
+      "multiOptions": [
+        {
+          "value": 1,
+          "label": "One"
+        },
+        {
+          "value": 2,
+          "label": "Two"
+        },
+        {
+          "value": 3,
+          "label": "Three"
+        },
+        {
+          "value": 4,
+          "label": "Four"
+        },
+        {
+          "value": 5,
+          "label": "Five"
+        },
+        {
+          "value": 6,
+          "label": "Six"
+        },
+        {
+          "value": 7,
+          "label": "Seven"
+        },
+        {
+          "value": 8,
+          "label": "Eight"
+        }
+      ],
       "id": 3
     },
     {
@@ -128,7 +182,7 @@
       "searchInput": "",
       "datePicker": null,
       "dateRangePicker": {
-        "start": "2023-08-06T23:00:00.000Z",
+        "start": "2023-08-09T23:00:00.000Z",
         "end": "2023-08-16T23:00:00.000Z"
       },
       "listOfInformations": [
@@ -150,451 +204,17 @@
       "chip": null,
       "radio": "option 4",
       "checkbox": [],
+      "multiOptions": [
+        {
+          "value": 1,
+          "label": "One"
+        },
+        {
+          "value": 2,
+          "label": "Two"
+        }
+      ],
       "id": 4
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-16T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [],
-      "id": 5
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-16T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [
-        "label 1",
-        "label 3"
-      ],
-      "id": 6
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-23T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [
-        "label 3"
-      ],
-      "id": 7
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-18T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [],
-      "id": 8
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-16T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [],
-      "id": 9
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-16T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [
-        "label 2"
-      ],
-      "id": 10
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-08-01T23:00:00.000Z",
-        "end": "2023-08-09T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [
-        "label 1"
-      ],
-      "id": 11
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-23T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [],
-      "id": 12
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-08-08T23:00:00.000Z",
-        "end": "2023-08-22T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [],
-      "id": 13
-    },
-    {
-      "textInput": null,
-      "passwordInput": null,
-      "searchInput": null,
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-08-07T23:00:00.000Z",
-        "end": "2023-08-16T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": null,
-      "menu": null,
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [
-        "label 1",
-        "label 2",
-        "label 3"
-      ],
-      "id": 14
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-08-06T23:00:00.000Z",
-        "end": "2023-08-23T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [
-        "label 1",
-        "label 2"
-      ],
-      "id": 15
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-08-06T23:00:00.000Z",
-        "end": "2023-08-14T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [
-        "label 2"
-      ],
-      "id": 16
-    },
-    {
-      "textInput": "",
-      "passwordInput": "",
-      "searchInput": "",
-      "datePicker": null,
-      "dateRangePicker": {
-        "start": "2023-07-31T23:00:00.000Z",
-        "end": "2023-08-16T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": []
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 1",
-      "chip": null,
-      "radio": "option 4",
-      "checkbox": [],
-      "id": 17
-    },
-    {
-      "textInput": "test",
-      "passwordInput": "tetst",
-      "searchInput": "kdkdk",
-      "datePicker": "2023-07-31T23:00:00.000Z",
-      "dateRangePicker": {
-        "start": "2023-08-07T23:00:00.000Z",
-        "end": "2023-08-15T23:00:00.000Z"
-      },
-      "listOfInformations": [
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        },
-        {
-          "title": "Saved export template 1",
-          "content": "Field name 1, Field name 2, Field name 3, Field name 4,Field name 5,Field name X"
-        }
-      ],
-      "selectionList": {
-        "selectionOptions": [
-          "nicht verfügbar",
-          "reserviert"
-        ]
-      },
-      "actionList": "Frauen",
-      "nativeSelect": "Filter Name 1",
-      "menu": "Menu Item 2",
-      "chip": "verfügbar",
-      "radio": "option 1",
-      "checkbox": [
-        "label 1",
-        "label 2"
-      ],
-      "id": 18
     }
   ],
   "letters": [
