@@ -11,6 +11,8 @@ import {
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import {MatRippleModule} from "@angular/material/core";
+import {Option} from "@ways-test/data-access";
 
 @Component({
   selector: 'ways-test-multi-select',
@@ -26,15 +28,15 @@ import { MatButtonModule } from '@angular/material/button';
     ButtonComponent,
     RaisedButtonComponent,
     DividerComponent,
+    MatRippleModule,
   ],
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
 })
 export class MultiSelectComponent {
   selectedValues: number[] = [];
-  @Input() options = [{ value: 0, label: '' }];
-  @Output() selectedOptions = new EventEmitter<typeof this.options>();
-  selectAll = true;
+  @Input() options = [] as Option[];
+  @Output() selectedOptions = new EventEmitter<Option[]>();
   showAddOption = true;
   searchValue = '';
   newValue = { value: this.options.length + 1, label: '' };
@@ -65,11 +67,11 @@ export class MultiSelectComponent {
     } else {
       this.selectedValues = this.filteredOptions.map((option) => option.value);
     }
+    this.emitNewOptions();
   }
 
   filterOptions($event: string) {
     this.searchValue = $event;
-    console.log(this.searchValue);
   }
 
   deleteSelectedOption(
@@ -82,12 +84,11 @@ export class MultiSelectComponent {
       this.selectedValues = this.selectedValues.filter(
         (item) => item !== option.value
       );
-      console.log(this.selectedValues.length)
+      this.emitNewOptions();
     }
   }
 
   clearAll($event: Event) {
-    console.log(this.selectedValues.length)
     $event.stopPropagation();
     if (this.selectedValues.length > 0) {
       this.options = [
@@ -97,6 +98,7 @@ export class MultiSelectComponent {
       ];
       this.selectedValues = [];
     }
+    this.emitNewOptions();
   }
 
   addOption($event: string) {
@@ -110,5 +112,13 @@ export class MultiSelectComponent {
       this.newValue = { value: this.options.length + 1, label: '' };
       this.showAddOption = !this.showAddOption;
     }
+  }
+
+  emitNewOptions() {
+    this.selectedOptions.emit(
+      this.options.filter((option) =>
+        this.selectedValues.includes(option.value)
+      )
+    );
   }
 }

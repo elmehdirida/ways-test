@@ -10,7 +10,7 @@
       type="search"
       (onChangeValue)="filterOptions($event)"
     ></ways-test-input-ui>
-    <div class="checkbox-container" style="height: 48px;" (click)="toggleAllSelection()">
+    <div class="checkbox-container" matRipple style="height: 48px;" (click)="toggleAllSelection()">
     <mat-checkbox
       [checked]="isAllSelected()"
       [indeterminate]="isIndeterminate()"
@@ -19,7 +19,8 @@
       {{ isAllSelected() ? 'Uncheck All' : 'Check All' }}
     </mat-checkbox>
     </div>
-    <mat-option *ngFor="let option of filteredOptions" [value]="option.value">
+    <mat-option *ngFor="let option of filteredOptions" [value]="option.value"     (click)="emitNewOptions()"
+    >
       {{ option.label }}
       <button
         color="warn"
@@ -30,16 +31,16 @@
         <mat-icon fontIcon="delete"></mat-icon>
       </button>
     </mat-option>
+    <ways-test-divider *ngIf="options.length>0"></ways-test-divider>
+    <div class="clearAll" *ngIf="selectedValues.length > 0">
+      <ways-test-raised-button
 
-    <ways-test-divider></ways-test-divider>
-    <ways-test-raised-button
-      *ngIf="options.length > 0"
-      class="clearAll"
-      label="Clear Selected"
-      color="warn"
-      icon="clear"
-      (click)="clearAll($event)"
-    ></ways-test-raised-button>
+        label="Clear Selected"
+        color="warn"
+        icon="clear"
+        (click)="clearAll($event)"
+      ></ways-test-raised-button>
+    </div>
     <ways-test-divider></ways-test-divider>
     <div class="addOption">
       <ways-test-raised-button
