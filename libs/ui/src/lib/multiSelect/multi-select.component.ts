@@ -2,10 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-import {ButtonComponent, DividerComponent, InputUiComponent, RaisedButtonComponent} from '@ways-test/ui';
+import {
+  ButtonComponent,
+  DividerComponent,
+  InputUiComponent,
+  RaisedButtonComponent,
+} from '@ways-test/ui';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatIconModule} from "@angular/material/icon";
-import {MatButtonModule} from "@angular/material/button";
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'ways-test-multi-select',
@@ -26,7 +31,6 @@ import {MatButtonModule} from "@angular/material/button";
   styleUrls: ['./multi-select.component.scss'],
 })
 export class MultiSelectComponent {
-
   selectedValues: number[] = [];
   options = [
     { value: 1, label: 'One' },
@@ -41,7 +45,7 @@ export class MultiSelectComponent {
   selectAll = true;
   showAddOption = true;
   searchValue = '';
-  newValue = { value: this.options.length+1, label: '' };
+  newValue = { value: this.options.length + 1, label: '' };
 
   get filteredOptions() {
     return this.options.filter((option) =>
@@ -51,7 +55,7 @@ export class MultiSelectComponent {
 
   toggleAllSelection() {
     if (this.selectAll) {
-      console.log(this.filteredOptions)
+      console.log(this.filteredOptions);
       this.selectedValues = this.filteredOptions.map((option) => option.value);
       this.selectAll = !this.selectAll;
     } else {
@@ -65,19 +69,24 @@ export class MultiSelectComponent {
     console.log(this.searchValue);
   }
 
-
-  deleteSelectedOption($event: Event , option: { value: number; label: string }) {
+  deleteSelectedOption(
+    $event: Event,
+    option: { value: number; label: string }
+  ) {
     $event.stopPropagation();
     if (this.options.length > 0) {
       this.options = this.options.filter((item) => item.value !== option.value);
     }
   }
 
-  clearAll($event :Event) {
+  clearAll($event: Event) {
     $event.stopPropagation();
-    if(this.selectedValues.length > 0){
-      this.options = [...this.options.filter((item) => !this.selectedValues.includes(item.value)
-      )];
+    if (this.selectedValues.length > 0) {
+      this.options = [
+        ...this.options.filter(
+          (item) => !this.selectedValues.includes(item.value)
+        ),
+      ];
       this.selectedValues = [];
     }
   }
@@ -88,7 +97,7 @@ export class MultiSelectComponent {
     }
   }
   saveOption() {
-    if (this.newValue.label!=='') {
+    if (this.newValue.label !== '') {
       this.options = [...this.options, this.newValue];
       this.newValue = { value: this.options.length + 1, label: '' };
       this.showAddOption = !this.showAddOption;

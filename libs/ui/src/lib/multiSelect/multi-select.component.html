@@ -1,61 +1,85 @@
-<mat-form-field  style="width: 100%" appearance="outline">
+<mat-form-field style="width: 100%" appearance="outline">
   <mat-select
     placeholder="Select options"
     multiple
     [(ngModel)]="selectedValues"
-    name="options">
+    name="options"
+  >
     <ways-test-input-ui
       type="search"
       (onChangeValue)="filterOptions($event)"
     ></ways-test-input-ui>
-      <mat-option (click)="toggleAllSelection()">
-        <button color="warn" mat-icon-button class="delete-icon" (click)="clearAll($event)">
-          <mat-icon fontIcon="delete" ></mat-icon>
-        </button>
-        <span>{{ selectAll ? 'Check All' : 'Uncheck All' }}</span>
-    </mat-option>
-    <mat-option  *ngFor="let option of filteredOptions" [value]="option.value">
+    <mat-checkbox
+      color="primary"
+      *ngIf="filteredOptions.length > 0"
+      (change)="toggleAllSelection()"
+      >{{ selectAll ? 'Check All' : 'Uncheck All' }}</mat-checkbox
+    >
+    <!-- <mat-option >
+      <button
+        color="warn"
+        mat-icon-button
+        class="delete-icon"
+        (click)="clearAll($event)"
+      >
+        <mat-icon fontIcon="delete"></mat-icon>
+      </button>
+    </mat-option> -->
+
+    <mat-option *ngFor="let option of filteredOptions" [value]="option.value">
       {{ option.label }}
-      <button color="warn" mat-icon-button class="delete-icon" (click)="deleteSelectedOption($event, option)">
-        <mat-icon fontIcon="delete" ></mat-icon>
+      <button
+        color="warn"
+        mat-icon-button
+        class="delete-icon"
+        (click)="deleteSelectedOption($event, option)"
+      >
+        <mat-icon fontIcon="delete"></mat-icon>
       </button>
     </mat-option>
     <ways-test-divider></ways-test-divider>
-    <div style="display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-      margin-top: 15px">
-    <ways-test-raised-button *ngIf="showAddOption"
-      label="Add"
-      color="primary"
-      icon="add"
-      type="button"
-      (click)="showAddOption = false"
+    <div
+      style="
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+        margin-top: 15px;
+      "
     >
-    </ways-test-raised-button>
-        <ways-test-input-ui *ngIf="!showAddOption"
-                            type="text"
-                            placeHolder="Add option"
-
-                            (onChangeValue)="addOption($event)"
-        >
-        </ways-test-input-ui>
-        <ways-test-raised-button *ngIf="!showAddOption"
-                                 label="Save"
-                                 color="accent"
-                                 icon="save"
-                                 type="button"
-                                 (click)="saveOption()"
-        >
-        </ways-test-raised-button>
-        <ways-test-raised-button *ngIf="!showAddOption"
-                                 label="Cancel"
-                                 color="warn"
-                                 icon="cancel"
-                                 type="button"
-                                 (click)="showAddOption = true"
-        >
-        </ways-test-raised-button>
+      <ways-test-raised-button
+        *ngIf="showAddOption"
+        label="Add"
+        color="primary"
+        icon="add"
+        type="button"
+        (click)="showAddOption = false"
+      >
+      </ways-test-raised-button>
+      <ways-test-input-ui
+        *ngIf="!showAddOption"
+        type="text"
+        placeHolder="Add option"
+        (onChangeValue)="addOption($event)"
+      >
+      </ways-test-input-ui>
+      <ways-test-raised-button
+        *ngIf="!showAddOption"
+        label="Save"
+        color="accent"
+        icon="save"
+        type="button"
+        (click)="saveOption()"
+      >
+      </ways-test-raised-button>
+      <ways-test-raised-button
+        *ngIf="!showAddOption"
+        label="Cancel"
+        color="warn"
+        icon="cancel"
+        type="button"
+        (click)="showAddOption = true"
+      >
+      </ways-test-raised-button>
     </div>
   </mat-select>
 </mat-form-field>
