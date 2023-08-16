@@ -6,7 +6,7 @@ import { Primary } from './button.component.stories';
 describe('ButtonComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ButtonComponent],
+      declarations: [],
     }).compileComponents();
   });
 
@@ -17,7 +17,7 @@ describe('ButtonComponent', () => {
   });
 
   // Add more tests for your component here
-  
+
   // Use the Primary story as part of your unit tests
   it('should render primary button', async () => {
     const fixture = TestBed.createComponent(ButtonComponent);
