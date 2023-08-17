@@ -1,18 +1,16 @@
-<mat-form-field appearance="outline" style="width: 100%">
-  <mat-label>{{ placeHolder }}</mat-label>
-  <textarea
-    role="textbox"
-    (change)="onChange()"
-    [type]="type"
-    [required]="required"
-    [formControl]="control"
-    [value]="value"
-    style="max-height: 119px"
-    cdkTextareaAutosize
-    matInput
-    >{{ value }}</textarea
-  >
-  <mat-error *ngIf="value.length === 0">
-    {{ placeHolder }} is required
-  </mat-error>
-</mat-form-field>
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label role="holder">{{placeHolder}}</mat-label>
+    <textarea
+      role="textbox"
+      (change)="onChange()"
+      [type]="type"
+      [required]="required"
+      [formControl]="control"
+      [value]="value"
+      style="max-height: 119px"
+      cdkTextareaAutosize
+      matInput >{{value}}</textarea>
+    <mat-error *ngIf="value.length===0"
+      role="row"> {{placeHolder}} is required
+    </mat-error>
+  </mat-form-field>
