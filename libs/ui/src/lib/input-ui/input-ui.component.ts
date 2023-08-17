@@ -70,5 +70,6 @@ export class InputUiComponent implements OnInit,OnChanges {
       }
   }
 
+
   protected readonly history = history;
 }
