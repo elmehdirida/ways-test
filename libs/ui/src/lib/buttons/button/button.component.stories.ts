@@ -26,9 +26,6 @@ export default {
 export const Primary = {
   render: (args: ButtonComponent) => ({
     props: args,
-    parameters: {
-      jest: ['button.stories.test.ts'],
-    },
   }),
   args: {
     label: 'Button',

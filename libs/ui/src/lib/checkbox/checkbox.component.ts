@@ -10,7 +10,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   styleUrls: ['./checkbox.component.scss'],
 })
 export class CheckboxComponent {
-  @Input() label = '';
+  @Input() label = 'label';
   @Input() checked = true;
   @Input() indeterminate = false;
   @Input() labelPosition: 'before' | 'after' = 'after';

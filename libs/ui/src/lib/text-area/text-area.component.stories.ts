@@ -1,9 +1,20 @@
-import {Meta, moduleMetadata} from '@storybook/angular';
+import {Meta, StoryObj, moduleMetadata} from '@storybook/angular';
 import { TextAreaComponent } from './text-area.component';
 import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {userEvent, within} from "@storybook/testing-library";
 
-export default {
+
+
+const meta : Meta<TextAreaComponent> = {
+  component : TextAreaComponent,
+}
+
+export default meta;
+type Story = StoryObj<TextAreaComponent>;
+
+
+export const defaultStory : Story = {
   title: 'Inputs/TextAreaComponent',
   component: TextAreaComponent,
   argTypes: {
@@ -21,7 +32,7 @@ export default {
   ]
 } as Meta<TextAreaComponent>;
 
-export const Primary = {
+export const Primary: Story = {
   render: (args: TextAreaComponent) => ({
     props: args,
   }),
@@ -29,5 +40,10 @@ export const Primary = {
     placeHolder: 'holder input',
     value: 'input value',
     required: false
+  },
+
+  play : async ({canvasElement}) => {
+    const canvas = within(canvasElement);
+    await userEvent.type(canvas.getByRole('textbox'), 'email@provider.com')
   }
 };
