@@ -3,11 +3,24 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
+
+const  history : string[] = [
+  'Lyon',
+  'Paris',
+  'Marseille',
+  'Toulouse',
+  'Nice',
+  'Nantes',
+  'Montpellier',
+  'Strasbourg',
+  'Bordeaux',
+]
 @Component({
   selector: 'ways-test-input-ui',
   standalone: true,
-  imports: [CommonModule, MatInputModule, FormsModule, ReactiveFormsModule, MatIconModule],
+  imports: [CommonModule, MatInputModule, FormsModule, ReactiveFormsModule, MatIconModule, MatAutocompleteModule],
   templateUrl: './input-ui.component.html',
   styleUrls: ['./input-ui.component.scss'],
 })
@@ -56,4 +69,6 @@ export class InputUiComponent implements OnInit,OnChanges {
             }
       }
   }
+
+  protected readonly history = history;
 }
