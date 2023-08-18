@@ -1,4 +1,4 @@
-import { Component, importProvidersFrom, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   InputUiComponent,
@@ -17,20 +17,19 @@ import {
   CheckboxComponent,
   ButtonComponent,
   RaisedButtonComponent,
-  MultiSelectComponent,
+  MultiSelectComponent, InputAutoCompeletComponent,
 } from '@ways-test/ui';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  Validators,
 } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatListModule } from '@angular/material/list';
 import { FormService } from 'libs/data-access/src/lib/services/Form.service';
 import { Form, Option } from 'libs/data-access/src/lib/models/Form.model';
-import { Router, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ways-test-home',
@@ -57,6 +56,7 @@ import { Router, Routes } from '@angular/router';
     MatListModule,
     ReactiveFormsModule,
     MultiSelectComponent,
+    InputAutoCompeletComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -205,8 +205,8 @@ export class HomeComponent implements OnInit {
         checkbox: this.selectedCheckBox.filter((value1) => value1 !== ''),
         multiOptions: this.selectedMultiSelectOptions,
       };
-      this.formService.addForm(this.form).subscribe((res) => {
-        this.router.navigateByUrl('').then((r) => {
+      this.formService.addForm(this.form).subscribe(() => {
+        this.router.navigateByUrl('').then(() => {
           alert('form saved successfully');
           window.location.reload();
         });

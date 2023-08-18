@@ -1,10 +1,10 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import {
-  ButtonComponent,
-  DividerComponent,
+  ButtonComponent, CardComponent, CardLetterComponent,
+  DividerComponent, InputAutoCompeletComponent,
   InputUiComponent,
   RaisedButtonComponent,
 } from '@ways-test/ui';
@@ -29,6 +29,9 @@ import {Option} from "@ways-test/data-access";
     RaisedButtonComponent,
     DividerComponent,
     MatRippleModule,
+    CardLetterComponent,
+    CardComponent,
+    InputAutoCompeletComponent,
   ],
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
