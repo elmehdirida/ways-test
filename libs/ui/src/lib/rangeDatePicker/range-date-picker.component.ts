@@ -6,7 +6,6 @@ import {MatInputModule} from "@angular/material/input";
 import { FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {MomentDateAdapter} from '@angular/material-moment-adapter';
-import {InputAutoCompeletComponent} from "../inputAutoCompelet/input-auto-compelet.component";
 
 export const MY_FORMATS = {
   parse: {
@@ -28,7 +27,7 @@ export const MY_FORMATS = {
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},],
     imports: [CommonModule, MatDatepickerModule, MatInputModule, MatFormFieldModule, MatNativeDateModule,
-        ReactiveFormsModule, InputAutoCompeletComponent],
+        ReactiveFormsModule],
   templateUrl: './range-date-picker.component.html',
   styleUrls: ['./range-date-picker.component.css'],
 })

@@ -1,26 +1,24 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {MatAutocompleteModule} from "@angular/material/autocomplete";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatIconModule} from "@angular/material/icon";
-import {MatInputModule} from "@angular/material/input";
-import {MatOptionModule} from "@angular/material/core";
 import {FormControl, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatButtonModule} from "@angular/material/button";
-
 
 export interface autoComplete {
   value: string;
   type: 'history' | 'suggestion' ;
 }
+
 @Component({
-  selector: 'ways-test-input-auto-compelet',
+  selector: 'ways-test-input-history',
   standalone: true,
-  imports: [CommonModule, MatAutocompleteModule, MatFormFieldModule, MatIconModule, MatInputModule, MatOptionModule, ReactiveFormsModule, MatButtonModule],
-  templateUrl: './input-auto-compelet.component.html',
-  styleUrls: ['./input-auto-compelet.component.scss'],
+  imports: [CommonModule, MatInputModule, MatIconModule, MatAutocompleteModule, ReactiveFormsModule, MatButtonModule],
+  templateUrl: './input-history.component.html',
+  styleUrls: ['./input-history.component.scss'],
 })
-export class InputAutoCompeletComponent  implements OnInit,OnChanges{
+export class InputHistoryComponent implements OnInit,OnChanges{
   @Input() placeHolder = '';
   @Input() value = '';
   @Input() type = 'search';
@@ -30,14 +28,23 @@ export class InputAutoCompeletComponent  implements OnInit,OnChanges{
   @Input() control = new FormControl();
   @Input() history: string[] = [
     'one',
-    'history2',
-    'history3',
+    'two',
+    'three',
+    'four',
   ];
   @Input() suggestions: string[] = [
-    'suggestion1',
-    'suggestion2',
-    'suggestion3',
-    'suggestion4',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+    'ten',
+
+
   ];
   inputType = this.type;
   showPassword = false;
@@ -67,7 +74,7 @@ export class InputAutoCompeletComponent  implements OnInit,OnChanges{
     });
     this.suggestions.forEach((value) => {
       if (this.options.length < 5) {
-        if (value.includes(this.control.value)) {
+        if (value.includes(this.control.value) && !this.history.includes(value)) {
           this.options.push({value: value, type: 'suggestion'});
         }
       }
@@ -114,6 +121,6 @@ export class InputAutoCompeletComponent  implements OnInit,OnChanges{
         this.history = this.history.filter((value) => value !== this.control.value);
         this.history.unshift(this.control.value);
         }
-    console.log(this.history)
+    this.mergeListOfAutoComplete();
   }
 }

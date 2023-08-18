@@ -3,24 +3,6 @@ import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-import {
-  ButtonComponent, CardComponent, CardLetterComponent,
-  DividerComponent, InputAutoCompeletComponent,
-  InputUiComponent,
-  RaisedButtonComponent,
-} from '@ways-test/ui';
-
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { MatSelectModule } from '@angular/material/select';
 import { ButtonComponent } from '../buttons/button/button.component';
 import { DividerComponent } from '../dividers/Divider/divider.component';
 import { InputUiComponent } from '../input-ui/input-ui.component';
@@ -29,6 +11,31 @@ import { RaisedButtonComponent } from '../buttons/raisedButton/raised-button.com
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import {MatRippleModule} from "@angular/material/core";
+import {Option} from "@ways-test/data-access";
+import { InputHistoryComponent } from "../input-history/input-history.component";
+
+@Component({
+    selector: 'ways-test-multi-select',
+    standalone: true,
+    templateUrl: './multi-select.component.html',
+    styleUrls: ['./multi-select.component.scss'],
+    imports: [
+        CommonModule,
+        FormsModule,
+        MatSelectModule,
+        InputUiComponent,
+        MatCheckboxModule,
+        MatIconModule,
+        MatButtonModule,
+        ButtonComponent,
+        RaisedButtonComponent,
+        DividerComponent,
+        MatRippleModule,
+        CardLetterComponent,
+        CardComponent,
+        InputHistoryComponent
+    ]
 import { MatRippleModule } from '@angular/material/core';
 import { Option } from '@ways-test/data-access';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -48,12 +55,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     RaisedButtonComponent,
     DividerComponent,
     MatRippleModule,
-
-    CardLetterComponent,
-    CardComponent,
-    InputAutoCompeletComponent,
-
-    MatAutocompleteModule,
 
   ],
   templateUrl: './multi-select.component.html',
