@@ -22,6 +22,7 @@ export default {
     type: {
       control: 'radio',
       options: ['text', 'password', 'search'],
+
     },
   },
   decorators: [
