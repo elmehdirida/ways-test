@@ -32,34 +32,10 @@ import { InputHistoryComponent } from "../input-history/input-history.component"
         RaisedButtonComponent,
         DividerComponent,
         MatRippleModule,
-        CardLetterComponent,
-        CardComponent,
         InputHistoryComponent
     ]
-import { MatRippleModule } from '@angular/material/core';
-import { Option } from '@ways-test/data-access';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-
-@Component({
-  selector: 'ways-test-multi-select',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    MatSelectModule,
-    InputUiComponent,
-    MatCheckboxModule,
-    MatIconModule,
-    MatButtonModule,
-    ButtonComponent,
-    RaisedButtonComponent,
-    DividerComponent,
-    MatRippleModule,
-
-  ],
-  templateUrl: './multi-select.component.html',
-  styleUrls: ['./multi-select.component.scss'],
 })
+
 export class MultiSelectComponent implements OnChanges {
   selectedValues: number[] = [];
   @Input() selectedOptions: Option[] = [];
