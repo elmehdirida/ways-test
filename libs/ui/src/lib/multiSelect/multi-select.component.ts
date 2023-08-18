@@ -1,18 +1,24 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-import {
-  ButtonComponent,
-  DividerComponent,
-  InputUiComponent,
-  RaisedButtonComponent,
-} from '@ways-test/ui';
+import { ButtonComponent } from '../buttons/button/button.component';
+import { DividerComponent } from '../dividers/Divider/divider.component';
+import { InputUiComponent } from '../input-ui/input-ui.component';
+import { RaisedButtonComponent } from '../buttons/raisedButton/raised-button.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import {MatRippleModule} from "@angular/material/core";
-import {Option} from "@ways-test/data-access";
+import { MatRippleModule } from '@angular/material/core';
+import { Option } from '@ways-test/data-access';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @Component({
   selector: 'ways-test-multi-select',
@@ -29,11 +35,12 @@ import {Option} from "@ways-test/data-access";
     RaisedButtonComponent,
     DividerComponent,
     MatRippleModule,
+    MatAutocompleteModule,
   ],
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
 })
-export class MultiSelectComponent implements OnChanges{
+export class MultiSelectComponent implements OnChanges {
   selectedValues: number[] = [];
   @Input() selectedOptions: Option[] = [];
   @Input() options = [] as Option[];
@@ -43,9 +50,9 @@ export class MultiSelectComponent implements OnChanges{
   newValue = { value: this.options.length + 1, label: '' };
 
   ngOnChanges() {
-    if(this.selectedOptions){
-    this.selectedValues = this.selectedOptions.map((option) => option.value);
-  }
+    if (this.selectedOptions) {
+      this.selectedValues = this.selectedOptions.map((option) => option.value);
+    }
   }
   get filteredOptions() {
     return this.options.filter((option) =>

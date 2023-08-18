@@ -55,3 +55,5 @@ export * from './lib/Table/table.component';
 export * from './lib/dialog/dialog.component';
 
 export * from './lib/multiSelect/multi-select.component';
+
+export * from './lib/search-component/search-component.component';
