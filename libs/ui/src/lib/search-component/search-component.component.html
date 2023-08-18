@@ -1,0 +1,55 @@
+<mat-form-field appearance="outline" style="width: 100%">
+  <mat-label>Search</mat-label>
+  <input
+    matInput
+    type="search"
+    placeholder="Search "
+    [(ngModel)]="searchQuery"
+    [matAutocomplete]="auto"
+    (keyup.enter)="onInput($event)"
+    (input)="onInputValue($event)"
+  />
+  <mat-autocomplete #auto="matAutocomplete">
+    <!-- Show suggestions when the user visits the page for the first time -->
+    <ng-container *ngIf="!searchQuery && showHistoryOnLoad">
+      <mat-option *ngFor="let sugg of suggestions" [value]="sugg">
+        <mat-icon>search</mat-icon> {{ sugg }}
+      </mat-option>
+    </ng-container>
+
+    <!-- Show history options for the first click -->
+    <ng-container *ngIf="!searchQuery && !showHistoryOnLoad">
+      <mat-option *ngFor="let hist of history; let i = index" [value]="hist">
+        <mat-icon>history</mat-icon> {{ hist }}
+        <mat-icon
+          class="delete-icon"
+          color="warn"
+          (click)="deleteHistoryItem($event, i)"
+          >delete</mat-icon
+        >
+      </mat-option>
+    </ng-container>
+
+    <!-- Show suggestions that are not in history and match search query -->
+    <ng-container *ngIf="searchQuery">
+      <mat-option
+        *ngFor="let hist of filteredHistory; let i = index"
+        [value]="hist"
+      >
+        <mat-icon>history</mat-icon> {{ hist }}
+        <mat-icon
+          class="delete-icon"
+          color="warn"
+          (click)="deleteHistoryItem($event, i)"
+          >delete</mat-icon
+        >
+      </mat-option>
+      <mat-option *ngFor="let option of filteredSuggestions" [value]="option">
+        <mat-icon>search</mat-icon> {{ option }}
+      </mat-option>
+    </ng-container>
+
+    {{ history | json }}
+    {{ suggestions | json }}
+  </mat-autocomplete>
+</mat-form-field>
