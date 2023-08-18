@@ -1,13 +1,14 @@
 import {applicationConfig, Meta, moduleMetadata} from '@storybook/angular';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
+import { InputHistoryComponent } from './input-history.component';
+import {FormControl} from "@angular/forms";
+import {CommonModule} from "@angular/common";
+import {MatIconModule} from "@angular/material/icon";
 import {importProvidersFrom} from "@angular/core";
-import {InputAutoCompeletComponent} from "./input-auto-compelet.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export default {
-  title: 'Inputs/InputAutoCompleteComponent',
-  component: InputAutoCompeletComponent,
+  title: 'inputs/InputHistoryComponent',
+  component: InputHistoryComponent,
   argTypes: {
     onChangeValue : {action : "changed value"},
     placeHolder: { control: 'text'  },
@@ -24,23 +25,15 @@ export default {
     },
   },
   decorators: [
-    moduleMetadata({
-      imports: [CommonModule, MatIconModule],
-    }),
     applicationConfig({
       providers: [importProvidersFrom(BrowserAnimationsModule)],
     }),
 
-  ],
-} as Meta<InputAutoCompeletComponent>;
+  ]
+} as Meta<InputHistoryComponent>;
 
 export const Primary = {
-  render: (args: InputAutoCompeletComponent) => ({
+  render: (args: InputHistoryComponent) => ({
     props: args,
   }),
-  args: {
-    placeHolder: 'holder input',
-    required: false,
-    type: 'text',
-  },
 };

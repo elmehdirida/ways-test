@@ -17,7 +17,7 @@ import {
   CheckboxComponent,
   ButtonComponent,
   RaisedButtonComponent,
-  MultiSelectComponent, InputAutoCompeletComponent,
+  MultiSelectComponent,
 } from '@ways-test/ui';
 import {
   FormControl,
@@ -56,7 +56,6 @@ import { Router } from '@angular/router';
     MatListModule,
     ReactiveFormsModule,
     MultiSelectComponent,
-    InputAutoCompeletComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

@@ -58,5 +58,4 @@ export * from './lib/dialog/dialog.component';
 
 export * from './lib/multiSelect/multi-select.component';
 
-export * from './lib/inputAutoCompelet/input-auto-compelet.component';
-
+export * from './lib/input-history/input-history.component';
