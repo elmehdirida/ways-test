@@ -1,0 +1,34 @@
+<mat-form-field appearance="outline" style="width: 100%;">
+  <mat-icon *ngIf="type === 'search'" matPrefix (click)="saveHistory()">search</mat-icon>
+  <mat-label>{{ placeHolder }}</mat-label>
+  <input
+    [matAutocomplete]="auto"
+    [type]="inputType"
+    name="myInput"
+    [required]="required"
+    matInput
+    (input)="onChange()"
+    [formControl]="control"
+    [value]="value"
+    (keyup.enter)="saveHistory()"
+  />
+  <mat-autocomplete #auto="matAutocomplete" >
+    <mat-option *ngFor="let option of options" [value]="option.value" (click)="onChange()">
+      <mat-icon
+      *ngIf="option.type === 'history'" matPrefix fontIcon="history"></mat-icon>
+      <mat-icon *ngIf="option.type === 'suggestion'" matPrefix fontIcon="search"></mat-icon>
+      {{ option.value }}
+      <button *ngIf="option.type === 'history'"
+              color="warn"
+              mat-icon-button
+              class="delete-icon" (click)="deleteSelectedOption($event, option.value)">
+
+        <mat-icon fontIcon="clear"></mat-icon>
+      </button>
+    </mat-option>
+  </mat-autocomplete>
+  <mat-icon *ngIf="type === 'password'" matSuffix (click)="togglePasswordVisibility()">
+    {{ showPassword ? 'visibility_off' : 'visibility' }}
+  </mat-icon>
+  <mat-error *ngIf="value.length === 0">{{ placeHolder }} is required</mat-error>
+</mat-form-field>

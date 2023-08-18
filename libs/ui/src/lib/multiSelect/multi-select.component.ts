@@ -1,3 +1,15 @@
+
+import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import {
+  ButtonComponent, CardComponent, CardLetterComponent,
+  DividerComponent, InputAutoCompeletComponent,
+  InputUiComponent,
+  RaisedButtonComponent,
+} from '@ways-test/ui';
+
 import {
   Component,
   EventEmitter,
@@ -13,6 +25,7 @@ import { ButtonComponent } from '../buttons/button/button.component';
 import { DividerComponent } from '../dividers/Divider/divider.component';
 import { InputUiComponent } from '../input-ui/input-ui.component';
 import { RaisedButtonComponent } from '../buttons/raisedButton/raised-button.component';
+
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -35,7 +48,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     RaisedButtonComponent,
     DividerComponent,
     MatRippleModule,
+
+    CardLetterComponent,
+    CardComponent,
+    InputAutoCompeletComponent,
+
     MatAutocompleteModule,
+
   ],
   templateUrl: './multi-select.component.html',
   styleUrls: ['./multi-select.component.scss'],
