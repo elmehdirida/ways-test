@@ -3,7 +3,7 @@ import {CommonModule, DatePipe} from '@angular/common';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import { FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import { FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {MomentDateAdapter} from '@angular/material-moment-adapter';
 
@@ -27,7 +27,7 @@ export const MY_FORMATS = {
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},],
     imports: [CommonModule, MatDatepickerModule, MatInputModule, MatFormFieldModule, MatNativeDateModule,
-      ReactiveFormsModule ],
+        ReactiveFormsModule],
   templateUrl: './range-date-picker.component.html',
   styleUrls: ['./range-date-picker.component.css'],
 })

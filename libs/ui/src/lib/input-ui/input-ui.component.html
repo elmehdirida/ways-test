@@ -2,7 +2,6 @@
   <mat-icon *ngIf="type === 'search'" matPrefix>search</mat-icon>
   <mat-label>{{ placeHolder }}</mat-label>
   <input
-      
     [type]="inputType"
     name="myInput"
     [required]="required"
@@ -11,16 +10,7 @@
     [formControl]="control"
     [value]="value"
   />
-  <!-- <mat-autocomplete #auto="matAutocomplete">[matAutocomplete]="auto"
-    <mat-option *ngFor="let option of history" [value]="option">
-      {{ option }}
-    </mat-option> 
-  </mat-autocomplete>-->
-  <mat-icon
-    *ngIf="type === 'password'"
-    matSuffix
-    (click)="togglePasswordVisibility()"
-  >
+  <mat-icon *ngIf="type === 'password'" matSuffix (click)="togglePasswordVisibility()">
     {{ showPassword ? 'visibility_off' : 'visibility' }}
   </mat-icon>
   <mat-error *ngIf="value.length === 0"

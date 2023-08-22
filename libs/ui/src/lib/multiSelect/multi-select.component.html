@@ -5,11 +5,11 @@
     [(ngModel)]="selectedValues"
     name="options"
   >
-    <ways-test-input-ui
+    <ways-test-input-history
       *ngIf="options.length > 3"
       type="search"
       (onChangeValue)="filterOptions($event)"
-    ></ways-test-input-ui>
+    ></ways-test-input-history>
     <div class="checkbox-container" matRipple style="height: 48px;" (click)="toggleAllSelection()">
     <mat-checkbox
       [checked]="isAllSelected()"

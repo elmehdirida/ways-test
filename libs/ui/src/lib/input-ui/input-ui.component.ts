@@ -5,18 +5,6 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
-
-const  history : string[] = [
-  'Lyon',
-  'Paris',
-  'Marseille',
-  'Toulouse',
-  'Nice',
-  'Nantes',
-  'Montpellier',
-  'Strasbourg',
-  'Bordeaux',
-]
 @Component({
   selector: 'ways-test-input-ui',
   standalone: true,
@@ -70,6 +58,4 @@ export class InputUiComponent implements OnInit,OnChanges {
       }
   }
 
-//hfdjhfdfff
-  protected readonly history = history;
 }

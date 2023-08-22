@@ -20,23 +20,24 @@ import { MatRippleModule } from '@angular/material/core';
 import { Option } from '@ways-test/data-access';
 
 @Component({
-  selector: 'ways-test-multi-select',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    MatSelectModule,
-    InputUiComponent,
-    MatCheckboxModule,
-    MatIconModule,
-    MatButtonModule,
-    ButtonComponent,
-    RaisedButtonComponent,
-    DividerComponent,
-    MatRippleModule,
-  ],
-  templateUrl: './multi-select.component.html',
-  styleUrls: ['./multi-select.component.scss'],
+    selector: 'ways-test-multi-select',
+    standalone: true,
+    templateUrl: './multi-select.component.html',
+    styleUrls: ['./multi-select.component.scss'],
+    imports: [
+        CommonModule,
+        FormsModule,
+        MatSelectModule,
+        InputUiComponent,
+        MatCheckboxModule,
+        MatIconModule,
+        MatButtonModule,
+        ButtonComponent,
+        RaisedButtonComponent,
+        DividerComponent,
+        MatRippleModule,
+        InputHistoryComponent
+    ]
 })
 export class MultiSelectComponent implements OnChanges {
   selectedValues: number[] = [];
@@ -48,6 +49,9 @@ export class MultiSelectComponent implements OnChanges {
   newValue = { value: this.options.length + 1, label: '' };
 
   ngOnChanges() {
+    if (this.selectedOptions) {
+      this.selectedValues = this.selectedOptions.map((option) => option.value);
+    }
     if (this.selectedOptions) {
       this.selectedValues = this.selectedOptions.map((option) => option.value);
     }
