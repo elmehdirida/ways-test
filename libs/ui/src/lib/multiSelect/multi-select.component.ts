@@ -54,9 +54,6 @@ export class MultiSelectComponent implements OnChanges {
     if (this.selectedOptions) {
       this.selectedValues = this.selectedOptions.map((option) => option.value);
     }
-    if (this.selectedOptions) {
-      this.selectedValues = this.selectedOptions.map((option) => option.value);
-    }
   }
   get filteredOptions() {
     const filteredBySearch = this.options.filter((option) =>
