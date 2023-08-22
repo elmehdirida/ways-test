@@ -51,6 +51,5 @@ export const Primary :Story = {
     await userEvent.keyboard('{tab}');
     const error = canvas.getByRole('row');
     expect(error).toHaveTextContent('required');
-
   },
 };

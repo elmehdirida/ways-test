@@ -18,7 +18,7 @@ export interface autoComplete {
   templateUrl: './input-history.component.html',
   styleUrls: ['./input-history.component.scss'],
 })
-export class InputHistoryComponent implements OnInit,OnChanges{
+export class InputHistoryComponent implements OnInit{
   @Input() placeHolder = '';
   @Input() value = '';
   @Input() type = 'search';
@@ -30,7 +30,6 @@ export class InputHistoryComponent implements OnInit,OnChanges{
     'one',
     'two',
     'three',
-    'four',
   ];
   @Input() suggestions: string[] = [
     'one',
@@ -56,11 +55,7 @@ export class InputHistoryComponent implements OnInit,OnChanges{
       this.control.setValue("")
     }
     this.mergeListOfAutoComplete()
-    if(this.disable){
-      this.control.disable()
-    }
     this.control.setValue(this.value);
-    this.inputType = this.type;
   }
 
   mergeListOfAutoComplete(): void {
@@ -86,27 +81,6 @@ export class InputHistoryComponent implements OnInit,OnChanges{
     this.mergeListOfAutoComplete();
   }
 
-  togglePasswordVisibility(): void {
-    this.showPassword = !this.showPassword;
-    this.inputType = this.showPassword ? 'text' : 'password';
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes["type"]) {
-      this.inputType = this.type;
-      if (this.type !== 'password') {
-        this.showPassword = false;
-      }
-    }
-    if (changes["disable"]) {
-      if(this.disable){
-        this.control.disable()
-      }
-      else {
-        this.control.enable()
-      }
-    }
-  }
 
   deleteSelectedOption($event:Event, option: string) {
     $event.stopPropagation();
@@ -117,7 +91,6 @@ export class InputHistoryComponent implements OnInit,OnChanges{
   saveHistory() {
     if(!this.history.includes(this.control.value) && this.control.value !== ''){
         this.history.push(this.control.value)
-        //push to history in the 1st position without duplicate and let the other elements in the same order
         this.history = this.history.filter((value) => value !== this.control.value);
         this.history.unshift(this.control.value);
         }

@@ -71,7 +71,6 @@ export class MultiSelectComponent implements OnChanges {
           (filteredOption) => filteredOption.value === selectedOption.value
         )
     );
-
     return filteredBySearch.concat(filteredSelectedOptions);
   }
 
@@ -130,9 +129,7 @@ export class MultiSelectComponent implements OnChanges {
   }
 
   addOption($event: string) {
-    if ($event) {
       this.newValue = { value: this.options.length + 1, label: $event };
-    }
   }
   saveOption() {
     if (this.newValue.label !== '') {

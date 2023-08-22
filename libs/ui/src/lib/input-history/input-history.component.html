@@ -3,7 +3,7 @@
     <mat-label>{{ placeHolder }}</mat-label>
     <input
       [matAutocomplete]="auto"
-      [type]="inputType"
+      [type]="type"
       name="myInput"
       [required]="required"
       matInput
@@ -27,8 +27,5 @@
         </button>
       </mat-option>
     </mat-autocomplete>
-    <mat-icon *ngIf="type === 'password'" matSuffix (click)="togglePasswordVisibility()">
-      {{ showPassword ? 'visibility_off' : 'visibility' }}
-    </mat-icon>
     <mat-error *ngIf="value.length === 0">{{ placeHolder }} is required</mat-error>
   </mat-form-field>
