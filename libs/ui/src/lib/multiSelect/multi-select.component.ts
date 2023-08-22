@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
 import { Option } from '@ways-test/data-access';
+import { InputHistoryComponent } from "../input-history/input-history.component";
+
 
 @Component({
     selector: 'ways-test-multi-select',
