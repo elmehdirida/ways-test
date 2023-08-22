@@ -3,11 +3,10 @@
   <input
     matInput
     type="search"
-    placeholder="Search "
+    [placeholder]="placeholder"
     [(ngModel)]="searchQuery"
     [matAutocomplete]="auto"
     (keyup.enter)="onInput($event)"
-    (input)="onInputValue($event)"
   />
   <mat-autocomplete #auto="matAutocomplete">
     <!-- Show suggestions when the user visits the page for the first time -->
@@ -44,7 +43,10 @@
           >delete</mat-icon
         >
       </mat-option>
-      <mat-option *ngFor="let option of filteredSuggestions" [value]="option">
+      <mat-option
+        *ngFor="let option of filteredDuplicatedValuesFromHistory"
+        [value]="option"
+      >
         <mat-icon>search</mat-icon> {{ option }}
       </mat-option>
     </ng-container>

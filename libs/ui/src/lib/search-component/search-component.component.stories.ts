@@ -16,12 +16,22 @@ export default {
       providers: [importProvidersFrom(BrowserAnimationsModule)],
     }),
   ],
-  
 } as Meta<SearchComponentComponent>;
 
 export const Primary = {
   render: (args: SearchComponentComponent) => ({
     props: args,
   }),
-  args: {},
+  args: {
+    history: ['Mohsine', 'Spring', 'JEE', 'Oracle'],
+    suggestions: [
+      'Angular',
+      'React',
+      'Vue',
+      'Spring',
+      'Jackarta EE',
+      'Boot',
+      'rretact',
+    ],
+  },
 };

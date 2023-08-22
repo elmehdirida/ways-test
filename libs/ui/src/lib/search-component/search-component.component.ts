@@ -1,18 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-const suggestions: string[] = [
-  'Angular',
-  'React',
-  'Vue',
-  'Spring',
-  'JEE',
-  'Mohsine',
-];
 
 @Component({
   selector: 'ways-test-search-component',
@@ -36,7 +27,10 @@ export class SearchComponentComponent implements OnInit {
     this.showHistoryOnLoad = this.isFirstVisit();
   }
 
-  history: string[] = ['Mohsine', 'Spring', 'JEE'];
+  @Input() history: string[] = [];
+  @Input() suggestions: string[] = [];
+
+  @Input() placeholder = 'Search';
 
   isFirstVisit(): boolean {
     const visitedKey = 'visited';
@@ -55,6 +49,7 @@ export class SearchComponentComponent implements OnInit {
   addToHistory(inputValue: string) {
     if (
       inputValue &&
+      //!this.suggestions.includes(normalizedInput.toLowerCase())
       !this.history.some(
         (item) => item.toLowerCase() === inputValue.toLowerCase()
       )
@@ -68,7 +63,6 @@ export class SearchComponentComponent implements OnInit {
     const normalizedInput = inputValue.trim();
     if (
       normalizedInput &&
-      !this.suggestions.includes(normalizedInput.toLowerCase()) &&
       !this.history.some(
         (item) => item.toLowerCase() === normalizedInput.toLowerCase()
       )
@@ -114,5 +108,4 @@ export class SearchComponentComponent implements OnInit {
     event.stopPropagation();
     this.history.splice(index, 1);
   }
-  protected readonly suggestions = suggestions;
 }
