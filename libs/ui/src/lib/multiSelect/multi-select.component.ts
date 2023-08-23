@@ -18,28 +18,27 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
 import { Option } from '@ways-test/data-access';
-import { InputHistoryComponent } from "../input-history/input-history.component";
-
+import { InputHistoryComponent } from '../input-history/input-history.component';
 
 @Component({
-    selector: 'ways-test-multi-select',
-    standalone: true,
-    templateUrl: './multi-select.component.html',
-    styleUrls: ['./multi-select.component.scss'],
-    imports: [
-        CommonModule,
-        FormsModule,
-        MatSelectModule,
-        InputUiComponent,
-        MatCheckboxModule,
-        MatIconModule,
-        MatButtonModule,
-        ButtonComponent,
-        RaisedButtonComponent,
-        DividerComponent,
-        MatRippleModule,
-        InputHistoryComponent
-    ]
+  selector: 'ways-test-multi-select',
+  standalone: true,
+  templateUrl: './multi-select.component.html',
+  styleUrls: ['./multi-select.component.scss'],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatSelectModule,
+    InputUiComponent,
+    MatCheckboxModule,
+    MatIconModule,
+    MatButtonModule,
+    ButtonComponent,
+    RaisedButtonComponent,
+    DividerComponent,
+    MatRippleModule,
+    InputHistoryComponent,
+  ],
 })
 export class MultiSelectComponent implements OnChanges {
   selectedValues: number[] = [];
