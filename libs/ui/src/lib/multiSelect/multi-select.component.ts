@@ -40,6 +40,7 @@ import { InputHistoryComponent } from '../input-history/input-history.component'
     InputHistoryComponent,
   ],
 })
+  
 export class MultiSelectComponent implements OnChanges {
   selectedValues: number[] = [];
   @Input() selectedOptions: Option[] = [];
