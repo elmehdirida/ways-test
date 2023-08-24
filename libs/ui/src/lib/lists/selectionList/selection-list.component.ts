@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatListModule, MatListOption} from '@angular/material/list';
+import { MatListModule, MatListOption } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemePalette } from '@angular/material/core';
 import {
@@ -10,7 +10,7 @@ import {
 } from '@angular-material-components/color-picker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import {FormControl, FormsModule} from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
 import { InputUiComponent } from '../../input-ui/input-ui.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
@@ -36,11 +36,11 @@ export class SelectionListComponent {
   @Input() options = [''];
   @Input() optionColors = [{ bgColor: '', textColor: '' }];
   @Output() newListOfItems = new EventEmitter();
-  @Input() newBgColor: string = '';
-  @Input() newTextColor: string = '';
-  @Input() newOption: string = '';
+  @Input() newBgColor = '';
+  @Input() newTextColor = '';
+  @Input() newOption = '';
   showForm = false;
-  @Output() newState = new EventEmitter<string[]>
+  @Output() newState = new EventEmitter<string[]>();
 
   getBackgroundColor(i: number) {
     if (i < this.optionColors.length) {
@@ -92,11 +92,18 @@ export class SelectionListComponent {
     this.showForm = !this.showForm;
   }
 
-  handleNewState(selected: MatListOption[]){
-    let newList:string[] = []
-    selected.forEach(value => {
-      newList.push(value.value)
-    })
-    this.newState.emit(newList)
+  handleNewState(selected: MatListOption[]) {
+    let newList: string[] = [];
+    selected.forEach((value) => {
+      newList.push(value.value);
+    });
+    this.newState.emit(newList);
+  }
+
+  handleSelectedOptions(selected: MatListOption[]) {
+    selected.forEach((value) => {
+      this.selectedOptions.push(value.value);
+    });
+    this.newListOfItems.emit(this.selectedOptions);
   }
 }

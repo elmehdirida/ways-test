@@ -1,15 +1,17 @@
-import {applicationConfig, Meta} from '@storybook/angular';
+import { applicationConfig, Meta } from '@storybook/angular';
 import { SelectionListComponent } from './selection-list.component';
-import {importProvidersFrom} from "@angular/core";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {NgxMatColorPickerModule} from "@angular-material-components/color-picker";
+import { importProvidersFrom } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMatColorPickerModule } from '@angular-material-components/color-picker';
 
 export default {
   title: 'lists/SelectionListComponent',
   component: SelectionListComponent,
-  decorators : [
+  decorators: [
     applicationConfig({
-      providers: [importProvidersFrom(NgxMatColorPickerModule , BrowserAnimationsModule)],
+      providers: [
+        importProvidersFrom(NgxMatColorPickerModule, BrowserAnimationsModule),
+      ],
     }),
   ],
   argTypes: {
@@ -32,5 +34,7 @@ export const Primary = {
       { bgColor: '#FDF5CA', textColor: '#B44100' },
       { bgColor: '#FFCDD6', textColor: '#B44100' },
     ],
+    showForm: false,
+
   },
 };
