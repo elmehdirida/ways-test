@@ -40,4 +40,10 @@ $custom-theme: mat.define-light-theme((
 @include mat.all-component-themes($custom-theme);
 
 p{
-  @include mat.typography-level($my-custom-typography-config,'body-2')}
+  @include mat.typography-level($my-custom-typography-config,'body-2')
+}
+
+h4{
+  @include mat.typography-level($my-custom-typography-config,'subtitle-2')
+}
+

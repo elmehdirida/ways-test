@@ -1,4 +1,8 @@
-<mat-form-field appearance="outline" style="width: 100%">
+<mat-form-field
+  *ngIf="!disable; else readOnly"
+  appearance="outline"
+  style="width: 100%"
+>
   <mat-icon *ngIf="type === 'search'" matPrefix>search</mat-icon>
   <mat-label>{{ placeHolder }}</mat-label>
   <input
@@ -10,10 +14,18 @@
     [formControl]="control"
     [value]="value"
   />
-  <mat-icon *ngIf="type === 'password'" matSuffix (click)="togglePasswordVisibility()">
+  <mat-icon
+    *ngIf="type === 'password'"
+    matSuffix
+    (click)="togglePasswordVisibility()"
+  >
     {{ showPassword ? 'visibility_off' : 'visibility' }}
   </mat-icon>
   <mat-error *ngIf="value.length === 0"
     >{{ placeHolder }} is required</mat-error
   >
 </mat-form-field>
+<ng-template #readOnly>
+  <h4 style="margin: 0">{{ placeHolder }}</h4>
+  <p style="margin: 0">{{ value }}</p>
+</ng-template>
