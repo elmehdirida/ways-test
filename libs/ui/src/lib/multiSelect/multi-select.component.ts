@@ -64,7 +64,7 @@ export class MultiSelectComponent implements OnChanges {
       this.selectedValues.includes(option.value)
     );
 
-    // Remove selected options that are also in the filteredBySearch array
+    // Remove selected options that are also in the filteredBySearch array.
     const filteredSelectedOptions = selectedOptions.filter(
       (selectedOption) =>
         !filteredBySearch.some(
