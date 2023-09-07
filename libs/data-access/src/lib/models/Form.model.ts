@@ -2,7 +2,6 @@ export class Formation {
   title!: string;
   content!: string;
 }
-
 export interface Option {
   value: number;
   label: string;
